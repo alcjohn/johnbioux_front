@@ -6,7 +6,6 @@ import { addApolloState, initializeApollo } from "../lib/apollo";
 import Html2React from "../components/Html2React";
 import Layout from "../components/layout/Layout";
 import PostComponent from "../components/PostComponent";
-import { Container } from "next/app";
 import { Box } from "@chakra-ui/react";
 interface IProps {}
 

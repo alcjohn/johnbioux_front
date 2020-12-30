@@ -5,7 +5,7 @@ import {
   ButtonProps,
   useClipboard,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import Highlight from "./highlight";
 
 export const liveEditorStyle: React.CSSProperties = {

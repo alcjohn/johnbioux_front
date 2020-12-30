@@ -1,5 +1,5 @@
 import React from "react";
-import { PostsDocument, usePostsQuery } from "../generated/graphql";
+import { PostsDocument } from "../generated/graphql";
 import { addApolloState, initializeApollo } from "../lib/apollo";
 import Layout from "../components/layout/Layout";
 import { Box } from "@chakra-ui/react";

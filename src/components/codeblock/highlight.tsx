@@ -4,14 +4,6 @@ import { liveEditorStyle } from "./codeblock";
 import { chakra } from "@chakra-ui/react";
 import theme from "prism-react-renderer/themes/nightOwl";
 
-const exampleCode = `
-(function someDemo() {
-  var test = "Hello World!";
-  console.log(test);
-})();
-
-return () => <App />;
-`;
 const RE = /{([\d,-]+)}/;
 
 const calculateLinesToHighlight = (meta: string) => {

@@ -1,8 +1,7 @@
-import { Box, Code, Divider, Heading, Text } from "@chakra-ui/react";
-import parse, { domToReact, HTMLReactParserOptions } from "html-react-parser";
+import { Divider } from "@chakra-ui/react";
+import parse, { HTMLReactParserOptions } from "html-react-parser";
 import React from "react";
 import CodeBlock from "./codeblock/codeblock";
-import Highlight from "./codeblock/highlight";
 import A from "./processors/A";
 import H2 from "./processors/H2";
 import H3 from "./processors/H3";
