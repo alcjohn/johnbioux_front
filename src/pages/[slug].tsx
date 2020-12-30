@@ -1,7 +1,11 @@
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import React from "react";
-import { PostBySlugDocument, usePostBySlugQuery } from "../generated/graphql";
+import {
+  PostBySlugDocument,
+  PostsDocument,
+  usePostBySlugQuery,
+} from "../generated/graphql";
 import { addApolloState, initializeApollo } from "../lib/apollo";
 import Html2React from "../components/Html2React";
 import Layout from "../components/layout/Layout";
@@ -37,9 +41,8 @@ const Post: React.FC<IProps> = ({}) => {
     </Layout>
   );
 };
-export async function getServerSideProps({ params }: any) {
+export async function getStaticProps({ params }: any) {
   const apolloClient = initializeApollo();
-  console.log(params);
 
   await apolloClient.query({
     query: PostBySlugDocument,
@@ -49,6 +52,19 @@ export async function getServerSideProps({ params }: any) {
   });
   return addApolloState(apolloClient, {
     props: {},
+    revalidate: 1,
   });
+}
+
+export async function getStaticPaths() {
+  const apolloClient = initializeApollo();
+
+  const { data } = await apolloClient.query({
+    query: PostsDocument,
+  });
+  return {
+    paths: data.posts.nodes.map(({ slug }: any) => `/${slug}`) || [],
+    fallback: true,
+  };
 }
 export default Post;
