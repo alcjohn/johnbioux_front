@@ -1,56 +1,54 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+import { Box, Flex } from "@chakra-ui/react";
+import React from "react";
+import Layout from "../components/layout/Layout";
 
-import { Hero } from '../components/Hero'
-import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+const Index: React.FC = () => (
+  <Layout>
+    <Flex
+      h="full"
+      justifyContent="center"
+      alignItems={{
+        base: "center",
+        lg: "flex-start",
+      }}
+      pl={{
+        lg: "15%",
+      }}
+      flexDirection="column"
+    >
+      <Box
+        as="h1"
+        textTransform="uppercase"
+        fontSize={{
+          base: "3rem",
+          md: "6.5rem",
+        }}
+        lineHeight={{
+          base: "2.5rem",
+          md: "7.5rem",
+        }}
+      >
+        <Box as="span" fontWeight="bold">
+          <Box as="span" color="primary.500">
+            J
+          </Box>
+          ohn
+        </Box>{" "}
+        <Box as="span">Bioux</Box>
+      </Box>
+      <Box
+        fontSize={{
+          base: "1.4rem",
+          md: "3rem",
+        }}
+        as="h2"
+        textTransform="uppercase"
+        fontWeight="regular"
+      >
+        Développeur fullstack
+      </Box>
+    </Flex>
+  </Layout>
+);
 
-const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>typescript</Code>.
-      </Text>
-
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
-
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
-
-export default Index
+export default Index;

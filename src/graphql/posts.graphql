@@ -1,0 +1,27 @@
+query Posts {
+  posts {
+    nodes {
+      id
+      uri
+      title
+      slug
+      excerpt
+      featuredImage {
+        node {
+          altText
+          sourceUrl(size: THUMBNAIL)
+          srcSet(size: THUMBNAIL)
+          sizes(size: THUMBNAIL)
+        }
+      }
+      seo {
+        metaDesc
+      }
+      categories {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}

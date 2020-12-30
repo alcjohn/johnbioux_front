@@ -1,0 +1,23 @@
+query PostBySlug($slug: String!) {
+  postBy(slug: $slug) {
+    id
+    content
+    title
+    date
+    featuredImage {
+      node {
+        sourceUrl
+        srcSet
+      }
+    }
+    contentType {
+      node {
+        name
+      }
+    }
+    seo {
+      title
+    }
+  }
+}
+oJDm-YFIwnLF
