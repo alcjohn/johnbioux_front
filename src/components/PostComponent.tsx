@@ -18,11 +18,10 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
-import { PostBySlugQuery } from "../generated/graphql";
 import Html2React from "./Html2React";
 
 interface PostComponentProps {
-  post: PostBySlugQuery["postBy"];
+  post: any;
 }
 
 const PostComponent: React.FC<PostComponentProps> = ({ post }) => {

@@ -1,25 +1,24 @@
 query Posts {
-  posts {
-    nodes {
-      id
-      uri
-      title
-      slug
-      excerpt
-      featuredImage {
-        node {
-          altText
-          sourceUrl(size: THUMBNAIL)
-          srcSet(size: THUMBNAIL)
-          sizes(size: THUMBNAIL)
+  posts(where: { orderby: { field: DATE, order: ASC } }) {
+    edges {
+      node {
+        id
+        title
+        slug
+        excerpt
+        categories {
+          nodes {
+            name
+            slug
+          }
         }
-      }
-      seo {
-        metaDesc
-      }
-      categories {
-        nodes {
-          name
+        featuredImage {
+          node {
+            sourceUrl(size: MEDIUM)
+            sizes(size: MEDIUM)
+            altText
+            srcSet(size: MEDIUM)
+          }
         }
       }
     }

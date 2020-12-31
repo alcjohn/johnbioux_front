@@ -20,4 +20,3 @@ query PostBySlug($slug: String!) {
     }
   }
 }
-oJDm-YFIwnLF

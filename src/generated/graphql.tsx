@@ -1,5 +1,3 @@
-import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
@@ -16,245 +14,107 @@ export type Scalars = {
 /** The root entry point into the Graph */
 export type RootQuery = {
   __typename?: 'RootQuery';
-  /**
-   * Entry point to get all settings for the site
-   * @deprecated 
-   */
+  /** Entry point to get all settings for the site */
   allSettings?: Maybe<Settings>;
-  /**
-   * Connection between the RootQuery type and the category type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the category type */
   categories?: Maybe<RootQueryToCategoryConnection>;
-  /**
-   * A 0bject
-   * @deprecated 
-   */
+  /** A 0bject */
   category?: Maybe<Category>;
-  /**
-   * Returns a Comment
-   * @deprecated 
-   */
+  /** Returns a Comment */
   comment?: Maybe<Comment>;
-  /**
-   * Connection between the RootQuery type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the Comment type */
   comments?: Maybe<RootQueryToCommentConnection>;
-  /**
-   * A node used to manage content
-   * @deprecated 
-   */
+  /** A node used to manage content */
   contentNode?: Maybe<ContentNode>;
-  /**
-   * Connection between the RootQuery type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the ContentNode type */
   contentNodes?: Maybe<RootQueryToContentNodeConnection>;
-  /**
-   * Fetch a Content Type node by unique Identifier
-   * @deprecated 
-   */
+  /** Fetch a Content Type node by unique Identifier */
   contentType?: Maybe<ContentType>;
-  /**
-   * Connection between the RootQuery type and the ContentType type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the ContentType type */
   contentTypes?: Maybe<RootQueryToContentTypeConnection>;
-  /** @deprecated  */
   discussionSettings?: Maybe<DiscussionSettings>;
-  /** @deprecated  */
   generalSettings?: Maybe<GeneralSettings>;
-  /**
-   * Get footer
-   * @deprecated 
-   */
-  getFooter?: Maybe<HcmsFooter>;
-  /**
-   * Get header
-   * @deprecated 
-   */
-  getHeader?: Maybe<HcmsHeader>;
-  /**
-   * An object of the mediaItem Type. 
-   * @deprecated 
-   */
+  /** An object of the mediaItem Type.  */
   mediaItem?: Maybe<MediaItem>;
   /**
    * A mediaItem object
    * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
    */
   mediaItemBy?: Maybe<MediaItem>;
-  /**
-   * Connection between the RootQuery type and the mediaItem type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the mediaItem type */
   mediaItems?: Maybe<RootQueryToMediaItemConnection>;
-  /**
-   * A WordPress navigation menu
-   * @deprecated 
-   */
+  /** A WordPress navigation menu */
   menu?: Maybe<Menu>;
-  /**
-   * A WordPress navigation menu item
-   * @deprecated 
-   */
+  /** A WordPress navigation menu item */
   menuItem?: Maybe<MenuItem>;
-  /**
-   * Connection between the RootQuery type and the MenuItem type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the MenuItem type */
   menuItems?: Maybe<RootQueryToMenuItemConnection>;
-  /**
-   * Connection between the RootQuery type and the Menu type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the Menu type */
   menus?: Maybe<RootQueryToMenuConnection>;
-  /**
-   * Fetches an object given its ID
-   * @deprecated 
-   */
+  /** Fetches an object given its ID */
   node?: Maybe<Node>;
-  /** @deprecated  */
   nodeByUri?: Maybe<UniformResourceIdentifiable>;
-  /**
-   * An object of the page Type. 
-   * @deprecated 
-   */
+  /** An object of the page Type.  */
   page?: Maybe<Page>;
   /**
    * A page object
    * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
    */
   pageBy?: Maybe<Page>;
-  /**
-   * Connection between the RootQuery type and the page type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the page type */
   pages?: Maybe<RootQueryToPageConnection>;
-  /**
-   * A WordPress plugin
-   * @deprecated 
-   */
+  /** A WordPress plugin */
   plugin?: Maybe<Plugin>;
-  /**
-   * Connection between the RootQuery type and the Plugin type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the Plugin type */
   plugins?: Maybe<RootQueryToPluginConnection>;
-  /**
-   * An object of the post Type. 
-   * @deprecated 
-   */
+  /** An object of the post Type.  */
   post?: Maybe<Post>;
   /**
    * A post object
    * @deprecated Deprecated in favor of using the single entry point for this type with ID and IDType fields. For example, instead of postBy( id: &quot;&quot; ), use post(id: &quot;&quot; idType: &quot;&quot;)
    */
   postBy?: Maybe<Post>;
-  /**
-   * A 0bject
-   * @deprecated 
-   */
+  /** A 0bject */
   postFormat?: Maybe<PostFormat>;
-  /**
-   * Connection between the RootQuery type and the postFormat type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the postFormat type */
   postFormats?: Maybe<RootQueryToPostFormatConnection>;
-  /**
-   * Connection between the RootQuery type and the post type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the post type */
   posts?: Maybe<RootQueryToPostConnection>;
-  /** @deprecated  */
   readingSettings?: Maybe<ReadingSettings>;
-  /**
-   * Connection between the RootQuery type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the EnqueuedScript type */
   registeredScripts?: Maybe<RootQueryToEnqueuedScriptConnection>;
-  /**
-   * Connection between the RootQuery type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the EnqueuedStylesheet type */
   registeredStylesheets?: Maybe<RootQueryToEnqueuedStylesheetConnection>;
-  /**
-   * Connection between the RootQuery type and the ContentRevisionUnion type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the ContentRevisionUnion type */
   revisions?: Maybe<RootQueryToContentRevisionUnionConnection>;
-  /**
-   * Returns seo site data
-   * @deprecated 
-   */
+  /** Returns seo site data */
   seo?: Maybe<SeoConfig>;
-  /**
-   * A 0bject
-   * @deprecated 
-   */
+  /** A 0bject */
   tag?: Maybe<Tag>;
-  /**
-   * Connection between the RootQuery type and the tag type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the tag type */
   tags?: Maybe<RootQueryToTagConnection>;
-  /**
-   * Connection between the RootQuery type and the Taxonomy type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the Taxonomy type */
   taxonomies?: Maybe<RootQueryToTaxonomyConnection>;
-  /**
-   * Fetch a Taxonomy node by unique Identifier
-   * @deprecated 
-   */
+  /** Fetch a Taxonomy node by unique Identifier */
   taxonomy?: Maybe<Taxonomy>;
-  /**
-   * A node in a taxonomy used to group and relate content nodes
-   * @deprecated 
-   */
+  /** A node in a taxonomy used to group and relate content nodes */
   termNode?: Maybe<TermNode>;
-  /**
-   * Connection between the RootQuery type and the TermNode type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the TermNode type */
   terms?: Maybe<RootQueryToTermNodeConnection>;
-  /**
-   * A Theme object
-   * @deprecated 
-   */
+  /** A Theme object */
   theme?: Maybe<Theme>;
-  /**
-   * Connection between the RootQuery type and the Theme type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the Theme type */
   themes?: Maybe<RootQueryToThemeConnection>;
-  /**
-   * Returns a user
-   * @deprecated 
-   */
+  /** Returns a user */
   user?: Maybe<User>;
-  /**
-   * Returns a user role
-   * @deprecated 
-   */
+  /** Returns a user role */
   userRole?: Maybe<UserRole>;
-  /**
-   * Connection between the RootQuery type and the UserRole type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the UserRole type */
   userRoles?: Maybe<RootQueryToUserRoleConnection>;
-  /**
-   * Connection between the RootQuery type and the User type
-   * @deprecated 
-   */
+  /** Connection between the RootQuery type and the User type */
   users?: Maybe<RootQueryToUserConnection>;
-  /**
-   * Returns the current user
-   * @deprecated 
-   */
+  /** Returns the current user */
   viewer?: Maybe<User>;
-  /** @deprecated  */
   writingSettings?: Maybe<WritingSettings>;
 };
 
@@ -613,80 +473,35 @@ export type RootQueryUsersArgs = {
 /** All of the registered settings */
 export type Settings = {
   __typename?: 'Settings';
-  /**
-   * Autoriser les gens à envoyer des commentaires sur les nouvelles publications.
-   * @deprecated 
-   */
+  /** Autoriser les gens à envoyer des commentaires sur les nouvelles publications. */
   discussionSettingsDefaultCommentStatus?: Maybe<Scalars['String']>;
-  /**
-   * Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles.
-   * @deprecated 
-   */
+  /** Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles. */
   discussionSettingsDefaultPingStatus?: Maybe<Scalars['String']>;
-  /**
-   * Un format de date commun pour tous les réglages de dates.
-   * @deprecated 
-   */
+  /** Un format de date commun pour tous les réglages de dates. */
   generalSettingsDateFormat?: Maybe<Scalars['String']>;
-  /**
-   * Slogan du site.
-   * @deprecated 
-   */
+  /** Slogan du site. */
   generalSettingsDescription?: Maybe<Scalars['String']>;
-  /**
-   * Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes.
-   * @deprecated 
-   */
+  /** Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes. */
   generalSettingsEmail?: Maybe<Scalars['String']>;
-  /**
-   * Code local de l’installation WordPress.
-   * @deprecated 
-   */
+  /** Code local de l’installation WordPress. */
   generalSettingsLanguage?: Maybe<Scalars['String']>;
-  /**
-   * Le numéro du jour de la semaine à laquelle la semaine devrait commencer.
-   * @deprecated 
-   */
+  /** Le numéro du jour de la semaine à laquelle la semaine devrait commencer. */
   generalSettingsStartOfWeek?: Maybe<Scalars['Int']>;
-  /**
-   * Un format d’heure commun pour tous les réglages d’heures.
-   * @deprecated 
-   */
+  /** Un format d’heure commun pour tous les réglages d’heures. */
   generalSettingsTimeFormat?: Maybe<Scalars['String']>;
-  /**
-   * Une ville dans le même fuseau horaire que le vôtre.
-   * @deprecated 
-   */
+  /** Une ville dans le même fuseau horaire que le vôtre. */
   generalSettingsTimezone?: Maybe<Scalars['String']>;
-  /**
-   * Titre du site.
-   * @deprecated 
-   */
+  /** Titre du site. */
   generalSettingsTitle?: Maybe<Scalars['String']>;
-  /**
-   * URL du site.
-   * @deprecated 
-   */
+  /** URL du site. */
   generalSettingsUrl?: Maybe<Scalars['String']>;
-  /**
-   * Les pages de blog affichent au maximum.
-   * @deprecated 
-   */
+  /** Les pages de blog affichent au maximum. */
   readingSettingsPostsPerPage?: Maybe<Scalars['Int']>;
-  /**
-   * Catégorie d’article par défaut.
-   * @deprecated 
-   */
+  /** Catégorie d’article par défaut. */
   writingSettingsDefaultCategory?: Maybe<Scalars['Int']>;
-  /**
-   * Format d’article par défaut.
-   * @deprecated 
-   */
+  /** Format d’article par défaut. */
   writingSettingsDefaultPostFormat?: Maybe<Scalars['String']>;
-  /**
-   * Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage.
-   * @deprecated 
-   */
+  /** Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage. */
   writingSettingsUseSmilies?: Maybe<Scalars['Boolean']>;
 };
 
@@ -746,155 +561,74 @@ export enum TermObjectsConnectionOrderbyEnum {
 /** Connection between the RootQuery type and the category type */
 export type RootQueryToCategoryConnection = {
   __typename?: 'RootQueryToCategoryConnection';
-  /**
-   * Edges for the RootQueryToCategoryConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToCategoryConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToCategoryConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Category>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToCategoryConnectionEdge = {
   __typename?: 'RootQueryToCategoryConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Category>;
 };
 
 /** The category type */
 export type Category = Node & TermNode & DatabaseIdentifier & UniformResourceIdentifiable & HierarchicalTermNode & MenuItemLinkable & {
   __typename?: 'Category';
-  /**
-   * The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
-   * @deprecated 
-   */
+  /** The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
   ancestors?: Maybe<CategoryToAncestorsCategoryConnection>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
   categoryId?: Maybe<Scalars['Int']>;
-  /**
-   * Connection between the category type and the category type
-   * @deprecated 
-   */
+  /** Connection between the category type and the category type */
   children?: Maybe<CategoryToCategoryConnection>;
-  /**
-   * Connection between the category type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the category type and the ContentNode type */
   contentNodes?: Maybe<CategoryToContentNodeConnection>;
-  /**
-   * The number of objects connected to the object
-   * @deprecated 
-   */
+  /** The number of objects connected to the object */
   count?: Maybe<Scalars['Int']>;
-  /**
-   * Identifies the primary key from the database.
-   * @deprecated 
-   */
+  /** Identifies the primary key from the database. */
   databaseId: Scalars['Int'];
-  /**
-   * The description of the object
-   * @deprecated 
-   */
+  /** The description of the object */
   description?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the TermNode type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the TermNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<TermNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the TermNode type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the TermNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<TermNodeToEnqueuedStylesheetConnection>;
-  /**
-   * The globally unique ID for the object
-   * @deprecated 
-   */
+  /** The globally unique ID for the object */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * The link to the term
-   * @deprecated 
-   */
+  /** The link to the term */
   link?: Maybe<Scalars['String']>;
-  /**
-   * The human friendly name of the object.
-   * @deprecated 
-   */
+  /** The human friendly name of the object. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the category type and the category type
-   * @deprecated 
-   */
+  /** Connection between the category type and the category type */
   parent?: Maybe<CategoryToParentCategoryConnectionEdge>;
-  /**
-   * Database id of the parent node
-   * @deprecated 
-   */
+  /** Database id of the parent node */
   parentDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the parent node.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the parent node. */
   parentId?: Maybe<Scalars['ID']>;
-  /**
-   * Connection between the category type and the post type
-   * @deprecated 
-   */
+  /** Connection between the category type and the post type */
   posts?: Maybe<CategoryToPostConnection>;
-  /**
-   * The Yoast SEO data of the Catégories taxonomy.
-   * @deprecated 
-   */
+  /** The Yoast SEO data of the Catégories taxonomy. */
   seo?: Maybe<TaxonomySeo>;
-  /**
-   * An alphanumeric identifier for the object unique to its type.
-   * @deprecated 
-   */
+  /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the category type and the Taxonomy type
-   * @deprecated 
-   */
+  /** Connection between the category type and the Taxonomy type */
   taxonomy?: Maybe<CategoryToTaxonomyConnectionEdge>;
-  /**
-   * The ID of the term group that this term object belongs to
-   * @deprecated 
-   */
+  /** The ID of the term group that this term object belongs to */
   termGroupId?: Maybe<Scalars['Int']>;
-  /**
-   * The taxonomy ID that the object is associated with
-   * @deprecated 
-   */
+  /** The taxonomy ID that the object is associated with */
   termTaxonomyId?: Maybe<Scalars['Int']>;
-  /**
-   * The unique resource identifier path
-   * @deprecated 
-   */
+  /** The unique resource identifier path */
   uri: Scalars['String'];
 };
 
@@ -1012,75 +746,39 @@ export type TermNodeEnqueuedStylesheetsArgs = {
 /** Connection between the TermNode type and the EnqueuedScript type */
 export type TermNodeToEnqueuedScriptConnection = {
   __typename?: 'TermNodeToEnqueuedScriptConnection';
-  /**
-   * Edges for the TermNodeToEnqueuedScriptConnection connection
-   * @deprecated 
-   */
+  /** Edges for the TermNodeToEnqueuedScriptConnection connection */
   edges?: Maybe<Array<Maybe<TermNodeToEnqueuedScriptConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type TermNodeToEnqueuedScriptConnectionEdge = {
   __typename?: 'TermNodeToEnqueuedScriptConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedScript>;
 };
 
 /** Script enqueued by the CMS */
 export type EnqueuedScript = Node & EnqueuedAsset & {
   __typename?: 'EnqueuedScript';
-  /**
-   * @todo
-   * @deprecated 
-   */
+  /** @todo */
   args?: Maybe<Scalars['Boolean']>;
-  /**
-   * Dependencies needed to use this asset
-   * @deprecated 
-   */
+  /** Dependencies needed to use this asset */
   dependencies?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /**
-   * Extra information needed for the script
-   * @deprecated 
-   */
+  /** Extra information needed for the script */
   extra?: Maybe<Scalars['String']>;
-  /**
-   * The handle of the enqueued asset
-   * @deprecated 
-   */
+  /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique ID for the object
-   * @deprecated 
-   */
+  /** The globally unique ID for the object */
   id: Scalars['ID'];
-  /**
-   * The source of the asset
-   * @deprecated 
-   */
+  /** The source of the asset */
   src?: Maybe<Scalars['String']>;
-  /**
-   * The version of the enqueued asset
-   * @deprecated 
-   */
+  /** The version of the enqueued asset */
   version?: Maybe<Scalars['String']>;
 };
 
@@ -1105,119 +803,66 @@ export type EnqueuedAsset = {
 /** Information about pagination in a connection. */
 export type WpPageInfo = {
   __typename?: 'WPPageInfo';
-  /**
-   * When paginating forwards, the cursor to continue.
-   * @deprecated 
-   */
+  /** When paginating forwards, the cursor to continue. */
   endCursor?: Maybe<Scalars['String']>;
-  /**
-   * When paginating forwards, are there more items?
-   * @deprecated 
-   */
+  /** When paginating forwards, are there more items? */
   hasNextPage: Scalars['Boolean'];
-  /**
-   * When paginating backwards, are there more items?
-   * @deprecated 
-   */
+  /** When paginating backwards, are there more items? */
   hasPreviousPage: Scalars['Boolean'];
-  /**
-   * Raw schema for page
-   * @deprecated 
-   */
+  /** Raw schema for page */
   seo?: Maybe<SeoPostTypePageInfo>;
-  /**
-   * When paginating backwards, the cursor to continue.
-   * @deprecated 
-   */
+  /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']>;
 };
 
 /** The page info SEO details */
 export type SeoPostTypePageInfo = {
   __typename?: 'SEOPostTypePageInfo';
-  /** @deprecated  */
   schema?: Maybe<SeoPageInfoSchema>;
 };
 
 /** The Schema for post type */
 export type SeoPageInfoSchema = {
   __typename?: 'SEOPageInfoSchema';
-  /** @deprecated  */
   raw?: Maybe<Scalars['String']>;
 };
 
 /** Connection between the TermNode type and the EnqueuedStylesheet type */
 export type TermNodeToEnqueuedStylesheetConnection = {
   __typename?: 'TermNodeToEnqueuedStylesheetConnection';
-  /**
-   * Edges for the TermNodeToEnqueuedStylesheetConnection connection
-   * @deprecated 
-   */
+  /** Edges for the TermNodeToEnqueuedStylesheetConnection connection */
   edges?: Maybe<Array<Maybe<TermNodeToEnqueuedStylesheetConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedStylesheet>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type TermNodeToEnqueuedStylesheetConnectionEdge = {
   __typename?: 'TermNodeToEnqueuedStylesheetConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedStylesheet>;
 };
 
 /** Stylesheet enqueued by the CMS */
 export type EnqueuedStylesheet = Node & EnqueuedAsset & {
   __typename?: 'EnqueuedStylesheet';
-  /**
-   * @todo
-   * @deprecated 
-   */
+  /** @todo */
   args?: Maybe<Scalars['Boolean']>;
-  /**
-   * Dependencies needed to use this asset
-   * @deprecated 
-   */
+  /** Dependencies needed to use this asset */
   dependencies?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /**
-   * Extra information needed for the script
-   * @deprecated 
-   */
+  /** Extra information needed for the script */
   extra?: Maybe<Scalars['String']>;
-  /**
-   * The handle of the enqueued asset
-   * @deprecated 
-   */
+  /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique ID for the object
-   * @deprecated 
-   */
+  /** The globally unique ID for the object */
   id: Scalars['ID'];
-  /**
-   * The source of the asset
-   * @deprecated 
-   */
+  /** The source of the asset */
   src?: Maybe<Scalars['String']>;
-  /**
-   * The version of the enqueued asset
-   * @deprecated 
-   */
+  /** The version of the enqueued asset */
   version?: Maybe<Scalars['String']>;
 };
 
@@ -1256,35 +901,20 @@ export type MenuItemLinkable = {
 /** Connection between the category type and the category type */
 export type CategoryToAncestorsCategoryConnection = {
   __typename?: 'CategoryToAncestorsCategoryConnection';
-  /**
-   * Edges for the CategoryToAncestorsCategoryConnection connection
-   * @deprecated 
-   */
+  /** Edges for the CategoryToAncestorsCategoryConnection connection */
   edges?: Maybe<Array<Maybe<CategoryToAncestorsCategoryConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Category>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type CategoryToAncestorsCategoryConnectionEdge = {
   __typename?: 'CategoryToAncestorsCategoryConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Category>;
 };
 
@@ -1333,35 +963,20 @@ export type CategoryToCategoryConnectionWhereArgs = {
 /** Connection between the category type and the category type */
 export type CategoryToCategoryConnection = {
   __typename?: 'CategoryToCategoryConnection';
-  /**
-   * Edges for the CategoryToCategoryConnection connection
-   * @deprecated 
-   */
+  /** Edges for the CategoryToCategoryConnection connection */
   edges?: Maybe<Array<Maybe<CategoryToCategoryConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Category>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type CategoryToCategoryConnectionEdge = {
   __typename?: 'CategoryToCategoryConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Category>;
 };
 
@@ -1614,35 +1229,20 @@ export enum PostStatusEnum {
 /** Connection between the category type and the ContentNode type */
 export type CategoryToContentNodeConnection = {
   __typename?: 'CategoryToContentNodeConnection';
-  /**
-   * Edges for the CategoryToContentNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the CategoryToContentNodeConnection connection */
   edges?: Maybe<Array<Maybe<CategoryToContentNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type CategoryToContentNodeConnectionEdge = {
   __typename?: 'CategoryToContentNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
@@ -1717,165 +1317,72 @@ export type ContentNodeEnqueuedStylesheetsArgs = {
 /** Connection between the ContentNode type and the ContentType type */
 export type ContentNodeToContentTypeConnectionEdge = {
   __typename?: 'ContentNodeToContentTypeConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<ContentType>;
 };
 
 /** An Post Type object */
 export type ContentType = Node & UniformResourceIdentifiable & {
   __typename?: 'ContentType';
-  /**
-   * Whether this content type should can be exported.
-   * @deprecated 
-   */
+  /** Whether this content type should can be exported. */
   canExport?: Maybe<Scalars['Boolean']>;
-  /**
-   * Connection between the ContentType type and the Taxonomy type
-   * @deprecated 
-   */
+  /** Connection between the ContentType type and the Taxonomy type */
   connectedTaxonomies?: Maybe<ContentTypeToTaxonomyConnection>;
-  /**
-   * Connection between the ContentType type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the ContentType type and the ContentNode type */
   contentNodes?: Maybe<ContentTypeToContentNodeConnection>;
-  /**
-   * Whether content of this type should be deleted when the author of it is deleted from the system.
-   * @deprecated 
-   */
+  /** Whether content of this type should be deleted when the author of it is deleted from the system. */
   deleteWithUser?: Maybe<Scalars['Boolean']>;
-  /**
-   * Description of the content type.
-   * @deprecated 
-   */
+  /** Description of the content type. */
   description?: Maybe<Scalars['String']>;
-  /**
-   * Whether to exclude nodes of this content type from front end search results.
-   * @deprecated 
-   */
+  /** Whether to exclude nodes of this content type from front end search results. */
   excludeFromSearch?: Maybe<Scalars['Boolean']>;
-  /**
-   * The plural name of the content type within the GraphQL Schema.
-   * @deprecated 
-   */
+  /** The plural name of the content type within the GraphQL Schema. */
   graphqlPluralName?: Maybe<Scalars['String']>;
-  /**
-   * The singular name of the content type within the GraphQL Schema.
-   * @deprecated 
-   */
+  /** The singular name of the content type within the GraphQL Schema. */
   graphqlSingleName?: Maybe<Scalars['String']>;
-  /**
-   * Whether this content type should have archives. Content archives are generated by type and by date.
-   * @deprecated 
-   */
+  /** Whether this content type should have archives. Content archives are generated by type and by date. */
   hasArchive?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the content type is hierarchical, for example pages.
-   * @deprecated 
-   */
+  /** Whether the content type is hierarchical, for example pages. */
   hierarchical?: Maybe<Scalars['Boolean']>;
-  /**
-   * The globally unique identifier of the post-type object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the post-type object. */
   id: Scalars['ID'];
-  /**
-   * Whether this page is set to the static front page.
-   * @deprecated 
-   */
+  /** Whether this page is set to the static front page. */
   isFrontPage: Scalars['Boolean'];
-  /**
-   * Whether this page is set to the blog posts page.
-   * @deprecated 
-   */
+  /** Whether this page is set to the blog posts page. */
   isPostsPage: Scalars['Boolean'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Display name of the content type.
-   * @deprecated 
-   */
+  /** Display name of the content type. */
   label?: Maybe<Scalars['String']>;
-  /**
-   * Details about the content type labels.
-   * @deprecated 
-   */
+  /** Details about the content type labels. */
   labels?: Maybe<PostTypeLabelDetails>;
-  /**
-   * The name of the icon file to display as a menu icon.
-   * @deprecated 
-   */
+  /** The name of the icon file to display as a menu icon. */
   menuIcon?: Maybe<Scalars['String']>;
-  /**
-   * The position of this post type in the menu. Only applies if show_in_menu is true.
-   * @deprecated 
-   */
+  /** The position of this post type in the menu. Only applies if show_in_menu is true. */
   menuPosition?: Maybe<Scalars['Int']>;
-  /**
-   * The internal name of the post type. This should not be used for display purposes.
-   * @deprecated 
-   */
+  /** The internal name of the post type. This should not be used for display purposes. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * Whether a content type is intended for use publicly either via the admin interface or by front-end users. While the default settings of exclude_from_search, publicly_queryable, show_ui, and show_in_nav_menus are inherited from public, each does not rely on this relationship and controls a very specific intention.
-   * @deprecated 
-   */
+  /** Whether a content type is intended for use publicly either via the admin interface or by front-end users. While the default settings of exclude_from_search, publicly_queryable, show_ui, and show_in_nav_menus are inherited from public, each does not rely on this relationship and controls a very specific intention. */
   public?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether queries can be performed on the front end for the content type as part of parse_request().
-   * @deprecated 
-   */
+  /** Whether queries can be performed on the front end for the content type as part of parse_request(). */
   publiclyQueryable?: Maybe<Scalars['Boolean']>;
-  /**
-   * Name of content type to display in REST API &quot;wp/v2&quot; namespace.
-   * @deprecated 
-   */
+  /** Name of content type to display in REST API &quot;wp/v2&quot; namespace. */
   restBase?: Maybe<Scalars['String']>;
-  /**
-   * The REST Controller class assigned to handling this content type.
-   * @deprecated 
-   */
+  /** The REST Controller class assigned to handling this content type. */
   restControllerClass?: Maybe<Scalars['String']>;
-  /**
-   * Makes this content type available via the admin bar.
-   * @deprecated 
-   */
+  /** Makes this content type available via the admin bar. */
   showInAdminBar?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to add the content type to the GraphQL Schema.
-   * @deprecated 
-   */
+  /** Whether to add the content type to the GraphQL Schema. */
   showInGraphql?: Maybe<Scalars['Boolean']>;
-  /**
-   * Where to show the content type in the admin menu. To work, $show_ui must be true. If true, the post type is shown in its own top level menu. If false, no menu is shown. If a string of an existing top level menu (eg. &quot;tools.php&quot; or &quot;edit.php?post_type=page&quot;), the post type will be placed as a sub-menu of that.
-   * @deprecated 
-   */
+  /** Where to show the content type in the admin menu. To work, $show_ui must be true. If true, the post type is shown in its own top level menu. If false, no menu is shown. If a string of an existing top level menu (eg. &quot;tools.php&quot; or &quot;edit.php?post_type=page&quot;), the post type will be placed as a sub-menu of that. */
   showInMenu?: Maybe<Scalars['Boolean']>;
-  /**
-   * Makes this content type available for selection in navigation menus.
-   * @deprecated 
-   */
+  /** Makes this content type available for selection in navigation menus. */
   showInNavMenus?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the content type is associated with a route under the the REST API &quot;wp/v2&quot; namespace.
-   * @deprecated 
-   */
+  /** Whether the content type is associated with a route under the the REST API &quot;wp/v2&quot; namespace. */
   showInRest?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to generate and allow a UI for managing this content type in the admin.
-   * @deprecated 
-   */
+  /** Whether to generate and allow a UI for managing this content type in the admin. */
   showUi?: Maybe<Scalars['Boolean']>;
-  /**
-   * The unique resource identifier path
-   * @deprecated 
-   */
+  /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']>;
 };
 
@@ -1901,140 +1408,65 @@ export type ContentTypeContentNodesArgs = {
 /** Connection between the ContentType type and the Taxonomy type */
 export type ContentTypeToTaxonomyConnection = {
   __typename?: 'ContentTypeToTaxonomyConnection';
-  /**
-   * Edges for the ContentTypeToTaxonomyConnection connection
-   * @deprecated 
-   */
+  /** Edges for the ContentTypeToTaxonomyConnection connection */
   edges?: Maybe<Array<Maybe<ContentTypeToTaxonomyConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Taxonomy>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type ContentTypeToTaxonomyConnectionEdge = {
   __typename?: 'ContentTypeToTaxonomyConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Taxonomy>;
 };
 
 /** A taxonomy object */
 export type Taxonomy = Node & {
   __typename?: 'Taxonomy';
-  /**
-   * List of Content Types associated with the Taxonomy
-   * @deprecated 
-   */
+  /** List of Content Types associated with the Taxonomy */
   connectedContentTypes?: Maybe<TaxonomyToContentTypeConnection>;
-  /**
-   * Description of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;description
-   * @deprecated 
-   */
+  /** Description of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;description */
   description?: Maybe<Scalars['String']>;
-  /**
-   * The plural name of the post type within the GraphQL Schema.
-   * @deprecated 
-   */
+  /** The plural name of the post type within the GraphQL Schema. */
   graphqlPluralName?: Maybe<Scalars['String']>;
-  /**
-   * The singular name of the post type within the GraphQL Schema.
-   * @deprecated 
-   */
+  /** The singular name of the post type within the GraphQL Schema. */
   graphqlSingleName?: Maybe<Scalars['String']>;
-  /**
-   * Whether the taxonomy is hierarchical
-   * @deprecated 
-   */
+  /** Whether the taxonomy is hierarchical */
   hierarchical?: Maybe<Scalars['Boolean']>;
-  /**
-   * The globally unique identifier of the taxonomy object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the taxonomy object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Name of the taxonomy shown in the menu. Usually plural.
-   * @deprecated 
-   */
+  /** Name of the taxonomy shown in the menu. Usually plural. */
   label?: Maybe<Scalars['String']>;
-  /**
-   * The display name of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;label
-   * @deprecated 
-   */
+  /** The display name of the taxonomy. This field is equivalent to WP_Taxonomy-&gt;label */
   name?: Maybe<Scalars['String']>;
-  /**
-   * Whether the taxonomy is publicly queryable
-   * @deprecated 
-   */
+  /** Whether the taxonomy is publicly queryable */
   public?: Maybe<Scalars['Boolean']>;
-  /**
-   * Name of content type to diplay in REST API &quot;wp/v2&quot; namespace.
-   * @deprecated 
-   */
+  /** Name of content type to diplay in REST API &quot;wp/v2&quot; namespace. */
   restBase?: Maybe<Scalars['String']>;
-  /**
-   * The REST Controller class assigned to handling this content type.
-   * @deprecated 
-   */
+  /** The REST Controller class assigned to handling this content type. */
   restControllerClass?: Maybe<Scalars['String']>;
-  /**
-   * Whether to show the taxonomy as part of a tag cloud widget. This field is equivalent to WP_Taxonomy-&gt;show_tagcloud
-   * @deprecated 
-   */
+  /** Whether to show the taxonomy as part of a tag cloud widget. This field is equivalent to WP_Taxonomy-&gt;show_tagcloud */
   showCloud?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to display a column for the taxonomy on its post type listing screens.
-   * @deprecated 
-   */
+  /** Whether to display a column for the taxonomy on its post type listing screens. */
   showInAdminColumn?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to add the post type to the GraphQL Schema.
-   * @deprecated 
-   */
+  /** Whether to add the post type to the GraphQL Schema. */
   showInGraphql?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to show the taxonomy in the admin menu
-   * @deprecated 
-   */
+  /** Whether to show the taxonomy in the admin menu */
   showInMenu?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the taxonomy is available for selection in navigation menus.
-   * @deprecated 
-   */
+  /** Whether the taxonomy is available for selection in navigation menus. */
   showInNavMenus?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to show the taxonomy in the quick/bulk edit panel.
-   * @deprecated 
-   */
+  /** Whether to show the taxonomy in the quick/bulk edit panel. */
   showInQuickEdit?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to add the post type route in the REST API &quot;wp/v2&quot; namespace.
-   * @deprecated 
-   */
+  /** Whether to add the post type route in the REST API &quot;wp/v2&quot; namespace. */
   showInRest?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether to generate and allow a UI for managing terms in this taxonomy in the admin
-   * @deprecated 
-   */
+  /** Whether to generate and allow a UI for managing terms in this taxonomy in the admin */
   showUi?: Maybe<Scalars['Boolean']>;
 };
 
@@ -2050,35 +1482,20 @@ export type TaxonomyConnectedContentTypesArgs = {
 /** Connection between the Taxonomy type and the ContentType type */
 export type TaxonomyToContentTypeConnection = {
   __typename?: 'TaxonomyToContentTypeConnection';
-  /**
-   * Edges for the TaxonomyToContentTypeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the TaxonomyToContentTypeConnection connection */
   edges?: Maybe<Array<Maybe<TaxonomyToContentTypeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentType>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type TaxonomyToContentTypeConnectionEdge = {
   __typename?: 'TaxonomyToContentTypeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentType>;
 };
 
@@ -2121,335 +1538,152 @@ export type ContentTypeToContentNodeConnectionWhereArgs = {
 /** Connection between the ContentType type and the ContentNode type */
 export type ContentTypeToContentNodeConnection = {
   __typename?: 'ContentTypeToContentNodeConnection';
-  /**
-   * Edges for the ContentTypeToContentNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the ContentTypeToContentNodeConnection connection */
   edges?: Maybe<Array<Maybe<ContentTypeToContentNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type ContentTypeToContentNodeConnectionEdge = {
   __typename?: 'ContentTypeToContentNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
 /** Details for labels of the PostType */
 export type PostTypeLabelDetails = {
   __typename?: 'PostTypeLabelDetails';
-  /**
-   * Default is ‘Add New’ for both hierarchical and non-hierarchical types.
-   * @deprecated 
-   */
+  /** Default is ‘Add New’ for both hierarchical and non-hierarchical types. */
   addNew?: Maybe<Scalars['String']>;
-  /**
-   * Label for adding a new singular item.
-   * @deprecated 
-   */
+  /** Label for adding a new singular item. */
   addNewItem?: Maybe<Scalars['String']>;
-  /**
-   * Label to signify all items in a submenu link.
-   * @deprecated 
-   */
+  /** Label to signify all items in a submenu link. */
   allItems?: Maybe<Scalars['String']>;
-  /**
-   * Label for archives in nav menus
-   * @deprecated 
-   */
+  /** Label for archives in nav menus */
   archives?: Maybe<Scalars['String']>;
-  /**
-   * Label for the attributes meta box.
-   * @deprecated 
-   */
+  /** Label for the attributes meta box. */
   attributes?: Maybe<Scalars['String']>;
-  /**
-   * Label for editing a singular item.
-   * @deprecated 
-   */
+  /** Label for editing a singular item. */
   editItem?: Maybe<Scalars['String']>;
-  /**
-   * Label for the Featured Image meta box title.
-   * @deprecated 
-   */
+  /** Label for the Featured Image meta box title. */
   featuredImage?: Maybe<Scalars['String']>;
-  /**
-   * Label for the table views hidden heading.
-   * @deprecated 
-   */
+  /** Label for the table views hidden heading. */
   filterItemsList?: Maybe<Scalars['String']>;
-  /**
-   * Label for the media frame button.
-   * @deprecated 
-   */
+  /** Label for the media frame button. */
   insertIntoItem?: Maybe<Scalars['String']>;
-  /**
-   * Label for the table hidden heading.
-   * @deprecated 
-   */
+  /** Label for the table hidden heading. */
   itemsList?: Maybe<Scalars['String']>;
-  /**
-   * Label for the table pagination hidden heading.
-   * @deprecated 
-   */
+  /** Label for the table pagination hidden heading. */
   itemsListNavigation?: Maybe<Scalars['String']>;
-  /**
-   * Label for the menu name.
-   * @deprecated 
-   */
+  /** Label for the menu name. */
   menuName?: Maybe<Scalars['String']>;
-  /**
-   * General name for the post type, usually plural.
-   * @deprecated 
-   */
+  /** General name for the post type, usually plural. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * Label for the new item page title.
-   * @deprecated 
-   */
+  /** Label for the new item page title. */
   newItem?: Maybe<Scalars['String']>;
-  /**
-   * Label used when no items are found.
-   * @deprecated 
-   */
+  /** Label used when no items are found. */
   notFound?: Maybe<Scalars['String']>;
-  /**
-   * Label used when no items are in the trash.
-   * @deprecated 
-   */
+  /** Label used when no items are in the trash. */
   notFoundInTrash?: Maybe<Scalars['String']>;
-  /**
-   * Label used to prefix parents of hierarchical items.
-   * @deprecated 
-   */
+  /** Label used to prefix parents of hierarchical items. */
   parentItemColon?: Maybe<Scalars['String']>;
-  /**
-   * Label for removing the featured image.
-   * @deprecated 
-   */
+  /** Label for removing the featured image. */
   removeFeaturedImage?: Maybe<Scalars['String']>;
-  /**
-   * Label for searching plural items.
-   * @deprecated 
-   */
+  /** Label for searching plural items. */
   searchItems?: Maybe<Scalars['String']>;
-  /**
-   * Label for setting the featured image.
-   * @deprecated 
-   */
+  /** Label for setting the featured image. */
   setFeaturedImage?: Maybe<Scalars['String']>;
-  /**
-   * Name for one object of this post type.
-   * @deprecated 
-   */
+  /** Name for one object of this post type. */
   singularName?: Maybe<Scalars['String']>;
-  /**
-   * Label for the media frame filter.
-   * @deprecated 
-   */
+  /** Label for the media frame filter. */
   uploadedToThisItem?: Maybe<Scalars['String']>;
-  /**
-   * Label in the media frame for using a featured image.
-   * @deprecated 
-   */
+  /** Label in the media frame for using a featured image. */
   useFeaturedImage?: Maybe<Scalars['String']>;
-  /**
-   * Label for viewing a singular item.
-   * @deprecated 
-   */
+  /** Label for viewing a singular item. */
   viewItem?: Maybe<Scalars['String']>;
-  /**
-   * Label for viewing post type archives.
-   * @deprecated 
-   */
+  /** Label for viewing post type archives. */
   viewItems?: Maybe<Scalars['String']>;
 };
 
 /** Connection between the ContentNode type and the User type */
 export type ContentNodeToEditLockConnectionEdge = {
   __typename?: 'ContentNodeToEditLockConnectionEdge';
-  /**
-   * The timestamp for when the node was last edited
-   * @deprecated 
-   */
+  /** The timestamp for when the node was last edited */
   lockTimestamp?: Maybe<Scalars['String']>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<User>;
 };
 
 /** A User object */
 export type User = Node & UniformResourceIdentifiable & Commenter & DatabaseIdentifier & {
   __typename?: 'User';
-  /**
-   * Avatar object for user. The avatar object can be retrieved in different sizes by specifying the size argument.
-   * @deprecated 
-   */
+  /** Avatar object for user. The avatar object can be retrieved in different sizes by specifying the size argument. */
   avatar?: Maybe<Avatar>;
-  /**
-   * User metadata option name. Usually it will be &quot;wp_capabilities&quot;.
-   * @deprecated 
-   */
+  /** User metadata option name. Usually it will be &quot;wp_capabilities&quot;. */
   capKey?: Maybe<Scalars['String']>;
-  /**
-   * A list of capabilities (permissions) granted to the user
-   * @deprecated 
-   */
+  /** A list of capabilities (permissions) granted to the user */
   capabilities?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * Connection between the User type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the User type and the Comment type */
   comments?: Maybe<UserToCommentConnection>;
-  /**
-   * Identifies the primary key from the database.
-   * @deprecated 
-   */
+  /** Identifies the primary key from the database. */
   databaseId: Scalars['Int'];
-  /**
-   * Description of the user.
-   * @deprecated 
-   */
+  /** Description of the user. */
   description?: Maybe<Scalars['String']>;
-  /**
-   * Email address of the user. This is equivalent to the WP_User-&gt;user_email property.
-   * @deprecated 
-   */
+  /** Email address of the user. This is equivalent to the WP_User-&gt;user_email property. */
   email?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the User type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the User type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<UserToEnqueuedScriptConnection>;
-  /**
-   * Connection between the User type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the User type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<UserToEnqueuedStylesheetConnection>;
-  /**
-   * A complete list of capabilities including capabilities inherited from a role. This is equivalent to the array keys of WP_User-&gt;allcaps.
-   * @deprecated 
-   */
+  /** A complete list of capabilities including capabilities inherited from a role. This is equivalent to the array keys of WP_User-&gt;allcaps. */
   extraCapabilities?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * First name of the user. This is equivalent to the WP_User-&gt;user_first_name property.
-   * @deprecated 
-   */
+  /** First name of the user. This is equivalent to the WP_User-&gt;user_first_name property. */
   firstName?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier for the user object.
-   * @deprecated 
-   */
+  /** The globally unique identifier for the user object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Last name of the user. This is equivalent to the WP_User-&gt;user_last_name property.
-   * @deprecated 
-   */
+  /** Last name of the user. This is equivalent to the WP_User-&gt;user_last_name property. */
   lastName?: Maybe<Scalars['String']>;
-  /**
-   * The preferred language locale set for the user. Value derived from get_user_locale().
-   * @deprecated 
-   */
+  /** The preferred language locale set for the user. Value derived from get_user_locale(). */
   locale?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the User type and the mediaItem type
-   * @deprecated 
-   */
+  /** Connection between the User type and the mediaItem type */
   mediaItems?: Maybe<UserToMediaItemConnection>;
-  /**
-   * Display name of the user. This is equivalent to the WP_User-&gt;dispaly_name property.
-   * @deprecated 
-   */
+  /** Display name of the user. This is equivalent to the WP_User-&gt;dispaly_name property. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * The nicename for the user. This field is equivalent to WP_User-&gt;user_nicename
-   * @deprecated 
-   */
+  /** The nicename for the user. This field is equivalent to WP_User-&gt;user_nicename */
   nicename?: Maybe<Scalars['String']>;
-  /**
-   * Nickname of the user.
-   * @deprecated 
-   */
+  /** Nickname of the user. */
   nickname?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the User type and the page type
-   * @deprecated 
-   */
+  /** Connection between the User type and the page type */
   pages?: Maybe<UserToPageConnection>;
-  /**
-   * Connection between the User type and the post type
-   * @deprecated 
-   */
+  /** Connection between the User type and the post type */
   posts?: Maybe<UserToPostConnection>;
-  /**
-   * The date the user registered or was created. The field follows a full ISO8601 date string format.
-   * @deprecated 
-   */
+  /** The date the user registered or was created. The field follows a full ISO8601 date string format. */
   registeredDate?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the User and Revisions authored by the user
-   * @deprecated 
-   */
+  /** Connection between the User and Revisions authored by the user */
   revisions?: Maybe<UserToContentRevisionUnionConnection>;
-  /**
-   * Connection between the User type and the UserRole type
-   * @deprecated 
-   */
+  /** Connection between the User type and the UserRole type */
   roles?: Maybe<UserToUserRoleConnection>;
-  /**
-   * The Yoast SEO data of a user
-   * @deprecated 
-   */
+  /** The Yoast SEO data of a user */
   seo?: Maybe<SeoUser>;
-  /**
-   * The slug for the user. This field is equivalent to WP_User-&gt;user_nicename
-   * @deprecated 
-   */
+  /** The slug for the user. This field is equivalent to WP_User-&gt;user_nicename */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * The unique resource identifier path
-   * @deprecated 
-   */
+  /** The unique resource identifier path */
   uri?: Maybe<Scalars['String']>;
-  /**
-   * A website url that is associated with the user.
-   * @deprecated 
-   */
+  /** A website url that is associated with the user. */
   url?: Maybe<Scalars['String']>;
   /**
    * The Id of the user. Equivalent to WP_User-&gt;ID
    * @deprecated Deprecated in favor of the databaseId field
    */
   userId?: Maybe<Scalars['Int']>;
-  /**
-   * Username for the user. This field is equivalent to WP_User-&gt;user_login.
-   * @deprecated 
-   */
+  /** Username for the user. This field is equivalent to WP_User-&gt;user_login. */
   username?: Maybe<Scalars['String']>;
 };
 
@@ -2565,60 +1799,27 @@ export enum AvatarRatingEnum {
 /** Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from. */
 export type Avatar = {
   __typename?: 'Avatar';
-  /**
-   * URL for the default image or a default type. Accepts &#039;404&#039; (return a 404 instead of a default image), &#039;retro&#039; (8bit), &#039;monsterid&#039; (monster), &#039;wavatar&#039; (cartoon face), &#039;indenticon&#039; (the &#039;quilt&#039;), &#039;mystery&#039;, &#039;mm&#039;, or &#039;mysteryman&#039; (The Oyster Man), &#039;blank&#039; (transparent GIF), or &#039;gravatar_default&#039; (the Gravatar logo).
-   * @deprecated 
-   */
+  /** URL for the default image or a default type. Accepts &#039;404&#039; (return a 404 instead of a default image), &#039;retro&#039; (8bit), &#039;monsterid&#039; (monster), &#039;wavatar&#039; (cartoon face), &#039;indenticon&#039; (the &#039;quilt&#039;), &#039;mystery&#039;, &#039;mm&#039;, or &#039;mysteryman&#039; (The Oyster Man), &#039;blank&#039; (transparent GIF), or &#039;gravatar_default&#039; (the Gravatar logo). */
   default?: Maybe<Scalars['String']>;
-  /**
-   * HTML attributes to insert in the IMG element. Is not sanitized.
-   * @deprecated 
-   */
+  /** HTML attributes to insert in the IMG element. Is not sanitized. */
   extraAttr?: Maybe<Scalars['String']>;
-  /**
-   * Whether to always show the default image, never the Gravatar.
-   * @deprecated 
-   */
+  /** Whether to always show the default image, never the Gravatar. */
   forceDefault?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the avatar was successfully found.
-   * @deprecated 
-   */
+  /** Whether the avatar was successfully found. */
   foundAvatar?: Maybe<Scalars['Boolean']>;
-  /**
-   * Height of the avatar image.
-   * @deprecated 
-   */
+  /** Height of the avatar image. */
   height?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * What rating to display avatars up to. Accepts &#039;G&#039;, &#039;PG&#039;, &#039;R&#039;, &#039;X&#039;, and are judged in that order.
-   * @deprecated 
-   */
+  /** What rating to display avatars up to. Accepts &#039;G&#039;, &#039;PG&#039;, &#039;R&#039;, &#039;X&#039;, and are judged in that order. */
   rating?: Maybe<Scalars['String']>;
-  /**
-   * Type of url scheme to use. Typically HTTP vs. HTTPS.
-   * @deprecated 
-   */
+  /** Type of url scheme to use. Typically HTTP vs. HTTPS. */
   scheme?: Maybe<Scalars['String']>;
-  /**
-   * The size of the avatar in pixels. A value of 96 will match a 96px x 96px gravatar image.
-   * @deprecated 
-   */
+  /** The size of the avatar in pixels. A value of 96 will match a 96px x 96px gravatar image. */
   size?: Maybe<Scalars['Int']>;
-  /**
-   * URL for the gravatar image source.
-   * @deprecated 
-   */
+  /** URL for the gravatar image source. */
   url?: Maybe<Scalars['String']>;
-  /**
-   * Width of the avatar image.
-   * @deprecated 
-   */
+  /** Width of the avatar image. */
   width?: Maybe<Scalars['Int']>;
 };
 
@@ -2717,130 +1918,64 @@ export enum CommentsConnectionOrderbyEnum {
 /** Connection between the User type and the Comment type */
 export type UserToCommentConnection = {
   __typename?: 'UserToCommentConnection';
-  /**
-   * Edges for the UserToCommentConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToCommentConnection connection */
   edges?: Maybe<Array<Maybe<UserToCommentConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Comment>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToCommentConnectionEdge = {
   __typename?: 'UserToCommentConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Comment>;
 };
 
 /** A Comment object */
 export type Comment = Node & DatabaseIdentifier & {
   __typename?: 'Comment';
-  /**
-   * User agent used to post the comment. This field is equivalent to WP_Comment-&gt;comment_agent and the value matching the &quot;comment_agent&quot; column in SQL.
-   * @deprecated 
-   */
+  /** User agent used to post the comment. This field is equivalent to WP_Comment-&gt;comment_agent and the value matching the &quot;comment_agent&quot; column in SQL. */
   agent?: Maybe<Scalars['String']>;
-  /**
-   * The approval status of the comment. This field is equivalent to WP_Comment-&gt;comment_approved and the value matching the &quot;comment_approved&quot; column in SQL.
-   * @deprecated 
-   */
+  /** The approval status of the comment. This field is equivalent to WP_Comment-&gt;comment_approved and the value matching the &quot;comment_approved&quot; column in SQL. */
   approved?: Maybe<Scalars['Boolean']>;
-  /**
-   * The author of the comment
-   * @deprecated 
-   */
+  /** The author of the comment */
   author?: Maybe<CommentToCommenterConnectionEdge>;
-  /**
-   * IP address for the author. This field is equivalent to WP_Comment-&gt;comment_author_IP and the value matching the &quot;comment_author_IP&quot; column in SQL.
-   * @deprecated 
-   */
+  /** IP address for the author. This field is equivalent to WP_Comment-&gt;comment_author_IP and the value matching the &quot;comment_author_IP&quot; column in SQL. */
   authorIp?: Maybe<Scalars['String']>;
   /**
    * ID for the comment, unique among comments.
    * @deprecated Deprecated in favor of databaseId
    */
   commentId?: Maybe<Scalars['Int']>;
-  /**
-   * Connection between the Comment type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the Comment type and the ContentNode type */
   commentedOn?: Maybe<CommentToContentNodeConnectionEdge>;
-  /**
-   * Content of the comment. This field is equivalent to WP_Comment-&gt;comment_content and the value matching the &quot;comment_content&quot; column in SQL.
-   * @deprecated 
-   */
+  /** Content of the comment. This field is equivalent to WP_Comment-&gt;comment_content and the value matching the &quot;comment_content&quot; column in SQL. */
   content?: Maybe<Scalars['String']>;
-  /**
-   * The unique identifier stored in the database
-   * @deprecated 
-   */
+  /** The unique identifier stored in the database */
   databaseId: Scalars['Int'];
-  /**
-   * Date the comment was posted in local time. This field is equivalent to WP_Comment-&gt;date and the value matching the &quot;date&quot; column in SQL.
-   * @deprecated 
-   */
+  /** Date the comment was posted in local time. This field is equivalent to WP_Comment-&gt;date and the value matching the &quot;date&quot; column in SQL. */
   date?: Maybe<Scalars['String']>;
-  /**
-   * Date the comment was posted in GMT. This field is equivalent to WP_Comment-&gt;date_gmt and the value matching the &quot;date_gmt&quot; column in SQL.
-   * @deprecated 
-   */
+  /** Date the comment was posted in GMT. This field is equivalent to WP_Comment-&gt;date_gmt and the value matching the &quot;date_gmt&quot; column in SQL. */
   dateGmt?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier for the comment object
-   * @deprecated 
-   */
+  /** The globally unique identifier for the comment object */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Karma value for the comment. This field is equivalent to WP_Comment-&gt;comment_karma and the value matching the &quot;comment_karma&quot; column in SQL.
-   * @deprecated 
-   */
+  /** Karma value for the comment. This field is equivalent to WP_Comment-&gt;comment_karma and the value matching the &quot;comment_karma&quot; column in SQL. */
   karma?: Maybe<Scalars['Int']>;
-  /**
-   * Connection between the Comment type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the Comment type and the Comment type */
   parent?: Maybe<CommentToParentCommentConnectionEdge>;
-  /**
-   * The database id of the parent comment node or null if it is the root comment
-   * @deprecated 
-   */
+  /** The database id of the parent comment node or null if it is the root comment */
   parentDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the parent comment node.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the parent comment node. */
   parentId?: Maybe<Scalars['ID']>;
-  /**
-   * Connection between the Comment type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the Comment type and the Comment type */
   replies?: Maybe<CommentToCommentConnection>;
-  /**
-   * Type of comment. This field is equivalent to WP_Comment-&gt;comment_type and the value matching the &quot;comment_type&quot; column in SQL.
-   * @deprecated 
-   */
+  /** Type of comment. This field is equivalent to WP_Comment-&gt;comment_type and the value matching the &quot;comment_type&quot; column in SQL. */
   type?: Maybe<Scalars['String']>;
 };
 
@@ -2869,20 +2004,14 @@ export type CommentRepliesArgs = {
 /** Connection between the Comment type and the Commenter type */
 export type CommentToCommenterConnectionEdge = {
   __typename?: 'CommentToCommenterConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Commenter>;
 };
 
 /** Connection between the Comment type and the ContentNode type */
 export type CommentToContentNodeConnectionEdge = {
   __typename?: 'CommentToContentNodeConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<ContentNode>;
 };
 
@@ -2959,10 +2088,7 @@ export type CommentToParentCommentConnectionWhereArgs = {
 /** Connection between the Comment type and the Comment type */
 export type CommentToParentCommentConnectionEdge = {
   __typename?: 'CommentToParentCommentConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Comment>;
 };
 
@@ -3031,105 +2157,60 @@ export type CommentToCommentConnectionWhereArgs = {
 /** Connection between the Comment type and the Comment type */
 export type CommentToCommentConnection = {
   __typename?: 'CommentToCommentConnection';
-  /**
-   * Edges for the CommentToCommentConnection connection
-   * @deprecated 
-   */
+  /** Edges for the CommentToCommentConnection connection */
   edges?: Maybe<Array<Maybe<CommentToCommentConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Comment>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type CommentToCommentConnectionEdge = {
   __typename?: 'CommentToCommentConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Comment>;
 };
 
 /** Connection between the User type and the EnqueuedScript type */
 export type UserToEnqueuedScriptConnection = {
   __typename?: 'UserToEnqueuedScriptConnection';
-  /**
-   * Edges for the UserToEnqueuedScriptConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToEnqueuedScriptConnection connection */
   edges?: Maybe<Array<Maybe<UserToEnqueuedScriptConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToEnqueuedScriptConnectionEdge = {
   __typename?: 'UserToEnqueuedScriptConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedScript>;
 };
 
 /** Connection between the User type and the EnqueuedStylesheet type */
 export type UserToEnqueuedStylesheetConnection = {
   __typename?: 'UserToEnqueuedStylesheetConnection';
-  /**
-   * Edges for the UserToEnqueuedStylesheetConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToEnqueuedStylesheetConnection connection */
   edges?: Maybe<Array<Maybe<UserToEnqueuedStylesheetConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedStylesheet>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToEnqueuedStylesheetConnectionEdge = {
   __typename?: 'UserToEnqueuedStylesheetConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedStylesheet>;
 };
 
@@ -3180,280 +2261,124 @@ export type UserToMediaItemConnectionWhereArgs = {
 /** Connection between the User type and the mediaItem type */
 export type UserToMediaItemConnection = {
   __typename?: 'UserToMediaItemConnection';
-  /**
-   * Edges for the UserToMediaItemConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToMediaItemConnection connection */
   edges?: Maybe<Array<Maybe<UserToMediaItemConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<MediaItem>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToMediaItemConnectionEdge = {
   __typename?: 'UserToMediaItemConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<MediaItem>;
 };
 
 /** The mediaItem type */
 export type MediaItem = Node & ContentNode & DatabaseIdentifier & NodeWithTemplate & UniformResourceIdentifiable & NodeWithTitle & NodeWithAuthor & NodeWithComments & HierarchicalContentNode & {
   __typename?: 'MediaItem';
-  /**
-   * Alternative text to display when resource is not displayed
-   * @deprecated 
-   */
+  /** Alternative text to display when resource is not displayed */
   altText?: Maybe<Scalars['String']>;
-  /**
-   * Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
-   * @deprecated 
-   */
+  /** Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
   ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>;
-  /**
-   * Connection between the NodeWithAuthor type and the User type
-   * @deprecated 
-   */
+  /** Connection between the NodeWithAuthor type and the User type */
   author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
-  /**
-   * The database identifier of the author of the node
-   * @deprecated 
-   */
+  /** The database identifier of the author of the node */
   authorDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the author of the node
-   * @deprecated 
-   */
+  /** The globally unique identifier of the author of the node */
   authorId?: Maybe<Scalars['ID']>;
-  /**
-   * The caption for the resource
-   * @deprecated 
-   */
+  /** The caption for the resource */
   caption?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the HierarchicalContentNode type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the HierarchicalContentNode type and the ContentNode type */
   children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>;
-  /**
-   * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
-   * @deprecated 
-   */
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
   commentCount?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the comments are open or closed for this particular post.
-   * @deprecated 
-   */
+  /** Whether the comments are open or closed for this particular post. */
   commentStatus?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the mediaItem type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the mediaItem type and the Comment type */
   comments?: Maybe<MediaItemToCommentConnection>;
-  /**
-   * Connection between the ContentNode type and the ContentType type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the ContentType type */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
-  /**
-   * The ID of the node in the database.
-   * @deprecated 
-   */
+  /** The ID of the node in the database. */
   databaseId: Scalars['Int'];
-  /**
-   * Post publishing date.
-   * @deprecated 
-   */
+  /** Post publishing date. */
   date?: Maybe<Scalars['String']>;
-  /**
-   * The publishing date set in GMT.
-   * @deprecated 
-   */
+  /** The publishing date set in GMT. */
   dateGmt?: Maybe<Scalars['String']>;
-  /**
-   * Description of the image (stored as post_content)
-   * @deprecated 
-   */
+  /** Description of the image (stored as post_content) */
   description?: Maybe<Scalars['String']>;
-  /**
-   * The desired slug of the post
-   * @deprecated 
-   */
+  /** The desired slug of the post */
   desiredSlug?: Maybe<Scalars['String']>;
-  /**
-   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
-   * @deprecated 
-   */
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
   editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
-  /**
-   * The RSS enclosure for the object
-   * @deprecated 
-   */
+  /** The RSS enclosure for the object */
   enclosure?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
-  /**
-   * The filesize in bytes of the resource
-   * @deprecated 
-   */
+  /** The filesize in bytes of the resource */
   fileSize?: Maybe<Scalars['Int']>;
-  /**
-   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
-   * @deprecated 
-   */
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   guid?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier of the attachment object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the attachment object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is a node in the preview state
-   * @deprecated 
-   */
+  /** Whether the object is a node in the preview state */
   isPreview?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * The user that most recently edited the node
-   * @deprecated 
-   */
+  /** The user that most recently edited the node */
   lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
-  /**
-   * The permalink of the post
-   * @deprecated 
-   */
+  /** The permalink of the post */
   link?: Maybe<Scalars['String']>;
-  /**
-   * Details about the mediaItem
-   * @deprecated 
-   */
+  /** Details about the mediaItem */
   mediaDetails?: Maybe<MediaDetails>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
   mediaItemId: Scalars['Int'];
-  /**
-   * Url of the mediaItem
-   * @deprecated 
-   */
+  /** Url of the mediaItem */
   mediaItemUrl?: Maybe<Scalars['String']>;
-  /**
-   * Type of resource
-   * @deprecated 
-   */
+  /** Type of resource */
   mediaType?: Maybe<Scalars['String']>;
-  /**
-   * The mime type of the mediaItem
-   * @deprecated 
-   */
+  /** The mime type of the mediaItem */
   mimeType?: Maybe<Scalars['String']>;
-  /**
-   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
-   * @deprecated 
-   */
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
   modified?: Maybe<Scalars['String']>;
-  /**
-   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
-   * @deprecated 
-   */
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']>;
-  /**
-   * The parent of the node. The parent object can be of various types
-   * @deprecated 
-   */
+  /** The parent of the node. The parent object can be of various types */
   parent?: Maybe<HierarchicalContentNodeToParentContentNodeConnectionEdge>;
-  /**
-   * Database id of the parent node
-   * @deprecated 
-   */
+  /** Database id of the parent node */
   parentDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the parent node.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the parent node. */
   parentId?: Maybe<Scalars['ID']>;
-  /**
-   * The database id of the preview node
-   * @deprecated 
-   */
+  /** The database id of the preview node */
   previewRevisionDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the object is a node in the preview state
-   * @deprecated 
-   */
+  /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']>;
-  /**
-   * The Yoast SEO data of the mediaItem
-   * @deprecated 
-   */
+  /** The Yoast SEO data of the mediaItem */
   seo?: Maybe<PostTypeSeo>;
-  /**
-   * The sizes attribute value for an image.
-   * @deprecated 
-   */
+  /** The sizes attribute value for an image. */
   sizes?: Maybe<Scalars['String']>;
-  /**
-   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
-   * @deprecated 
-   */
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * Url of the mediaItem
-   * @deprecated 
-   */
+  /** Url of the mediaItem */
   sourceUrl?: Maybe<Scalars['String']>;
-  /**
-   * The srcset attribute specifies the URL of the image to use in different situations. It is a comma separated string of urls and their widths.
-   * @deprecated 
-   */
+  /** The srcset attribute specifies the URL of the image to use in different situations. It is a comma separated string of urls and their widths. */
   srcSet?: Maybe<Scalars['String']>;
-  /**
-   * The current status of the object
-   * @deprecated 
-   */
+  /** The current status of the object */
   status?: Maybe<Scalars['String']>;
-  /**
-   * The template assigned to a node of content
-   * @deprecated 
-   */
+  /** The template assigned to a node of content */
   template?: Maybe<ContentTemplate>;
-  /**
-   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
-   * @deprecated 
-   */
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
   title?: Maybe<Scalars['String']>;
-  /**
-   * URI path for the resource
-   * @deprecated 
-   */
+  /** URI path for the resource */
   uri: Scalars['String'];
 };
 
@@ -3584,10 +2509,7 @@ export type NodeWithAuthor = {
 /** Connection between the NodeWithAuthor type and the User type */
 export type NodeWithAuthorToUserConnectionEdge = {
   __typename?: 'NodeWithAuthorToUserConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<User>;
 };
 
@@ -3672,35 +2594,20 @@ export type HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs = {
 /** Connection between the HierarchicalContentNode type and the ContentNode type */
 export type HierarchicalContentNodeToContentNodeAncestorsConnection = {
   __typename?: 'HierarchicalContentNodeToContentNodeAncestorsConnection';
-  /**
-   * Edges for the HierarchicalContentNodeToContentNodeAncestorsConnection connection
-   * @deprecated 
-   */
+  /** Edges for the HierarchicalContentNodeToContentNodeAncestorsConnection connection */
   edges?: Maybe<Array<Maybe<HierarchicalContentNodeToContentNodeAncestorsConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type HierarchicalContentNodeToContentNodeAncestorsConnectionEdge = {
   __typename?: 'HierarchicalContentNodeToContentNodeAncestorsConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
@@ -3743,45 +2650,27 @@ export type HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs = {
 /** Connection between the HierarchicalContentNode type and the ContentNode type */
 export type HierarchicalContentNodeToContentNodeChildrenConnection = {
   __typename?: 'HierarchicalContentNodeToContentNodeChildrenConnection';
-  /**
-   * Edges for the HierarchicalContentNodeToContentNodeChildrenConnection connection
-   * @deprecated 
-   */
+  /** Edges for the HierarchicalContentNodeToContentNodeChildrenConnection connection */
   edges?: Maybe<Array<Maybe<HierarchicalContentNodeToContentNodeChildrenConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type HierarchicalContentNodeToContentNodeChildrenConnectionEdge = {
   __typename?: 'HierarchicalContentNodeToContentNodeChildrenConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
 /** Connection between the HierarchicalContentNode type and the ContentNode type */
 export type HierarchicalContentNodeToParentContentNodeConnectionEdge = {
   __typename?: 'HierarchicalContentNodeToParentContentNodeConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<ContentNode>;
 };
 
@@ -3850,105 +2739,60 @@ export type MediaItemToCommentConnectionWhereArgs = {
 /** Connection between the mediaItem type and the Comment type */
 export type MediaItemToCommentConnection = {
   __typename?: 'MediaItemToCommentConnection';
-  /**
-   * Edges for the MediaItemToCommentConnection connection
-   * @deprecated 
-   */
+  /** Edges for the MediaItemToCommentConnection connection */
   edges?: Maybe<Array<Maybe<MediaItemToCommentConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Comment>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type MediaItemToCommentConnectionEdge = {
   __typename?: 'MediaItemToCommentConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Comment>;
 };
 
 /** Connection between the ContentNode type and the EnqueuedScript type */
 export type ContentNodeToEnqueuedScriptConnection = {
   __typename?: 'ContentNodeToEnqueuedScriptConnection';
-  /**
-   * Edges for the ContentNodeToEnqueuedScriptConnection connection
-   * @deprecated 
-   */
+  /** Edges for the ContentNodeToEnqueuedScriptConnection connection */
   edges?: Maybe<Array<Maybe<ContentNodeToEnqueuedScriptConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type ContentNodeToEnqueuedScriptConnectionEdge = {
   __typename?: 'ContentNodeToEnqueuedScriptConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedScript>;
 };
 
 /** Connection between the ContentNode type and the EnqueuedStylesheet type */
 export type ContentNodeToEnqueuedStylesheetConnection = {
   __typename?: 'ContentNodeToEnqueuedStylesheetConnection';
-  /**
-   * Edges for the ContentNodeToEnqueuedStylesheetConnection connection
-   * @deprecated 
-   */
+  /** Edges for the ContentNodeToEnqueuedStylesheetConnection connection */
   edges?: Maybe<Array<Maybe<ContentNodeToEnqueuedStylesheetConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedStylesheet>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type ContentNodeToEnqueuedStylesheetConnectionEdge = {
   __typename?: 'ContentNodeToEnqueuedStylesheetConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedStylesheet>;
 };
 
@@ -3960,8 +2804,6 @@ export enum MediaItemSizeEnum {
   Medium = 'MEDIUM',
   /** MediaItem with the medium_large size */
   MediumLarge = 'MEDIUM_LARGE',
-  /** MediaItem with the post-thumbnail size */
-  PostThumbnail = 'POST_THUMBNAIL',
   /** MediaItem with the thumbnail size */
   Thumbnail = 'THUMBNAIL',
   /** MediaItem with the 1536x1536 size */
@@ -3973,180 +2815,98 @@ export enum MediaItemSizeEnum {
 /** Connection between the ContentNode type and the User type */
 export type ContentNodeToEditLastConnectionEdge = {
   __typename?: 'ContentNodeToEditLastConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<User>;
 };
 
 /** File details for a Media Item */
 export type MediaDetails = {
   __typename?: 'MediaDetails';
-  /**
-   * The height of the mediaItem
-   * @deprecated 
-   */
+  /** The height of the mediaItem */
   file?: Maybe<Scalars['String']>;
-  /**
-   * The height of the mediaItem
-   * @deprecated 
-   */
+  /** The height of the mediaItem */
   height?: Maybe<Scalars['Int']>;
-  /** @deprecated  */
   meta?: Maybe<MediaItemMeta>;
-  /**
-   * The available sizes of the mediaItem
-   * @deprecated 
-   */
+  /** The available sizes of the mediaItem */
   sizes?: Maybe<Array<Maybe<MediaSize>>>;
-  /**
-   * The width of the mediaItem
-   * @deprecated 
-   */
+  /** The width of the mediaItem */
   width?: Maybe<Scalars['Int']>;
 };
 
 /** Meta connected to a MediaItem */
 export type MediaItemMeta = {
   __typename?: 'MediaItemMeta';
-  /** @deprecated  */
   aperture?: Maybe<Scalars['Float']>;
-  /** @deprecated  */
   camera?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   caption?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   copyright?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   createdTimestamp?: Maybe<Scalars['Int']>;
-  /** @deprecated  */
   credit?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   focalLength?: Maybe<Scalars['Float']>;
-  /** @deprecated  */
   iso?: Maybe<Scalars['Int']>;
-  /** @deprecated  */
   keywords?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /** @deprecated  */
   orientation?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   shutterSpeed?: Maybe<Scalars['Float']>;
-  /** @deprecated  */
   title?: Maybe<Scalars['String']>;
 };
 
 /** Details of an available size for a media item */
 export type MediaSize = {
   __typename?: 'MediaSize';
-  /**
-   * The file of the for the referenced size
-   * @deprecated 
-   */
+  /** The file of the for the referenced size */
   file?: Maybe<Scalars['String']>;
-  /**
-   * The filesize of the resource
-   * @deprecated 
-   */
+  /** The filesize of the resource */
   fileSize?: Maybe<Scalars['Int']>;
-  /**
-   * The height of the for the referenced size
-   * @deprecated 
-   */
+  /** The height of the for the referenced size */
   height?: Maybe<Scalars['String']>;
-  /**
-   * The mime type of the resource
-   * @deprecated 
-   */
+  /** The mime type of the resource */
   mimeType?: Maybe<Scalars['String']>;
-  /**
-   * The referenced size name
-   * @deprecated 
-   */
+  /** The referenced size name */
   name?: Maybe<Scalars['String']>;
-  /**
-   * The url of the for the referenced size
-   * @deprecated 
-   */
+  /** The url of the for the referenced size */
   sourceUrl?: Maybe<Scalars['String']>;
-  /**
-   * The width of the for the referenced size
-   * @deprecated 
-   */
+  /** The width of the for the referenced size */
   width?: Maybe<Scalars['String']>;
 };
 
 export type PostTypeSeo = {
   __typename?: 'PostTypeSEO';
-  /** @deprecated  */
   breadcrumbs?: Maybe<Array<Maybe<SeoPostTypeBreadcrumbs>>>;
-  /** @deprecated  */
   canonical?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   cornerstone?: Maybe<Scalars['Boolean']>;
-  /** @deprecated  */
   focuskw?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaDesc?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaKeywords?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNofollow?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNoindex?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphAuthor?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphDescription?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphImage?: Maybe<MediaItem>;
-  /** @deprecated  */
   opengraphModifiedTime?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphPublishedTime?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphPublisher?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphSiteName?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphTitle?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphType?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphUrl?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   schema?: Maybe<SeoPostTypeSchema>;
-  /**
-   * Yoast SEO Schema
-   * @deprecated 
-   */
-  schemaDetails?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   title?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   twitterDescription?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   twitterImage?: Maybe<MediaItem>;
-  /** @deprecated  */
   twitterTitle?: Maybe<Scalars['String']>;
 };
 
 export type SeoPostTypeBreadcrumbs = {
   __typename?: 'SEOPostTypeBreadcrumbs';
-  /** @deprecated  */
   text?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 /** The Schema types */
 export type SeoPostTypeSchema = {
   __typename?: 'SEOPostTypeSchema';
-  /** @deprecated  */
   articleType?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /** @deprecated  */
   pageType?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /** @deprecated  */
   raw?: Maybe<Scalars['String']>;
 };
 
@@ -4197,285 +2957,124 @@ export type UserToPageConnectionWhereArgs = {
 /** Connection between the User type and the page type */
 export type UserToPageConnection = {
   __typename?: 'UserToPageConnection';
-  /**
-   * Edges for the UserToPageConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToPageConnection connection */
   edges?: Maybe<Array<Maybe<UserToPageConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Page>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToPageConnectionEdge = {
   __typename?: 'UserToPageConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Page>;
 };
 
 /** The page type */
 export type Page = Node & ContentNode & DatabaseIdentifier & NodeWithTemplate & UniformResourceIdentifiable & NodeWithTitle & NodeWithContentEditor & NodeWithAuthor & NodeWithFeaturedImage & NodeWithComments & NodeWithRevisions & NodeWithPageAttributes & HierarchicalContentNode & MenuItemLinkable & {
   __typename?: 'Page';
-  /**
-   * Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
-   * @deprecated 
-   */
+  /** Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
   ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>;
-  /**
-   * Connection between the NodeWithAuthor type and the User type
-   * @deprecated 
-   */
+  /** Connection between the NodeWithAuthor type and the User type */
   author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
-  /**
-   * The database identifier of the author of the node
-   * @deprecated 
-   */
+  /** The database identifier of the author of the node */
   authorDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the author of the node
-   * @deprecated 
-   */
+  /** The globally unique identifier of the author of the node */
   authorId?: Maybe<Scalars['ID']>;
-  /**
-   * bodyClasses
-   * @deprecated 
-   */
-  bodyClasses?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the HierarchicalContentNode type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the HierarchicalContentNode type and the ContentNode type */
   children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>;
-  /**
-   * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
-   * @deprecated 
-   */
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
   commentCount?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the comments are open or closed for this particular post.
-   * @deprecated 
-   */
+  /** Whether the comments are open or closed for this particular post. */
   commentStatus?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the page type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the page type and the Comment type */
   comments?: Maybe<PageToCommentConnection>;
-  /**
-   * The content of the post.
-   * @deprecated 
-   */
+  /** The content of the post. */
   content?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the ContentNode type and the ContentType type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the ContentType type */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
-  /**
-   * The ID of the node in the database.
-   * @deprecated 
-   */
+  /** The ID of the node in the database. */
   databaseId: Scalars['Int'];
-  /**
-   * Post publishing date.
-   * @deprecated 
-   */
+  /** Post publishing date. */
   date?: Maybe<Scalars['String']>;
-  /**
-   * The publishing date set in GMT.
-   * @deprecated 
-   */
+  /** The publishing date set in GMT. */
   dateGmt?: Maybe<Scalars['String']>;
-  /**
-   * The desired slug of the post
-   * @deprecated 
-   */
+  /** The desired slug of the post */
   desiredSlug?: Maybe<Scalars['String']>;
-  /**
-   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
-   * @deprecated 
-   */
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
   editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
-  /**
-   * The RSS enclosure for the object
-   * @deprecated 
-   */
+  /** The RSS enclosure for the object */
   enclosure?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
-  /**
-   * Connection between the NodeWithFeaturedImage type and the MediaItem type
-   * @deprecated 
-   */
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
   featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
-  /**
-   * The database identifier for the featured image node assigned to the content node
-   * @deprecated 
-   */
+  /** The database identifier for the featured image node assigned to the content node */
   featuredImageDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * Globally unique ID of the featured image assigned to the node
-   * @deprecated 
-   */
+  /** Globally unique ID of the featured image assigned to the node */
   featuredImageId?: Maybe<Scalars['ID']>;
-  /**
-   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
-   * @deprecated 
-   */
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   guid?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier of the page object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the page object. */
   id: Scalars['ID'];
-  /**
-   * Whether this page is set to the static front page.
-   * @deprecated 
-   */
+  /** Whether this page is set to the static front page. */
   isFrontPage: Scalars['Boolean'];
-  /**
-   * Whether this page is set to the blog posts page.
-   * @deprecated 
-   */
+  /** Whether this page is set to the blog posts page. */
   isPostsPage: Scalars['Boolean'];
-  /**
-   * Whether the object is a node in the preview state
-   * @deprecated 
-   */
+  /** Whether the object is a node in the preview state */
   isPreview?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * True if the node is a revision of another node
-   * @deprecated 
-   */
+  /** True if the node is a revision of another node */
   isRevision?: Maybe<Scalars['Boolean']>;
-  /**
-   * The user that most recently edited the node
-   * @deprecated 
-   */
+  /** The user that most recently edited the node */
   lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
-  /**
-   * The permalink of the post
-   * @deprecated 
-   */
+  /** The permalink of the post */
   link?: Maybe<Scalars['String']>;
-  /**
-   * A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types.
-   * @deprecated 
-   */
+  /** A field used for ordering posts. This is typically used with nav menu items or for special ordering of hierarchical content types. */
   menuOrder?: Maybe<Scalars['Int']>;
-  /**
-   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
-   * @deprecated 
-   */
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
   modified?: Maybe<Scalars['String']>;
-  /**
-   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
-   * @deprecated 
-   */
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
   pageId: Scalars['Int'];
-  /**
-   * The parent of the node. The parent object can be of various types
-   * @deprecated 
-   */
+  /** The parent of the node. The parent object can be of various types */
   parent?: Maybe<HierarchicalContentNodeToParentContentNodeConnectionEdge>;
-  /**
-   * Database id of the parent node
-   * @deprecated 
-   */
+  /** Database id of the parent node */
   parentDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the parent node.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the parent node. */
   parentId?: Maybe<Scalars['ID']>;
-  /**
-   * Connection between the page type and the page type
-   * @deprecated 
-   */
+  /** Connection between the page type and the page type */
   preview?: Maybe<PageToPreviewConnectionEdge>;
-  /**
-   * The database id of the preview node
-   * @deprecated 
-   */
+  /** The database id of the preview node */
   previewRevisionDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the object is a node in the preview state
-   * @deprecated 
-   */
+  /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']>;
-  /**
-   * If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node.
-   * @deprecated 
-   */
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
   revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
-  /**
-   * Connection between the page type and the page type
-   * @deprecated 
-   */
+  /** Connection between the page type and the page type */
   revisions?: Maybe<PageToRevisionConnection>;
-  /**
-   * The Yoast SEO data of the page
-   * @deprecated 
-   */
+  /** The Yoast SEO data of the page */
   seo?: Maybe<PostTypeSeo>;
-  /**
-   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
-   * @deprecated 
-   */
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * The current status of the object
-   * @deprecated 
-   */
+  /** The current status of the object */
   status?: Maybe<Scalars['String']>;
-  /**
-   * The template assigned to a node of content
-   * @deprecated 
-   */
+  /** The template assigned to a node of content */
   template?: Maybe<ContentTemplate>;
-  /**
-   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
-   * @deprecated 
-   */
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
   title?: Maybe<Scalars['String']>;
-  /**
-   * URI path for the resource
-   * @deprecated 
-   */
+  /** URI path for the resource */
   uri: Scalars['String'];
 };
 
@@ -4574,10 +3173,7 @@ export type NodeWithFeaturedImage = {
 /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
 export type NodeWithFeaturedImageToMediaItemConnectionEdge = {
   __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<MediaItem>;
 };
 
@@ -4592,10 +3188,7 @@ export type NodeWithRevisions = {
 /** Connection between the NodeWithRevisions type and the ContentNode type */
 export type NodeWithRevisionsToContentNodeConnectionEdge = {
   __typename?: 'NodeWithRevisionsToContentNodeConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<ContentNode>;
 };
 
@@ -4670,45 +3263,27 @@ export type PageToCommentConnectionWhereArgs = {
 /** Connection between the page type and the Comment type */
 export type PageToCommentConnection = {
   __typename?: 'PageToCommentConnection';
-  /**
-   * Edges for the PageToCommentConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PageToCommentConnection connection */
   edges?: Maybe<Array<Maybe<PageToCommentConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Comment>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PageToCommentConnectionEdge = {
   __typename?: 'PageToCommentConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Comment>;
 };
 
 /** Connection between the page type and the page type */
 export type PageToPreviewConnectionEdge = {
   __typename?: 'PageToPreviewConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Page>;
 };
 
@@ -4759,35 +3334,20 @@ export type PageToRevisionConnectionWhereArgs = {
 /** Connection between the page type and the page type */
 export type PageToRevisionConnection = {
   __typename?: 'PageToRevisionConnection';
-  /**
-   * Edges for the pageToRevisionConnection connection
-   * @deprecated 
-   */
+  /** Edges for the pageToRevisionConnection connection */
   edges?: Maybe<Array<Maybe<PageToRevisionConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Page>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PageToRevisionConnectionEdge = {
   __typename?: 'PageToRevisionConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Page>;
 };
 
@@ -4858,295 +3418,126 @@ export type UserToPostConnectionWhereArgs = {
 /** Connection between the User type and the post type */
 export type UserToPostConnection = {
   __typename?: 'UserToPostConnection';
-  /**
-   * Edges for the UserToPostConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToPostConnection connection */
   edges?: Maybe<Array<Maybe<UserToPostConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Post>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToPostConnectionEdge = {
   __typename?: 'UserToPostConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Post>;
 };
 
 /** The post type */
 export type Post = Node & ContentNode & DatabaseIdentifier & NodeWithTemplate & UniformResourceIdentifiable & NodeWithTitle & NodeWithContentEditor & NodeWithAuthor & NodeWithFeaturedImage & NodeWithExcerpt & NodeWithComments & NodeWithTrackbacks & NodeWithRevisions & MenuItemLinkable & {
   __typename?: 'Post';
-  /**
-   * Connection between the NodeWithAuthor type and the User type
-   * @deprecated 
-   */
+  /** Connection between the NodeWithAuthor type and the User type */
   author?: Maybe<NodeWithAuthorToUserConnectionEdge>;
-  /**
-   * The database identifier of the author of the node
-   * @deprecated 
-   */
+  /** The database identifier of the author of the node */
   authorDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the author of the node
-   * @deprecated 
-   */
+  /** The globally unique identifier of the author of the node */
   authorId?: Maybe<Scalars['ID']>;
-  /**
-   * bodyClasses
-   * @deprecated 
-   */
-  bodyClasses?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the post type and the category type
-   * @deprecated 
-   */
+  /** Connection between the post type and the category type */
   categories?: Maybe<PostToCategoryConnection>;
-  /**
-   * Co Authors
-   * @deprecated 
-   */
-  coAuthors?: Maybe<Scalars['String']>;
-  /**
-   * The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility.
-   * @deprecated 
-   */
+  /** The number of comments. Even though WPGraphQL denotes this field as an integer, in WordPress this field should be saved as a numeric string for compatibility. */
   commentCount?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the comments are open or closed for this particular post.
-   * @deprecated 
-   */
+  /** Whether the comments are open or closed for this particular post. */
   commentStatus?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the post type and the Comment type
-   * @deprecated 
-   */
+  /** Connection between the post type and the Comment type */
   comments?: Maybe<PostToCommentConnection>;
-  /**
-   * The content of the post.
-   * @deprecated 
-   */
+  /** The content of the post. */
   content?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the ContentNode type and the ContentType type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the ContentType type */
   contentType?: Maybe<ContentNodeToContentTypeConnectionEdge>;
-  /**
-   * The ID of the node in the database.
-   * @deprecated 
-   */
+  /** The ID of the node in the database. */
   databaseId: Scalars['Int'];
-  /**
-   * Post publishing date.
-   * @deprecated 
-   */
+  /** Post publishing date. */
   date?: Maybe<Scalars['String']>;
-  /**
-   * The publishing date set in GMT.
-   * @deprecated 
-   */
+  /** The publishing date set in GMT. */
   dateGmt?: Maybe<Scalars['String']>;
-  /**
-   * The desired slug of the post
-   * @deprecated 
-   */
+  /** The desired slug of the post */
   desiredSlug?: Maybe<Scalars['String']>;
-  /**
-   * If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds
-   * @deprecated 
-   */
+  /** If a user has edited the node within the past 15 seconds, this will return the user that last edited. Null if the edit lock doesn&#039;t exist or is greater than 15 seconds */
   editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>;
-  /**
-   * The RSS enclosure for the object
-   * @deprecated 
-   */
+  /** The RSS enclosure for the object */
   enclosure?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the ContentNode type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the ContentNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>;
-  /**
-   * The excerpt of the post.
-   * @deprecated 
-   */
+  /** The excerpt of the post. */
   excerpt?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the NodeWithFeaturedImage type and the MediaItem type
-   * @deprecated 
-   */
+  /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
   featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>;
-  /**
-   * The database identifier for the featured image node assigned to the content node
-   * @deprecated 
-   */
+  /** The database identifier for the featured image node assigned to the content node */
   featuredImageDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * Globally unique ID of the featured image assigned to the node
-   * @deprecated 
-   */
+  /** Globally unique ID of the featured image assigned to the node */
   featuredImageId?: Maybe<Scalars['ID']>;
-  /**
-   * The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
-   * @deprecated 
-   */
+  /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   guid?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier of the post object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the post object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is a node in the preview state
-   * @deprecated 
-   */
+  /** Whether the object is a node in the preview state */
   isPreview?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * True if the node is a revision of another node
-   * @deprecated 
-   */
+  /** True if the node is a revision of another node */
   isRevision?: Maybe<Scalars['Boolean']>;
-  /**
-   * Whether this page is sticky
-   * @deprecated 
-   */
+  /** Whether this page is sticky */
   isSticky: Scalars['Boolean'];
-  /**
-   * The user that most recently edited the node
-   * @deprecated 
-   */
+  /** The user that most recently edited the node */
   lastEditedBy?: Maybe<ContentNodeToEditLastConnectionEdge>;
-  /**
-   * The permalink of the post
-   * @deprecated 
-   */
+  /** The permalink of the post */
   link?: Maybe<Scalars['String']>;
-  /**
-   * The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time.
-   * @deprecated 
-   */
+  /** The local modified time for a post. If a post was recently updated the modified field will change to match the corresponding time. */
   modified?: Maybe<Scalars['String']>;
-  /**
-   * The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT.
-   * @deprecated 
-   */
+  /** The GMT modified time for a post. If a post was recently updated the modified field will change to match the corresponding time in GMT. */
   modifiedGmt?: Maybe<Scalars['String']>;
-  /**
-   * Whether the pings are open or closed for this particular post.
-   * @deprecated 
-   */
+  /** Whether the pings are open or closed for this particular post. */
   pingStatus?: Maybe<Scalars['String']>;
-  /**
-   * URLs that have been pinged.
-   * @deprecated 
-   */
+  /** URLs that have been pinged. */
   pinged?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * Connection between the post type and the postFormat type
-   * @deprecated 
-   */
+  /** Connection between the post type and the postFormat type */
   postFormats?: Maybe<PostToPostFormatConnection>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of the databaseId field
    */
   postId: Scalars['Int'];
-  /**
-   * Connection between the post type and the post type
-   * @deprecated 
-   */
+  /** Connection between the post type and the post type */
   preview?: Maybe<PostToPreviewConnectionEdge>;
-  /**
-   * The database id of the preview node
-   * @deprecated 
-   */
+  /** The database id of the preview node */
   previewRevisionDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * Whether the object is a node in the preview state
-   * @deprecated 
-   */
+  /** Whether the object is a node in the preview state */
   previewRevisionId?: Maybe<Scalars['ID']>;
-  /**
-   * If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node.
-   * @deprecated 
-   */
+  /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
   revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>;
-  /**
-   * Connection between the post type and the post type
-   * @deprecated 
-   */
+  /** Connection between the post type and the post type */
   revisions?: Maybe<PostToRevisionConnection>;
-  /**
-   * The Yoast SEO data of the post
-   * @deprecated 
-   */
+  /** The Yoast SEO data of the post */
   seo?: Maybe<PostTypeSeo>;
-  /**
-   * The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
-   * @deprecated 
-   */
+  /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * The current status of the object
-   * @deprecated 
-   */
+  /** The current status of the object */
   status?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the post type and the tag type
-   * @deprecated 
-   */
+  /** Connection between the post type and the tag type */
   tags?: Maybe<PostToTagConnection>;
-  /**
-   * The template assigned to a node of content
-   * @deprecated 
-   */
+  /** The template assigned to a node of content */
   template?: Maybe<ContentTemplate>;
-  /**
-   * Connection between the post type and the TermNode type
-   * @deprecated 
-   */
+  /** Connection between the post type and the TermNode type */
   terms?: Maybe<PostToTermNodeConnection>;
-  /**
-   * The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made.
-   * @deprecated 
-   */
+  /** The title of the post. This is currently just the raw title. An amendment to support rendered title needs to be made. */
   title?: Maybe<Scalars['String']>;
-  /**
-   * URLs queued to be pinged.
-   * @deprecated 
-   */
+  /** URLs queued to be pinged. */
   toPing?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * URI path for the resource
-   * @deprecated 
-   */
+  /** URI path for the resource */
   uri: Scalars['String'];
 };
 
@@ -5313,40 +3704,22 @@ export type PostToCategoryConnectionWhereArgs = {
 /** Connection between the post type and the category type */
 export type PostToCategoryConnection = {
   __typename?: 'PostToCategoryConnection';
-  /**
-   * Edges for the PostToCategoryConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostToCategoryConnection connection */
   edges?: Maybe<Array<Maybe<PostToCategoryConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Category>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostToCategoryConnectionEdge = {
   __typename?: 'PostToCategoryConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The Yoast SEO Primary category
-   * @deprecated 
-   */
+  /** The Yoast SEO Primary category */
   isPrimary?: Maybe<Scalars['Boolean']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Category>;
 };
 
@@ -5415,35 +3788,20 @@ export type PostToCommentConnectionWhereArgs = {
 /** Connection between the post type and the Comment type */
 export type PostToCommentConnection = {
   __typename?: 'PostToCommentConnection';
-  /**
-   * Edges for the PostToCommentConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostToCommentConnection connection */
   edges?: Maybe<Array<Maybe<PostToCommentConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Comment>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostToCommentConnectionEdge = {
   __typename?: 'PostToCommentConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Comment>;
 };
 
@@ -5492,130 +3850,64 @@ export type PostToPostFormatConnectionWhereArgs = {
 /** Connection between the post type and the postFormat type */
 export type PostToPostFormatConnection = {
   __typename?: 'PostToPostFormatConnection';
-  /**
-   * Edges for the PostToPostFormatConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostToPostFormatConnection connection */
   edges?: Maybe<Array<Maybe<PostToPostFormatConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<PostFormat>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostToPostFormatConnectionEdge = {
   __typename?: 'PostToPostFormatConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<PostFormat>;
 };
 
 /** The postFormat type */
 export type PostFormat = Node & TermNode & DatabaseIdentifier & UniformResourceIdentifiable & {
   __typename?: 'PostFormat';
-  /**
-   * Connection between the postFormat type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the postFormat type and the ContentNode type */
   contentNodes?: Maybe<PostFormatToContentNodeConnection>;
-  /**
-   * The number of objects connected to the object
-   * @deprecated 
-   */
+  /** The number of objects connected to the object */
   count?: Maybe<Scalars['Int']>;
-  /**
-   * Identifies the primary key from the database.
-   * @deprecated 
-   */
+  /** Identifies the primary key from the database. */
   databaseId: Scalars['Int'];
-  /**
-   * The description of the object
-   * @deprecated 
-   */
+  /** The description of the object */
   description?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the TermNode type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the TermNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<TermNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the TermNode type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the TermNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<TermNodeToEnqueuedStylesheetConnection>;
-  /**
-   * The globally unique ID for the object
-   * @deprecated 
-   */
+  /** The globally unique ID for the object */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * The link to the term
-   * @deprecated 
-   */
+  /** The link to the term */
   link?: Maybe<Scalars['String']>;
-  /**
-   * The human friendly name of the object.
-   * @deprecated 
-   */
+  /** The human friendly name of the object. */
   name?: Maybe<Scalars['String']>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
   postFormatId?: Maybe<Scalars['Int']>;
-  /**
-   * Connection between the postFormat type and the post type
-   * @deprecated 
-   */
+  /** Connection between the postFormat type and the post type */
   posts?: Maybe<PostFormatToPostConnection>;
-  /**
-   * The Yoast SEO data of the Formats taxonomy.
-   * @deprecated 
-   */
+  /** The Yoast SEO data of the Formats taxonomy. */
   seo?: Maybe<TaxonomySeo>;
-  /**
-   * An alphanumeric identifier for the object unique to its type.
-   * @deprecated 
-   */
+  /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the postFormat type and the Taxonomy type
-   * @deprecated 
-   */
+  /** Connection between the postFormat type and the Taxonomy type */
   taxonomy?: Maybe<PostFormatToTaxonomyConnectionEdge>;
-  /**
-   * The ID of the term group that this term object belongs to
-   * @deprecated 
-   */
+  /** The ID of the term group that this term object belongs to */
   termGroupId?: Maybe<Scalars['Int']>;
-  /**
-   * The taxonomy ID that the object is associated with
-   * @deprecated 
-   */
+  /** The taxonomy ID that the object is associated with */
   termTaxonomyId?: Maybe<Scalars['Int']>;
-  /**
-   * The unique resource identifier path
-   * @deprecated 
-   */
+  /** The unique resource identifier path */
   uri: Scalars['String'];
 };
 
@@ -5696,35 +3988,20 @@ export type PostFormatToContentNodeConnectionWhereArgs = {
 /** Connection between the postFormat type and the ContentNode type */
 export type PostFormatToContentNodeConnection = {
   __typename?: 'PostFormatToContentNodeConnection';
-  /**
-   * Edges for the PostFormatToContentNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostFormatToContentNodeConnection connection */
   edges?: Maybe<Array<Maybe<PostFormatToContentNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostFormatToContentNodeConnectionEdge = {
   __typename?: 'PostFormatToContentNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
@@ -5795,112 +4072,67 @@ export type PostFormatToPostConnectionWhereArgs = {
 /** Connection between the postFormat type and the post type */
 export type PostFormatToPostConnection = {
   __typename?: 'PostFormatToPostConnection';
-  /**
-   * Edges for the PostFormatToPostConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostFormatToPostConnection connection */
   edges?: Maybe<Array<Maybe<PostFormatToPostConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Post>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostFormatToPostConnectionEdge = {
   __typename?: 'PostFormatToPostConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Post>;
 };
 
 export type TaxonomySeo = {
   __typename?: 'TaxonomySEO';
-  /** @deprecated  */
   breadcrumbs?: Maybe<Array<Maybe<SeoPostTypeBreadcrumbs>>>;
-  /** @deprecated  */
   canonical?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   cornerstone?: Maybe<Scalars['Boolean']>;
-  /** @deprecated  */
   focuskw?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaDesc?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaKeywords?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNofollow?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNoindex?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphAuthor?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphDescription?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphImage?: Maybe<MediaItem>;
-  /** @deprecated  */
   opengraphModifiedTime?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphPublishedTime?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphPublisher?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphSiteName?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphTitle?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphType?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   opengraphUrl?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   schema?: Maybe<SeoTaxonomySchema>;
-  /** @deprecated  */
   title?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   twitterDescription?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   twitterImage?: Maybe<MediaItem>;
-  /** @deprecated  */
   twitterTitle?: Maybe<Scalars['String']>;
 };
 
 /** The Schema types for Taxonomy */
 export type SeoTaxonomySchema = {
   __typename?: 'SEOTaxonomySchema';
-  /** @deprecated  */
   raw?: Maybe<Scalars['String']>;
 };
 
 /** Connection between the postFormat type and the Taxonomy type */
 export type PostFormatToTaxonomyConnectionEdge = {
   __typename?: 'PostFormatToTaxonomyConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Taxonomy>;
 };
 
 /** Connection between the post type and the post type */
 export type PostToPreviewConnectionEdge = {
   __typename?: 'PostToPreviewConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Post>;
 };
 
@@ -5971,35 +4203,20 @@ export type PostToRevisionConnectionWhereArgs = {
 /** Connection between the post type and the post type */
 export type PostToRevisionConnection = {
   __typename?: 'PostToRevisionConnection';
-  /**
-   * Edges for the postToRevisionConnection connection
-   * @deprecated 
-   */
+  /** Edges for the postToRevisionConnection connection */
   edges?: Maybe<Array<Maybe<PostToRevisionConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Post>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostToRevisionConnectionEdge = {
   __typename?: 'PostToRevisionConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Post>;
 };
 
@@ -6048,130 +4265,64 @@ export type PostToTagConnectionWhereArgs = {
 /** Connection between the post type and the tag type */
 export type PostToTagConnection = {
   __typename?: 'PostToTagConnection';
-  /**
-   * Edges for the PostToTagConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostToTagConnection connection */
   edges?: Maybe<Array<Maybe<PostToTagConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Tag>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostToTagConnectionEdge = {
   __typename?: 'PostToTagConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Tag>;
 };
 
 /** The tag type */
 export type Tag = Node & TermNode & DatabaseIdentifier & UniformResourceIdentifiable & MenuItemLinkable & {
   __typename?: 'Tag';
-  /**
-   * Connection between the tag type and the ContentNode type
-   * @deprecated 
-   */
+  /** Connection between the tag type and the ContentNode type */
   contentNodes?: Maybe<TagToContentNodeConnection>;
-  /**
-   * The number of objects connected to the object
-   * @deprecated 
-   */
+  /** The number of objects connected to the object */
   count?: Maybe<Scalars['Int']>;
-  /**
-   * Identifies the primary key from the database.
-   * @deprecated 
-   */
+  /** Identifies the primary key from the database. */
   databaseId: Scalars['Int'];
-  /**
-   * The description of the object
-   * @deprecated 
-   */
+  /** The description of the object */
   description?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the TermNode type and the EnqueuedScript type
-   * @deprecated 
-   */
+  /** Connection between the TermNode type and the EnqueuedScript type */
   enqueuedScripts?: Maybe<TermNodeToEnqueuedScriptConnection>;
-  /**
-   * Connection between the TermNode type and the EnqueuedStylesheet type
-   * @deprecated 
-   */
+  /** Connection between the TermNode type and the EnqueuedStylesheet type */
   enqueuedStylesheets?: Maybe<TermNodeToEnqueuedStylesheetConnection>;
-  /**
-   * The globally unique ID for the object
-   * @deprecated 
-   */
+  /** The globally unique ID for the object */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * The link to the term
-   * @deprecated 
-   */
+  /** The link to the term */
   link?: Maybe<Scalars['String']>;
-  /**
-   * The human friendly name of the object.
-   * @deprecated 
-   */
+  /** The human friendly name of the object. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * Connection between the tag type and the post type
-   * @deprecated 
-   */
+  /** Connection between the tag type and the post type */
   posts?: Maybe<TagToPostConnection>;
-  /**
-   * The Yoast SEO data of the Étiquettes taxonomy.
-   * @deprecated 
-   */
+  /** The Yoast SEO data of the Étiquettes taxonomy. */
   seo?: Maybe<TaxonomySeo>;
-  /**
-   * An alphanumeric identifier for the object unique to its type.
-   * @deprecated 
-   */
+  /** An alphanumeric identifier for the object unique to its type. */
   slug?: Maybe<Scalars['String']>;
   /**
    * The id field matches the WP_Post-&gt;ID field.
    * @deprecated Deprecated in favor of databaseId
    */
   tagId?: Maybe<Scalars['Int']>;
-  /**
-   * Connection between the tag type and the Taxonomy type
-   * @deprecated 
-   */
+  /** Connection between the tag type and the Taxonomy type */
   taxonomy?: Maybe<TagToTaxonomyConnectionEdge>;
-  /**
-   * The ID of the term group that this term object belongs to
-   * @deprecated 
-   */
+  /** The ID of the term group that this term object belongs to */
   termGroupId?: Maybe<Scalars['Int']>;
-  /**
-   * The taxonomy ID that the object is associated with
-   * @deprecated 
-   */
+  /** The taxonomy ID that the object is associated with */
   termTaxonomyId?: Maybe<Scalars['Int']>;
-  /**
-   * The unique resource identifier path
-   * @deprecated 
-   */
+  /** The unique resource identifier path */
   uri: Scalars['String'];
 };
 
@@ -6252,35 +4403,20 @@ export type TagToContentNodeConnectionWhereArgs = {
 /** Connection between the tag type and the ContentNode type */
 export type TagToContentNodeConnection = {
   __typename?: 'TagToContentNodeConnection';
-  /**
-   * Edges for the TagToContentNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the TagToContentNodeConnection connection */
   edges?: Maybe<Array<Maybe<TagToContentNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type TagToContentNodeConnectionEdge = {
   __typename?: 'TagToContentNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
@@ -6351,45 +4487,27 @@ export type TagToPostConnectionWhereArgs = {
 /** Connection between the tag type and the post type */
 export type TagToPostConnection = {
   __typename?: 'TagToPostConnection';
-  /**
-   * Edges for the TagToPostConnection connection
-   * @deprecated 
-   */
+  /** Edges for the TagToPostConnection connection */
   edges?: Maybe<Array<Maybe<TagToPostConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Post>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type TagToPostConnectionEdge = {
   __typename?: 'TagToPostConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Post>;
 };
 
 /** Connection between the tag type and the Taxonomy type */
 export type TagToTaxonomyConnectionEdge = {
   __typename?: 'TagToTaxonomyConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Taxonomy>;
 };
 
@@ -6447,35 +4565,20 @@ export enum TaxonomyEnum {
 /** Connection between the post type and the TermNode type */
 export type PostToTermNodeConnection = {
   __typename?: 'PostToTermNodeConnection';
-  /**
-   * Edges for the PostToTermNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the PostToTermNodeConnection connection */
   edges?: Maybe<Array<Maybe<PostToTermNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<TermNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type PostToTermNodeConnectionEdge = {
   __typename?: 'PostToTermNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<TermNode>;
 };
 
@@ -6518,35 +4621,20 @@ export type UserToContentRevisionUnionConnectionWhereArgs = {
 /** Connection between the User type and the ContentRevisionUnion type */
 export type UserToContentRevisionUnionConnection = {
   __typename?: 'UserToContentRevisionUnionConnection';
-  /**
-   * Edges for the UserToContentRevisionUnionConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToContentRevisionUnionConnection connection */
   edges?: Maybe<Array<Maybe<UserToContentRevisionUnionConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentRevisionUnion>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToContentRevisionUnionConnectionEdge = {
   __typename?: 'UserToContentRevisionUnionConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentRevisionUnion>;
 };
 
@@ -6555,120 +4643,71 @@ export type ContentRevisionUnion = Post | Page;
 /** Connection between the User type and the UserRole type */
 export type UserToUserRoleConnection = {
   __typename?: 'UserToUserRoleConnection';
-  /**
-   * Edges for the UserToUserRoleConnection connection
-   * @deprecated 
-   */
+  /** Edges for the UserToUserRoleConnection connection */
   edges?: Maybe<Array<Maybe<UserToUserRoleConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<UserRole>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type UserToUserRoleConnectionEdge = {
   __typename?: 'UserToUserRoleConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<UserRole>;
 };
 
 /** A user role object */
 export type UserRole = Node & {
   __typename?: 'UserRole';
-  /**
-   * The capabilities that belong to this role
-   * @deprecated 
-   */
+  /** The capabilities that belong to this role */
   capabilities?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * The display name of the role
-   * @deprecated 
-   */
+  /** The display name of the role */
   displayName?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier for the user role object.
-   * @deprecated 
-   */
+  /** The globally unique identifier for the user role object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * The registered name of the role
-   * @deprecated 
-   */
+  /** The registered name of the role */
   name?: Maybe<Scalars['String']>;
 };
 
 export type SeoUser = {
   __typename?: 'SEOUser';
-  /** @deprecated  */
   metaDesc?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNofollow?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNoindex?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   schema?: Maybe<SeoUserSchema>;
-  /** @deprecated  */
   social?: Maybe<SeoUserSocial>;
-  /** @deprecated  */
   title?: Maybe<Scalars['String']>;
 };
 
 /** The Schema types for User */
 export type SeoUserSchema = {
   __typename?: 'SEOUserSchema';
-  /** @deprecated  */
   raw?: Maybe<Scalars['String']>;
 };
 
 export type SeoUserSocial = {
   __typename?: 'SEOUserSocial';
-  /** @deprecated  */
   facebook?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   instagram?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   linkedIn?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   mySpace?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   pinterest?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   soundCloud?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   twitter?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   wikipedia?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   youTube?: Maybe<Scalars['String']>;
 };
 
 /** Connection between the category type and the category type */
 export type CategoryToParentCategoryConnectionEdge = {
   __typename?: 'CategoryToParentCategoryConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Category>;
 };
 
@@ -6739,45 +4778,27 @@ export type CategoryToPostConnectionWhereArgs = {
 /** Connection between the category type and the post type */
 export type CategoryToPostConnection = {
   __typename?: 'CategoryToPostConnection';
-  /**
-   * Edges for the CategoryToPostConnection connection
-   * @deprecated 
-   */
+  /** Edges for the CategoryToPostConnection connection */
   edges?: Maybe<Array<Maybe<CategoryToPostConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Post>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type CategoryToPostConnectionEdge = {
   __typename?: 'CategoryToPostConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Post>;
 };
 
 /** Connection between the category type and the Taxonomy type */
 export type CategoryToTaxonomyConnectionEdge = {
   __typename?: 'CategoryToTaxonomyConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Taxonomy>;
 };
 
@@ -6860,35 +4881,20 @@ export type RootQueryToCommentConnectionWhereArgs = {
 /** Connection between the RootQuery type and the Comment type */
 export type RootQueryToCommentConnection = {
   __typename?: 'RootQueryToCommentConnection';
-  /**
-   * Edges for the RootQueryToCommentConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToCommentConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToCommentConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Comment>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToCommentConnectionEdge = {
   __typename?: 'RootQueryToCommentConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Comment>;
 };
 
@@ -6943,35 +4949,20 @@ export type RootQueryToContentNodeConnectionWhereArgs = {
 /** Connection between the RootQuery type and the ContentNode type */
 export type RootQueryToContentNodeConnection = {
   __typename?: 'RootQueryToContentNodeConnection';
-  /**
-   * Edges for the RootQueryToContentNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToContentNodeConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToContentNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToContentNodeConnectionEdge = {
   __typename?: 'RootQueryToContentNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentNode>;
 };
 
@@ -6986,166 +4977,53 @@ export enum ContentTypeIdTypeEnum {
 /** Connection between the RootQuery type and the ContentType type */
 export type RootQueryToContentTypeConnection = {
   __typename?: 'RootQueryToContentTypeConnection';
-  /**
-   * Edges for the RootQueryToContentTypeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToContentTypeConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToContentTypeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentType>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToContentTypeConnectionEdge = {
   __typename?: 'RootQueryToContentTypeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentType>;
 };
 
 /** The discussion setting type */
 export type DiscussionSettings = {
   __typename?: 'DiscussionSettings';
-  /**
-   * Autoriser les gens à envoyer des commentaires sur les nouvelles publications.
-   * @deprecated 
-   */
+  /** Autoriser les gens à envoyer des commentaires sur les nouvelles publications. */
   defaultCommentStatus?: Maybe<Scalars['String']>;
-  /**
-   * Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles.
-   * @deprecated 
-   */
+  /** Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles. */
   defaultPingStatus?: Maybe<Scalars['String']>;
 };
 
 /** The general setting type */
 export type GeneralSettings = {
   __typename?: 'GeneralSettings';
-  /**
-   * Un format de date commun pour tous les réglages de dates.
-   * @deprecated 
-   */
+  /** Un format de date commun pour tous les réglages de dates. */
   dateFormat?: Maybe<Scalars['String']>;
-  /**
-   * Slogan du site.
-   * @deprecated 
-   */
+  /** Slogan du site. */
   description?: Maybe<Scalars['String']>;
-  /**
-   * Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes.
-   * @deprecated 
-   */
+  /** Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes. */
   email?: Maybe<Scalars['String']>;
-  /**
-   * Code local de l’installation WordPress.
-   * @deprecated 
-   */
+  /** Code local de l’installation WordPress. */
   language?: Maybe<Scalars['String']>;
-  /**
-   * Le numéro du jour de la semaine à laquelle la semaine devrait commencer.
-   * @deprecated 
-   */
+  /** Le numéro du jour de la semaine à laquelle la semaine devrait commencer. */
   startOfWeek?: Maybe<Scalars['Int']>;
-  /**
-   * Un format d’heure commun pour tous les réglages d’heures.
-   * @deprecated 
-   */
+  /** Un format d’heure commun pour tous les réglages d’heures. */
   timeFormat?: Maybe<Scalars['String']>;
-  /**
-   * Une ville dans le même fuseau horaire que le vôtre.
-   * @deprecated 
-   */
+  /** Une ville dans le même fuseau horaire que le vôtre. */
   timezone?: Maybe<Scalars['String']>;
-  /**
-   * Titre du site.
-   * @deprecated 
-   */
+  /** Titre du site. */
   title?: Maybe<Scalars['String']>;
-  /**
-   * URL du site.
-   * @deprecated 
-   */
+  /** URL du site. */
   url?: Maybe<Scalars['String']>;
-};
-
-/** Header Type */
-export type HcmsFooter = {
-  __typename?: 'HCMSFooter';
-  /**
-   * Copyright text
-   * @deprecated 
-   */
-  copyrightText?: Maybe<Scalars['String']>;
-  /**
-   * sidebarOne
-   * @deprecated 
-   */
-  sidebarOne?: Maybe<Scalars['String']>;
-  /**
-   * sidebarTwo
-   * @deprecated 
-   */
-  sidebarTwo?: Maybe<Scalars['String']>;
-  /**
-   * Social links
-   * @deprecated 
-   */
-  socialLinks?: Maybe<Array<Maybe<HcmsSocialLinks>>>;
-};
-
-/** Social Links Type */
-export type HcmsSocialLinks = {
-  __typename?: 'HCMSSocialLinks';
-  /**
-   * Icon name
-   * @deprecated 
-   */
-  iconName?: Maybe<Scalars['String']>;
-  /**
-   * Icon url
-   * @deprecated 
-   */
-  iconUrl?: Maybe<Scalars['String']>;
-};
-
-/** Header Type */
-export type HcmsHeader = {
-  __typename?: 'HCMSHeader';
-  /**
-   * favicon
-   * @deprecated 
-   */
-  favicon?: Maybe<Scalars['String']>;
-  /**
-   * Site logo URL
-   * @deprecated 
-   */
-  siteLogoUrl?: Maybe<Scalars['String']>;
-  /**
-   * Site tagline
-   * @deprecated 
-   */
-  siteTagLine?: Maybe<Scalars['String']>;
-  /**
-   * Site title
-   * @deprecated 
-   */
-  siteTitle?: Maybe<Scalars['String']>;
 };
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
@@ -7209,35 +5087,20 @@ export type RootQueryToMediaItemConnectionWhereArgs = {
 /** Connection between the RootQuery type and the mediaItem type */
 export type RootQueryToMediaItemConnection = {
   __typename?: 'RootQueryToMediaItemConnection';
-  /**
-   * Edges for the RootQueryToMediaItemConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToMediaItemConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToMediaItemConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<MediaItem>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToMediaItemConnectionEdge = {
   __typename?: 'RootQueryToMediaItemConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<MediaItem>;
 };
 
@@ -7254,47 +5117,25 @@ export enum MenuNodeIdTypeEnum {
 /** Menus are the containers for navigation items. Menus can be assigned to menu locations, which are typically registered by the active theme. */
 export type Menu = Node & DatabaseIdentifier & {
   __typename?: 'Menu';
-  /**
-   * The number of items in the menu
-   * @deprecated 
-   */
+  /** The number of items in the menu */
   count?: Maybe<Scalars['Int']>;
-  /**
-   * The unique identifier stored in the database
-   * @deprecated 
-   */
+  /** The unique identifier stored in the database */
   databaseId: Scalars['Int'];
-  /**
-   * The globally unique identifier of the nav menu object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the nav menu object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /** @deprecated  */
   locations?: Maybe<Array<Maybe<MenuLocationEnum>>>;
   /**
    * WP ID of the nav menu.
    * @deprecated Deprecated in favor of the databaseId field
    */
   menuId?: Maybe<Scalars['Int']>;
-  /**
-   * Connection between the Menu type and the MenuItem type
-   * @deprecated 
-   */
+  /** Connection between the Menu type and the MenuItem type */
   menuItems?: Maybe<MenuToMenuItemConnection>;
-  /**
-   * Display name of the menu. Equivalent to WP_Term-&gt;name.
-   * @deprecated 
-   */
+  /** Display name of the menu. Equivalent to WP_Term-&gt;name. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * The url friendly name of the menu. Equivalent to WP_Term-&gt;slug
-   * @deprecated 
-   */
+  /** The url friendly name of the menu. Equivalent to WP_Term-&gt;slug */
   slug?: Maybe<Scalars['String']>;
 };
 
@@ -7310,8 +5151,7 @@ export type MenuMenuItemsArgs = {
 
 /** Registered menu locations */
 export enum MenuLocationEnum {
-  HcmsMenuFooter = 'HCMS_MENU_FOOTER',
-  HcmsMenuHeader = 'HCMS_MENU_HEADER'
+  Empty = 'EMPTY'
 }
 
 /** Arguments for filtering the MenuToMenuItemConnection connection */
@@ -7329,137 +5169,70 @@ export type MenuToMenuItemConnectionWhereArgs = {
 /** Connection between the Menu type and the MenuItem type */
 export type MenuToMenuItemConnection = {
   __typename?: 'MenuToMenuItemConnection';
-  /**
-   * Edges for the MenuToMenuItemConnection connection
-   * @deprecated 
-   */
+  /** Edges for the MenuToMenuItemConnection connection */
   edges?: Maybe<Array<Maybe<MenuToMenuItemConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<MenuItem>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type MenuToMenuItemConnectionEdge = {
   __typename?: 'MenuToMenuItemConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<MenuItem>;
 };
 
 /** Navigation menu items are the individual items assigned to a menu. These are rendered as the links in a navigation menu. */
 export type MenuItem = Node & DatabaseIdentifier & {
   __typename?: 'MenuItem';
-  /**
-   * Connection between the MenuItem type and the MenuItem type
-   * @deprecated 
-   */
+  /** Connection between the MenuItem type and the MenuItem type */
   childItems?: Maybe<MenuItemToMenuItemConnection>;
-  /**
-   * Connection from MenuItem to it&#039;s connected node
-   * @deprecated 
-   */
+  /** Connection from MenuItem to it&#039;s connected node */
   connectedNode?: Maybe<MenuItemToMenuItemLinkableConnectionEdge>;
   /**
    * The object connected to this menu item.
    * @deprecated Deprecated in favor of the connectedNode field
    */
   connectedObject?: Maybe<MenuItemObjectUnion>;
-  /**
-   * Class attribute for the menu item link
-   * @deprecated 
-   */
+  /** Class attribute for the menu item link */
   cssClasses?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * The unique identifier stored in the database
-   * @deprecated 
-   */
+  /** The unique identifier stored in the database */
   databaseId: Scalars['Int'];
-  /**
-   * Description of the menu item.
-   * @deprecated 
-   */
+  /** Description of the menu item. */
   description?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier of the nav menu item object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the nav menu item object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Label or title of the menu item.
-   * @deprecated 
-   */
+  /** Label or title of the menu item. */
   label?: Maybe<Scalars['String']>;
-  /**
-   * Link relationship (XFN) of the menu item.
-   * @deprecated 
-   */
+  /** Link relationship (XFN) of the menu item. */
   linkRelationship?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   locations?: Maybe<Array<Maybe<MenuLocationEnum>>>;
-  /**
-   * The Menu a MenuItem is part of
-   * @deprecated 
-   */
+  /** The Menu a MenuItem is part of */
   menu?: Maybe<MenuItemToMenuConnectionEdge>;
   /**
    * WP ID of the menu item.
    * @deprecated Deprecated in favor of the databaseId field
    */
   menuItemId?: Maybe<Scalars['Int']>;
-  /**
-   * Menu item order
-   * @deprecated 
-   */
+  /** Menu item order */
   order?: Maybe<Scalars['Int']>;
-  /**
-   * The database id of the parent menu item or null if it is the root
-   * @deprecated 
-   */
+  /** The database id of the parent menu item or null if it is the root */
   parentDatabaseId?: Maybe<Scalars['Int']>;
-  /**
-   * The globally unique identifier of the parent nav menu item object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the parent nav menu item object. */
   parentId?: Maybe<Scalars['ID']>;
-  /**
-   * Path for the resource. Relative path for internal resources. Absolute path for external resources.
-   * @deprecated 
-   */
+  /** Path for the resource. Relative path for internal resources. Absolute path for external resources. */
   path: Scalars['String'];
-  /**
-   * Target attribute for the menu item link.
-   * @deprecated 
-   */
+  /** Target attribute for the menu item link. */
   target?: Maybe<Scalars['String']>;
-  /**
-   * Title attribute for the menu item link
-   * @deprecated 
-   */
+  /** Title attribute for the menu item link */
   title?: Maybe<Scalars['String']>;
-  /**
-   * URL or destination of the menu item.
-   * @deprecated 
-   */
+  /** URL or destination of the menu item. */
   url?: Maybe<Scalars['String']>;
 };
 
@@ -7488,45 +5261,27 @@ export type MenuItemToMenuItemConnectionWhereArgs = {
 /** Connection between the MenuItem type and the MenuItem type */
 export type MenuItemToMenuItemConnection = {
   __typename?: 'MenuItemToMenuItemConnection';
-  /**
-   * Edges for the MenuItemToMenuItemConnection connection
-   * @deprecated 
-   */
+  /** Edges for the MenuItemToMenuItemConnection connection */
   edges?: Maybe<Array<Maybe<MenuItemToMenuItemConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<MenuItem>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type MenuItemToMenuItemConnectionEdge = {
   __typename?: 'MenuItemToMenuItemConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<MenuItem>;
 };
 
 /** Connection between the MenuItem type and the MenuItemLinkable type */
 export type MenuItemToMenuItemLinkableConnectionEdge = {
   __typename?: 'MenuItemToMenuItemLinkableConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<MenuItemLinkable>;
 };
 
@@ -7536,10 +5291,7 @@ export type MenuItemObjectUnion = Post | Page | Category | Tag;
 /** Connection between the MenuItem type and the Menu type */
 export type MenuItemToMenuConnectionEdge = {
   __typename?: 'MenuItemToMenuConnectionEdge';
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   node?: Maybe<Menu>;
 };
 
@@ -7566,35 +5318,20 @@ export type RootQueryToMenuItemConnectionWhereArgs = {
 /** Connection between the RootQuery type and the MenuItem type */
 export type RootQueryToMenuItemConnection = {
   __typename?: 'RootQueryToMenuItemConnection';
-  /**
-   * Edges for the RootQueryToMenuItemConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToMenuItemConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToMenuItemConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<MenuItem>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToMenuItemConnectionEdge = {
   __typename?: 'RootQueryToMenuItemConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<MenuItem>;
 };
 
@@ -7611,35 +5348,20 @@ export type RootQueryToMenuConnectionWhereArgs = {
 /** Connection between the RootQuery type and the Menu type */
 export type RootQueryToMenuConnection = {
   __typename?: 'RootQueryToMenuConnection';
-  /**
-   * Edges for the RootQueryToMenuConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToMenuConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToMenuConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Menu>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToMenuConnectionEdge = {
   __typename?: 'RootQueryToMenuConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Menu>;
 };
 
@@ -7700,120 +5422,63 @@ export type RootQueryToPageConnectionWhereArgs = {
 /** Connection between the RootQuery type and the page type */
 export type RootQueryToPageConnection = {
   __typename?: 'RootQueryToPageConnection';
-  /**
-   * Edges for the RootQueryToPageConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToPageConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToPageConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Page>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToPageConnectionEdge = {
   __typename?: 'RootQueryToPageConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Page>;
 };
 
 /** An plugin object */
 export type Plugin = Node & {
   __typename?: 'Plugin';
-  /**
-   * Name of the plugin author(s), may also be a company name.
-   * @deprecated 
-   */
+  /** Name of the plugin author(s), may also be a company name. */
   author?: Maybe<Scalars['String']>;
-  /**
-   * URI for the related author(s)/company website.
-   * @deprecated 
-   */
+  /** URI for the related author(s)/company website. */
   authorUri?: Maybe<Scalars['String']>;
-  /**
-   * Description of the plugin.
-   * @deprecated 
-   */
+  /** Description of the plugin. */
   description?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier of the plugin object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the plugin object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Display name of the plugin.
-   * @deprecated 
-   */
+  /** Display name of the plugin. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * Plugin path.
-   * @deprecated 
-   */
+  /** Plugin path. */
   path?: Maybe<Scalars['String']>;
-  /**
-   * URI for the plugin website. This is useful for directing users for support requests etc.
-   * @deprecated 
-   */
+  /** URI for the plugin website. This is useful for directing users for support requests etc. */
   pluginUri?: Maybe<Scalars['String']>;
-  /**
-   * Current version of the plugin.
-   * @deprecated 
-   */
+  /** Current version of the plugin. */
   version?: Maybe<Scalars['String']>;
 };
 
 /** Connection between the RootQuery type and the Plugin type */
 export type RootQueryToPluginConnection = {
   __typename?: 'RootQueryToPluginConnection';
-  /**
-   * Edges for the RootQueryToPluginConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToPluginConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToPluginConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Plugin>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToPluginConnectionEdge = {
   __typename?: 'RootQueryToPluginConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Plugin>;
 };
 
@@ -7888,35 +5553,20 @@ export type RootQueryToPostFormatConnectionWhereArgs = {
 /** Connection between the RootQuery type and the postFormat type */
 export type RootQueryToPostFormatConnection = {
   __typename?: 'RootQueryToPostFormatConnection';
-  /**
-   * Edges for the RootQueryToPostFormatConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToPostFormatConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToPostFormatConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<PostFormat>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToPostFormatConnectionEdge = {
   __typename?: 'RootQueryToPostFormatConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<PostFormat>;
 };
 
@@ -7954,8 +5604,6 @@ export type RootQueryToPostConnectionWhereArgs = {
   nameIn?: Maybe<Array<Maybe<Scalars['String']>>>;
   /** Specify IDs NOT to retrieve. If this is used in the same query as "in", it will be ignored */
   notIn?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  /** The ID of the post object to filter by */
-  onlySticky?: Maybe<Scalars['Boolean']>;
   /** What paramater to use to order the objects by. */
   orderby?: Maybe<Array<Maybe<PostObjectsConnectionOrderbyInput>>>;
   /** Use ID to return only children. Use 0 to return only top-level items */
@@ -7989,115 +5637,67 @@ export type RootQueryToPostConnectionWhereArgs = {
 /** Connection between the RootQuery type and the post type */
 export type RootQueryToPostConnection = {
   __typename?: 'RootQueryToPostConnection';
-  /**
-   * Edges for the RootQueryToPostConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToPostConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToPostConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Post>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToPostConnectionEdge = {
   __typename?: 'RootQueryToPostConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Post>;
 };
 
 /** The reading setting type */
 export type ReadingSettings = {
   __typename?: 'ReadingSettings';
-  /**
-   * Les pages de blog affichent au maximum.
-   * @deprecated 
-   */
+  /** Les pages de blog affichent au maximum. */
   postsPerPage?: Maybe<Scalars['Int']>;
 };
 
 /** Connection between the RootQuery type and the EnqueuedScript type */
 export type RootQueryToEnqueuedScriptConnection = {
   __typename?: 'RootQueryToEnqueuedScriptConnection';
-  /**
-   * Edges for the RootQueryToEnqueuedScriptConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToEnqueuedScriptConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToEnqueuedScriptConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedScript>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToEnqueuedScriptConnectionEdge = {
   __typename?: 'RootQueryToEnqueuedScriptConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedScript>;
 };
 
 /** Connection between the RootQuery type and the EnqueuedStylesheet type */
 export type RootQueryToEnqueuedStylesheetConnection = {
   __typename?: 'RootQueryToEnqueuedStylesheetConnection';
-  /**
-   * Edges for the RootQueryToEnqueuedStylesheetConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToEnqueuedStylesheetConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToEnqueuedStylesheetConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<EnqueuedStylesheet>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToEnqueuedStylesheetConnectionEdge = {
   __typename?: 'RootQueryToEnqueuedStylesheetConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<EnqueuedStylesheet>;
 };
 
@@ -8140,224 +5740,149 @@ export type RootQueryToContentRevisionUnionConnectionWhereArgs = {
 /** Connection between the RootQuery type and the ContentRevisionUnion type */
 export type RootQueryToContentRevisionUnionConnection = {
   __typename?: 'RootQueryToContentRevisionUnionConnection';
-  /**
-   * Edges for the RootQueryToContentRevisionUnionConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToContentRevisionUnionConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToContentRevisionUnionConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<ContentRevisionUnion>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToContentRevisionUnionConnectionEdge = {
   __typename?: 'RootQueryToContentRevisionUnionConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<ContentRevisionUnion>;
 };
 
 /** The Yoast SEO site level configuration data */
 export type SeoConfig = {
   __typename?: 'SEOConfig';
-  /** @deprecated  */
   breadcrumbs?: Maybe<SeoBreadcrumbs>;
-  /** @deprecated  */
   contentTypes?: Maybe<SeoContentTypes>;
-  /** @deprecated  */
   openGraph?: Maybe<SeoOpenGraph>;
-  /** @deprecated  */
   redirects?: Maybe<Array<Maybe<SeoRedirect>>>;
-  /** @deprecated  */
   schema?: Maybe<SeoSchema>;
-  /** @deprecated  */
   social?: Maybe<SeoSocial>;
-  /** @deprecated  */
   webmaster?: Maybe<SeoWebmaster>;
 };
 
 /** The Yoast SEO breadcrumb config */
 export type SeoBreadcrumbs = {
   __typename?: 'SEOBreadcrumbs';
-  /** @deprecated  */
   archivePrefix?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   boldLast?: Maybe<Scalars['Boolean']>;
-  /** @deprecated  */
   enabled?: Maybe<Scalars['Boolean']>;
-  /** @deprecated  */
   homeText?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   notFoundText?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   prefix?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   searchPrefix?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   separator?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   showBlogPage?: Maybe<Scalars['Boolean']>;
 };
 
 /** The Yoast SEO search appearance content types */
 export type SeoContentTypes = {
   __typename?: 'SEOContentTypes';
-  /** @deprecated  */
   mediaItem?: Maybe<SeoContentType>;
-  /** @deprecated  */
   page?: Maybe<SeoContentType>;
-  /** @deprecated  */
   post?: Maybe<SeoContentType>;
 };
 
 /** he Yoast SEO search appearance content types fields */
 export type SeoContentType = {
   __typename?: 'SEOContentType';
-  /** @deprecated  */
   metaDesc?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   metaRobotsNoindex?: Maybe<Scalars['Boolean']>;
-  /** @deprecated  */
   schema?: Maybe<SeoPageInfoSchema>;
-  /** @deprecated  */
   schemaType?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   title?: Maybe<Scalars['String']>;
 };
 
 /** The Open Graph data */
 export type SeoOpenGraph = {
   __typename?: 'SEOOpenGraph';
-  /** @deprecated  */
   defaultImage?: Maybe<MediaItem>;
-  /** @deprecated  */
   frontPage?: Maybe<SeoOpenGraphFrontPage>;
 };
 
 /** The Open Graph Front page data */
 export type SeoOpenGraphFrontPage = {
   __typename?: 'SEOOpenGraphFrontPage';
-  /** @deprecated  */
   description?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   image?: Maybe<MediaItem>;
-  /** @deprecated  */
   title?: Maybe<Scalars['String']>;
 };
 
 /** The Yoast redirect data  (Yoast Premium only) */
 export type SeoRedirect = {
   __typename?: 'SEORedirect';
-  /** @deprecated  */
   format?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   origin?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   target?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   type?: Maybe<Scalars['Int']>;
 };
 
 /** The Yoast SEO schema data */
 export type SeoSchema = {
   __typename?: 'SEOSchema';
-  /** @deprecated  */
   companyLogo?: Maybe<MediaItem>;
-  /** @deprecated  */
   companyName?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   companyOrPerson?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   inLanguage?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   logo?: Maybe<MediaItem>;
-  /** @deprecated  */
   personLogo?: Maybe<MediaItem>;
-  /** @deprecated  */
   personName?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   siteName?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   siteUrl?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   wordpressSiteName?: Maybe<Scalars['String']>;
 };
 
 /** The Yoast SEO Social media links */
 export type SeoSocial = {
   __typename?: 'SEOSocial';
-  /** @deprecated  */
   facebook?: Maybe<SeoSocialFacebook>;
-  /** @deprecated  */
   instagram?: Maybe<SeoSocialInstagram>;
-  /** @deprecated  */
   linkedIn?: Maybe<SeoSocialLinkedIn>;
-  /** @deprecated  */
   mySpace?: Maybe<SeoSocialMySpace>;
-  /** @deprecated  */
   pinterest?: Maybe<SeoSocialPinterest>;
-  /** @deprecated  */
   twitter?: Maybe<SeoSocialTwitter>;
-  /** @deprecated  */
   wikipedia?: Maybe<SeoSocialWikipedia>;
-  /** @deprecated  */
   youTube?: Maybe<SeoSocialYoutube>;
 };
 
 export type SeoSocialFacebook = {
   __typename?: 'SEOSocialFacebook';
-  /** @deprecated  */
   defaultImage?: Maybe<MediaItem>;
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 export type SeoSocialInstagram = {
   __typename?: 'SEOSocialInstagram';
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 export type SeoSocialLinkedIn = {
   __typename?: 'SEOSocialLinkedIn';
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 export type SeoSocialMySpace = {
   __typename?: 'SEOSocialMySpace';
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 export type SeoSocialPinterest = {
   __typename?: 'SEOSocialPinterest';
-  /** @deprecated  */
   metaTag?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 export type SeoSocialTwitter = {
   __typename?: 'SEOSocialTwitter';
-  /** @deprecated  */
   cardType?: Maybe<SeoCardType>;
-  /** @deprecated  */
   username?: Maybe<Scalars['String']>;
 };
 
@@ -8369,26 +5894,20 @@ export enum SeoCardType {
 
 export type SeoSocialWikipedia = {
   __typename?: 'SEOSocialWikipedia';
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 export type SeoSocialYoutube = {
   __typename?: 'SEOSocialYoutube';
-  /** @deprecated  */
   url?: Maybe<Scalars['String']>;
 };
 
 /** The Yoast SEO  webmaster fields */
 export type SeoWebmaster = {
   __typename?: 'SEOWebmaster';
-  /** @deprecated  */
   baiduVerify?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   googleVerify?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   msVerify?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   yandexVerify?: Maybe<Scalars['String']>;
 };
 
@@ -8451,70 +5970,40 @@ export type RootQueryToTagConnectionWhereArgs = {
 /** Connection between the RootQuery type and the tag type */
 export type RootQueryToTagConnection = {
   __typename?: 'RootQueryToTagConnection';
-  /**
-   * Edges for the RootQueryToTagConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToTagConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToTagConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Tag>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToTagConnectionEdge = {
   __typename?: 'RootQueryToTagConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Tag>;
 };
 
 /** Connection between the RootQuery type and the Taxonomy type */
 export type RootQueryToTaxonomyConnection = {
   __typename?: 'RootQueryToTaxonomyConnection';
-  /**
-   * Edges for the RootQueryToTaxonomyConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToTaxonomyConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToTaxonomyConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Taxonomy>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToTaxonomyConnectionEdge = {
   __typename?: 'RootQueryToTaxonomyConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Taxonomy>;
 };
 
@@ -8587,130 +6076,67 @@ export type RootQueryToTermNodeConnectionWhereArgs = {
 /** Connection between the RootQuery type and the TermNode type */
 export type RootQueryToTermNodeConnection = {
   __typename?: 'RootQueryToTermNodeConnection';
-  /**
-   * Edges for the RootQueryToTermNodeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToTermNodeConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToTermNodeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<TermNode>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToTermNodeConnectionEdge = {
   __typename?: 'RootQueryToTermNodeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<TermNode>;
 };
 
 /** A theme object */
 export type Theme = Node & {
   __typename?: 'Theme';
-  /**
-   * Name of the theme author(s), could also be a company name. This field is equivalent to WP_Theme-&gt;get( &quot;Author&quot; ).
-   * @deprecated 
-   */
+  /** Name of the theme author(s), could also be a company name. This field is equivalent to WP_Theme-&gt;get( &quot;Author&quot; ). */
   author?: Maybe<Scalars['String']>;
-  /**
-   * URI for the author/company website. This field is equivalent to WP_Theme-&gt;get( &quot;AuthorURI&quot; ).
-   * @deprecated 
-   */
+  /** URI for the author/company website. This field is equivalent to WP_Theme-&gt;get( &quot;AuthorURI&quot; ). */
   authorUri?: Maybe<Scalars['String']>;
-  /**
-   * The description of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Description&quot; ).
-   * @deprecated 
-   */
+  /** The description of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Description&quot; ). */
   description?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier of the theme object.
-   * @deprecated 
-   */
+  /** The globally unique identifier of the theme object. */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * Display name of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Name&quot; ).
-   * @deprecated 
-   */
+  /** Display name of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Name&quot; ). */
   name?: Maybe<Scalars['String']>;
-  /**
-   * The URL of the screenshot for the theme. The screenshot is intended to give an overview of what the theme looks like. This field is equivalent to WP_Theme-&gt;get_screenshot().
-   * @deprecated 
-   */
+  /** The URL of the screenshot for the theme. The screenshot is intended to give an overview of what the theme looks like. This field is equivalent to WP_Theme-&gt;get_screenshot(). */
   screenshot?: Maybe<Scalars['String']>;
-  /**
-   * The theme slug is used to internally match themes. Theme slugs can have subdirectories like: my-theme/sub-theme. This field is equivalent to WP_Theme-&gt;get_stylesheet().
-   * @deprecated 
-   */
+  /** The theme slug is used to internally match themes. Theme slugs can have subdirectories like: my-theme/sub-theme. This field is equivalent to WP_Theme-&gt;get_stylesheet(). */
   slug?: Maybe<Scalars['String']>;
-  /**
-   * URI for the author/company website. This field is equivalent to WP_Theme-&gt;get( &quot;Tags&quot; ).
-   * @deprecated 
-   */
+  /** URI for the author/company website. This field is equivalent to WP_Theme-&gt;get( &quot;Tags&quot; ). */
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-  /**
-   * A URI if the theme has a website associated with it. The Theme URI is handy for directing users to a theme site for support etc. This field is equivalent to WP_Theme-&gt;get( &quot;ThemeURI&quot; ).
-   * @deprecated 
-   */
+  /** A URI if the theme has a website associated with it. The Theme URI is handy for directing users to a theme site for support etc. This field is equivalent to WP_Theme-&gt;get( &quot;ThemeURI&quot; ). */
   themeUri?: Maybe<Scalars['String']>;
-  /**
-   * The current version of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Version&quot; ).
-   * @deprecated 
-   */
+  /** The current version of the theme. This field is equivalent to WP_Theme-&gt;get( &quot;Version&quot; ). */
   version?: Maybe<Scalars['String']>;
 };
 
 /** Connection between the RootQuery type and the Theme type */
 export type RootQueryToThemeConnection = {
   __typename?: 'RootQueryToThemeConnection';
-  /**
-   * Edges for the RootQueryToThemeConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToThemeConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToThemeConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<Theme>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToThemeConnectionEdge = {
   __typename?: 'RootQueryToThemeConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<Theme>;
 };
 
@@ -8733,35 +6159,20 @@ export enum UserNodeIdTypeEnum {
 /** Connection between the RootQuery type and the UserRole type */
 export type RootQueryToUserRoleConnection = {
   __typename?: 'RootQueryToUserRoleConnection';
-  /**
-   * Edges for the RootQueryToUserRoleConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToUserRoleConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToUserRoleConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<UserRole>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToUserRoleConnectionEdge = {
   __typename?: 'RootQueryToUserRoleConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<UserRole>;
 };
 
@@ -8850,207 +6261,95 @@ export enum UsersConnectionSearchColumnEnum {
 /** Connection between the RootQuery type and the User type */
 export type RootQueryToUserConnection = {
   __typename?: 'RootQueryToUserConnection';
-  /**
-   * Edges for the RootQueryToUserConnection connection
-   * @deprecated 
-   */
+  /** Edges for the RootQueryToUserConnection connection */
   edges?: Maybe<Array<Maybe<RootQueryToUserConnectionEdge>>>;
-  /**
-   * The nodes of the connection, without the edges
-   * @deprecated 
-   */
+  /** The nodes of the connection, without the edges */
   nodes?: Maybe<Array<Maybe<User>>>;
-  /**
-   * Information about pagination in a connection.
-   * @deprecated 
-   */
+  /** Information about pagination in a connection. */
   pageInfo?: Maybe<WpPageInfo>;
 };
 
 /** An edge in a connection */
 export type RootQueryToUserConnectionEdge = {
   __typename?: 'RootQueryToUserConnectionEdge';
-  /**
-   * A cursor for use in pagination
-   * @deprecated 
-   */
+  /** A cursor for use in pagination */
   cursor?: Maybe<Scalars['String']>;
-  /**
-   * The item at the end of the edge
-   * @deprecated 
-   */
+  /** The item at the end of the edge */
   node?: Maybe<User>;
 };
 
 /** The writing setting type */
 export type WritingSettings = {
   __typename?: 'WritingSettings';
-  /**
-   * Catégorie d’article par défaut.
-   * @deprecated 
-   */
+  /** Catégorie d’article par défaut. */
   defaultCategory?: Maybe<Scalars['Int']>;
-  /**
-   * Format d’article par défaut.
-   * @deprecated 
-   */
+  /** Format d’article par défaut. */
   defaultPostFormat?: Maybe<Scalars['String']>;
-  /**
-   * Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage.
-   * @deprecated 
-   */
+  /** Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage. */
   useSmilies?: Maybe<Scalars['Boolean']>;
 };
 
 /** The root mutation */
 export type RootMutation = {
   __typename?: 'RootMutation';
-  /**
-   * The payload for the UpdateCategory mutation
-   * @deprecated 
-   */
+  /** The payload for the UpdateCategory mutation */
   updateCategory?: Maybe<UpdateCategoryPayload>;
-  /**
-   * The payload for the UpdatePostFormat mutation
-   * @deprecated 
-   */
+  /** The payload for the UpdatePostFormat mutation */
   updatePostFormat?: Maybe<UpdatePostFormatPayload>;
-  /**
-   * The payload for the UpdateTag mutation
-   * @deprecated 
-   */
+  /** The payload for the UpdateTag mutation */
   updateTag?: Maybe<UpdateTagPayload>;
-  /**
-   * The payload for the createCategory mutation
-   * @deprecated 
-   */
+  /** The payload for the createCategory mutation */
   createCategory?: Maybe<CreateCategoryPayload>;
-  /**
-   * The payload for the createComment mutation
-   * @deprecated 
-   */
+  /** The payload for the createComment mutation */
   createComment?: Maybe<CreateCommentPayload>;
-  /**
-   * The payload for the createMediaItem mutation
-   * @deprecated 
-   */
+  /** The payload for the createMediaItem mutation */
   createMediaItem?: Maybe<CreateMediaItemPayload>;
-  /**
-   * The payload for the createPage mutation
-   * @deprecated 
-   */
+  /** The payload for the createPage mutation */
   createPage?: Maybe<CreatePagePayload>;
-  /**
-   * The payload for the createPost mutation
-   * @deprecated 
-   */
+  /** The payload for the createPost mutation */
   createPost?: Maybe<CreatePostPayload>;
-  /**
-   * The payload for the createPostFormat mutation
-   * @deprecated 
-   */
+  /** The payload for the createPostFormat mutation */
   createPostFormat?: Maybe<CreatePostFormatPayload>;
-  /**
-   * The payload for the createTag mutation
-   * @deprecated 
-   */
+  /** The payload for the createTag mutation */
   createTag?: Maybe<CreateTagPayload>;
-  /**
-   * The payload for the createUser mutation
-   * @deprecated 
-   */
+  /** The payload for the createUser mutation */
   createUser?: Maybe<CreateUserPayload>;
-  /**
-   * The payload for the deleteCategory mutation
-   * @deprecated 
-   */
+  /** The payload for the deleteCategory mutation */
   deleteCategory?: Maybe<DeleteCategoryPayload>;
-  /**
-   * The payload for the deleteComment mutation
-   * @deprecated 
-   */
+  /** The payload for the deleteComment mutation */
   deleteComment?: Maybe<DeleteCommentPayload>;
-  /**
-   * The payload for the deleteMediaItem mutation
-   * @deprecated 
-   */
+  /** The payload for the deleteMediaItem mutation */
   deleteMediaItem?: Maybe<DeleteMediaItemPayload>;
-  /**
-   * The payload for the deletePage mutation
-   * @deprecated 
-   */
+  /** The payload for the deletePage mutation */
   deletePage?: Maybe<DeletePagePayload>;
-  /**
-   * The payload for the deletePost mutation
-   * @deprecated 
-   */
+  /** The payload for the deletePost mutation */
   deletePost?: Maybe<DeletePostPayload>;
-  /**
-   * The payload for the deletePostFormat mutation
-   * @deprecated 
-   */
+  /** The payload for the deletePostFormat mutation */
   deletePostFormat?: Maybe<DeletePostFormatPayload>;
-  /**
-   * The payload for the deleteTag mutation
-   * @deprecated 
-   */
+  /** The payload for the deleteTag mutation */
   deleteTag?: Maybe<DeleteTagPayload>;
-  /**
-   * The payload for the deleteUser mutation
-   * @deprecated 
-   */
+  /** The payload for the deleteUser mutation */
   deleteUser?: Maybe<DeleteUserPayload>;
-  /** @deprecated  */
   increaseCount?: Maybe<Scalars['Int']>;
-  /**
-   * The payload for the registerUser mutation
-   * @deprecated 
-   */
+  /** The payload for the registerUser mutation */
   registerUser?: Maybe<RegisterUserPayload>;
-  /**
-   * The payload for the resetUserPassword mutation
-   * @deprecated 
-   */
+  /** The payload for the resetUserPassword mutation */
   resetUserPassword?: Maybe<ResetUserPasswordPayload>;
-  /**
-   * The payload for the restoreComment mutation
-   * @deprecated 
-   */
+  /** The payload for the restoreComment mutation */
   restoreComment?: Maybe<RestoreCommentPayload>;
-  /**
-   * The payload for the sendPasswordResetEmail mutation
-   * @deprecated 
-   */
+  /** The payload for the sendPasswordResetEmail mutation */
   sendPasswordResetEmail?: Maybe<SendPasswordResetEmailPayload>;
-  /**
-   * The payload for the updateComment mutation
-   * @deprecated 
-   */
+  /** The payload for the updateComment mutation */
   updateComment?: Maybe<UpdateCommentPayload>;
-  /**
-   * The payload for the updateMediaItem mutation
-   * @deprecated 
-   */
+  /** The payload for the updateMediaItem mutation */
   updateMediaItem?: Maybe<UpdateMediaItemPayload>;
-  /**
-   * The payload for the updatePage mutation
-   * @deprecated 
-   */
+  /** The payload for the updatePage mutation */
   updatePage?: Maybe<UpdatePagePayload>;
-  /**
-   * The payload for the updatePost mutation
-   * @deprecated 
-   */
+  /** The payload for the updatePost mutation */
   updatePost?: Maybe<UpdatePostPayload>;
-  /**
-   * The payload for the updateSettings mutation
-   * @deprecated 
-   */
+  /** The payload for the updateSettings mutation */
   updateSettings?: Maybe<UpdateSettingsPayload>;
-  /**
-   * The payload for the updateUser mutation
-   * @deprecated 
-   */
+  /** The payload for the updateUser mutation */
   updateUser?: Maybe<UpdateUserPayload>;
 };
 
@@ -9254,12 +6553,8 @@ export type UpdateCategoryInput = {
 /** The payload for the UpdateCategory mutation */
 export type UpdateCategoryPayload = {
   __typename?: 'UpdateCategoryPayload';
-  /**
-   * The created category
-   * @deprecated 
-   */
+  /** The created category */
   category?: Maybe<Category>;
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
 };
 
@@ -9281,12 +6576,8 @@ export type UpdatePostFormatInput = {
 /** The payload for the UpdatePostFormat mutation */
 export type UpdatePostFormatPayload = {
   __typename?: 'UpdatePostFormatPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The created post_format
-   * @deprecated 
-   */
+  /** The created post_format */
   postFormat?: Maybe<PostFormat>;
 };
 
@@ -9308,12 +6599,8 @@ export type UpdateTagInput = {
 /** The payload for the UpdateTag mutation */
 export type UpdateTagPayload = {
   __typename?: 'UpdateTagPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The created post_tag
-   * @deprecated 
-   */
+  /** The created post_tag */
   tag?: Maybe<Tag>;
 };
 
@@ -9335,12 +6622,8 @@ export type CreateCategoryInput = {
 /** The payload for the createCategory mutation */
 export type CreateCategoryPayload = {
   __typename?: 'CreateCategoryPayload';
-  /**
-   * The created category
-   * @deprecated 
-   */
+  /** The created category */
   category?: Maybe<Category>;
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
 };
 
@@ -9370,17 +6653,10 @@ export type CreateCommentInput = {
 /** The payload for the createComment mutation */
 export type CreateCommentPayload = {
   __typename?: 'CreateCommentPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The comment that was created
-   * @deprecated 
-   */
+  /** The comment that was created */
   comment?: Maybe<Comment>;
-  /**
-   * Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache
-   * @deprecated 
-   */
+  /** Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache */
   success?: Maybe<Scalars['Boolean']>;
 };
 
@@ -9432,9 +6708,7 @@ export enum MediaItemStatusEnum {
 /** The payload for the createMediaItem mutation */
 export type CreateMediaItemPayload = {
   __typename?: 'CreateMediaItemPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   mediaItem?: Maybe<MediaItem>;
 };
 
@@ -9466,9 +6740,7 @@ export type CreatePageInput = {
 /** The payload for the createPage mutation */
 export type CreatePagePayload = {
   __typename?: 'CreatePagePayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   page?: Maybe<Page>;
 };
 
@@ -9569,9 +6841,7 @@ export type PostTagsNodeInput = {
 /** The payload for the createPost mutation */
 export type CreatePostPayload = {
   __typename?: 'CreatePostPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   post?: Maybe<Post>;
 };
 
@@ -9591,12 +6861,8 @@ export type CreatePostFormatInput = {
 /** The payload for the createPostFormat mutation */
 export type CreatePostFormatPayload = {
   __typename?: 'CreatePostFormatPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The created post_format
-   * @deprecated 
-   */
+  /** The created post_format */
   postFormat?: Maybe<PostFormat>;
 };
 
@@ -9616,12 +6882,8 @@ export type CreateTagInput = {
 /** The payload for the createTag mutation */
 export type CreateTagPayload = {
   __typename?: 'CreateTagPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The created post_tag
-   * @deprecated 
-   */
+  /** The created post_tag */
   tag?: Maybe<Tag>;
 };
 
@@ -9667,9 +6929,7 @@ export type CreateUserInput = {
 /** The payload for the createUser mutation */
 export type CreateUserPayload = {
   __typename?: 'CreateUserPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   user?: Maybe<User>;
 };
 
@@ -9683,17 +6943,10 @@ export type DeleteCategoryInput = {
 /** The payload for the deleteCategory mutation */
 export type DeleteCategoryPayload = {
   __typename?: 'DeleteCategoryPayload';
-  /**
-   * The deteted term object
-   * @deprecated 
-   */
+  /** The deteted term object */
   category?: Maybe<Category>;
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the deleted object
-   * @deprecated 
-   */
+  /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']>;
 };
 
@@ -9709,17 +6962,10 @@ export type DeleteCommentInput = {
 /** The payload for the deleteComment mutation */
 export type DeleteCommentPayload = {
   __typename?: 'DeleteCommentPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The deleted comment object
-   * @deprecated 
-   */
+  /** The deleted comment object */
   comment?: Maybe<Comment>;
-  /**
-   * The deleted comment ID
-   * @deprecated 
-   */
+  /** The deleted comment ID */
   deletedId?: Maybe<Scalars['ID']>;
 };
 
@@ -9735,17 +6981,10 @@ export type DeleteMediaItemInput = {
 /** The payload for the deleteMediaItem mutation */
 export type DeleteMediaItemPayload = {
   __typename?: 'DeleteMediaItemPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the deleted mediaItem
-   * @deprecated 
-   */
+  /** The ID of the deleted mediaItem */
   deletedId?: Maybe<Scalars['ID']>;
-  /**
-   * The mediaItem before it was deleted
-   * @deprecated 
-   */
+  /** The mediaItem before it was deleted */
   mediaItem?: Maybe<MediaItem>;
 };
 
@@ -9761,17 +7000,10 @@ export type DeletePageInput = {
 /** The payload for the deletePage mutation */
 export type DeletePagePayload = {
   __typename?: 'DeletePagePayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the deleted object
-   * @deprecated 
-   */
+  /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']>;
-  /**
-   * The object before it was deleted
-   * @deprecated 
-   */
+  /** The object before it was deleted */
   page?: Maybe<Page>;
 };
 
@@ -9787,17 +7019,10 @@ export type DeletePostInput = {
 /** The payload for the deletePost mutation */
 export type DeletePostPayload = {
   __typename?: 'DeletePostPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the deleted object
-   * @deprecated 
-   */
+  /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']>;
-  /**
-   * The object before it was deleted
-   * @deprecated 
-   */
+  /** The object before it was deleted */
   post?: Maybe<Post>;
 };
 
@@ -9811,17 +7036,10 @@ export type DeletePostFormatInput = {
 /** The payload for the deletePostFormat mutation */
 export type DeletePostFormatPayload = {
   __typename?: 'DeletePostFormatPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the deleted object
-   * @deprecated 
-   */
+  /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']>;
-  /**
-   * The deteted term object
-   * @deprecated 
-   */
+  /** The deteted term object */
   postFormat?: Maybe<PostFormat>;
 };
 
@@ -9835,17 +7053,10 @@ export type DeleteTagInput = {
 /** The payload for the deleteTag mutation */
 export type DeleteTagPayload = {
   __typename?: 'DeleteTagPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the deleted object
-   * @deprecated 
-   */
+  /** The ID of the deleted object */
   deletedId?: Maybe<Scalars['ID']>;
-  /**
-   * The deteted term object
-   * @deprecated 
-   */
+  /** The deteted term object */
   tag?: Maybe<Tag>;
 };
 
@@ -9861,17 +7072,10 @@ export type DeleteUserInput = {
 /** The payload for the deleteUser mutation */
 export type DeleteUserPayload = {
   __typename?: 'DeleteUserPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The ID of the user that you just deleted
-   * @deprecated 
-   */
+  /** The ID of the user that you just deleted */
   deletedId?: Maybe<Scalars['ID']>;
-  /**
-   * The deleted user object
-   * @deprecated 
-   */
+  /** The deleted user object */
   user?: Maybe<User>;
 };
 
@@ -9915,9 +7119,7 @@ export type RegisterUserInput = {
 /** The payload for the registerUser mutation */
 export type RegisterUserPayload = {
   __typename?: 'RegisterUserPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   user?: Maybe<User>;
 };
 
@@ -9935,9 +7137,7 @@ export type ResetUserPasswordInput = {
 /** The payload for the resetUserPassword mutation */
 export type ResetUserPasswordPayload = {
   __typename?: 'ResetUserPasswordPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   user?: Maybe<User>;
 };
 
@@ -9951,17 +7151,10 @@ export type RestoreCommentInput = {
 /** The payload for the restoreComment mutation */
 export type RestoreCommentPayload = {
   __typename?: 'RestoreCommentPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The restored comment object
-   * @deprecated 
-   */
+  /** The restored comment object */
   comment?: Maybe<Comment>;
-  /**
-   * The ID of the restored comment
-   * @deprecated 
-   */
+  /** The ID of the restored comment */
   restoredId?: Maybe<Scalars['ID']>;
 };
 
@@ -9975,12 +7168,8 @@ export type SendPasswordResetEmailInput = {
 /** The payload for the sendPasswordResetEmail mutation */
 export type SendPasswordResetEmailPayload = {
   __typename?: 'SendPasswordResetEmailPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The user that the password reset email was sent to
-   * @deprecated 
-   */
+  /** The user that the password reset email was sent to */
   user?: Maybe<User>;
 };
 
@@ -10012,17 +7201,10 @@ export type UpdateCommentInput = {
 /** The payload for the updateComment mutation */
 export type UpdateCommentPayload = {
   __typename?: 'UpdateCommentPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /**
-   * The comment that was created
-   * @deprecated 
-   */
+  /** The comment that was created */
   comment?: Maybe<Comment>;
-  /**
-   * Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache
-   * @deprecated 
-   */
+  /** Whether the mutation succeeded. If the comment is not approved, the server will not return the comment to a non authenticated user, but a success message can be returned if the create succeeded, and the client can optimistically add the comment to the client cache */
   success?: Maybe<Scalars['Boolean']>;
 };
 
@@ -10064,9 +7246,7 @@ export type UpdateMediaItemInput = {
 /** The payload for the updateMediaItem mutation */
 export type UpdateMediaItemPayload = {
   __typename?: 'UpdateMediaItemPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   mediaItem?: Maybe<MediaItem>;
 };
 
@@ -10100,9 +7280,7 @@ export type UpdatePageInput = {
 /** The payload for the updatePage mutation */
 export type UpdatePagePayload = {
   __typename?: 'UpdatePagePayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   page?: Maybe<Page>;
 };
 
@@ -10148,9 +7326,7 @@ export type UpdatePostInput = {
 /** The payload for the updatePost mutation */
 export type UpdatePostPayload = {
   __typename?: 'UpdatePostPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   post?: Maybe<Post>;
 };
 
@@ -10192,17 +7368,11 @@ export type UpdateSettingsInput = {
 /** The payload for the updateSettings mutation */
 export type UpdateSettingsPayload = {
   __typename?: 'UpdateSettingsPayload';
-  /** @deprecated  */
   allSettings?: Maybe<Settings>;
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   discussionSettings?: Maybe<DiscussionSettings>;
-  /** @deprecated  */
   generalSettings?: Maybe<GeneralSettings>;
-  /** @deprecated  */
   readingSettings?: Maybe<ReadingSettings>;
-  /** @deprecated  */
   writingSettings?: Maybe<WritingSettings>;
 };
 
@@ -10248,44 +7418,24 @@ export type UpdateUserInput = {
 /** The payload for the updateUser mutation */
 export type UpdateUserPayload = {
   __typename?: 'UpdateUserPayload';
-  /** @deprecated  */
   clientMutationId?: Maybe<Scalars['String']>;
-  /** @deprecated  */
   user?: Maybe<User>;
 };
 
 /** A Comment Author object */
 export type CommentAuthor = Node & Commenter & {
   __typename?: 'CommentAuthor';
-  /**
-   * Identifies the primary key from the database.
-   * @deprecated 
-   */
+  /** Identifies the primary key from the database. */
   databaseId: Scalars['Int'];
-  /**
-   * The email for the comment author
-   * @deprecated 
-   */
+  /** The email for the comment author */
   email?: Maybe<Scalars['String']>;
-  /**
-   * The globally unique identifier for the comment author object
-   * @deprecated 
-   */
+  /** The globally unique identifier for the comment author object */
   id: Scalars['ID'];
-  /**
-   * Whether the object is restricted from the current viewer
-   * @deprecated 
-   */
+  /** Whether the object is restricted from the current viewer */
   isRestricted?: Maybe<Scalars['Boolean']>;
-  /**
-   * The name for the comment author.
-   * @deprecated 
-   */
+  /** The name for the comment author. */
   name?: Maybe<Scalars['String']>;
-  /**
-   * The url the comment author.
-   * @deprecated 
-   */
+  /** The url the comment author. */
   url?: Maybe<Scalars['String']>;
 };
 
@@ -11216,168 +8366,3 @@ export type MenuItemsWhereArgs = {
 export type PostObjectUnion = Post | Page | MediaItem;
 
 export type TermObjectUnion = Category | Tag | PostFormat;
-
-export type PostBySlugQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-export type PostBySlugQuery = (
-  { __typename?: 'RootQuery' }
-  & { postBy?: Maybe<(
-    { __typename?: 'Post' }
-    & Pick<Post, 'id' | 'content' | 'title' | 'date'>
-    & { featuredImage?: Maybe<(
-      { __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge' }
-      & { node?: Maybe<(
-        { __typename?: 'MediaItem' }
-        & Pick<MediaItem, 'sourceUrl' | 'srcSet'>
-      )> }
-    )>, contentType?: Maybe<(
-      { __typename?: 'ContentNodeToContentTypeConnectionEdge' }
-      & { node?: Maybe<(
-        { __typename?: 'ContentType' }
-        & Pick<ContentType, 'name'>
-      )> }
-    )>, seo?: Maybe<(
-      { __typename?: 'PostTypeSEO' }
-      & Pick<PostTypeSeo, 'title'>
-    )> }
-  )> }
-);
-
-export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PostsQuery = (
-  { __typename?: 'RootQuery' }
-  & { posts?: Maybe<(
-    { __typename?: 'RootQueryToPostConnection' }
-    & { nodes?: Maybe<Array<Maybe<(
-      { __typename?: 'Post' }
-      & Pick<Post, 'id' | 'uri' | 'title' | 'slug' | 'excerpt'>
-      & { featuredImage?: Maybe<(
-        { __typename?: 'NodeWithFeaturedImageToMediaItemConnectionEdge' }
-        & { node?: Maybe<(
-          { __typename?: 'MediaItem' }
-          & Pick<MediaItem, 'altText' | 'sourceUrl' | 'srcSet' | 'sizes'>
-        )> }
-      )>, seo?: Maybe<(
-        { __typename?: 'PostTypeSEO' }
-        & Pick<PostTypeSeo, 'metaDesc'>
-      )>, categories?: Maybe<(
-        { __typename?: 'PostToCategoryConnection' }
-        & { nodes?: Maybe<Array<Maybe<(
-          { __typename?: 'Category' }
-          & Pick<Category, 'name'>
-        )>>> }
-      )> }
-    )>>> }
-  )> }
-);
-
-
-export const PostBySlugDocument = gql`
-    query PostBySlug($slug: String!) {
-  postBy(slug: $slug) {
-    id
-    content
-    title
-    date
-    featuredImage {
-      node {
-        sourceUrl
-        srcSet
-      }
-    }
-    contentType {
-      node {
-        name
-      }
-    }
-    seo {
-      title
-    }
-  }
-}
-    `;
-
-/**
- * __usePostBySlugQuery__
- *
- * To run a query within a React component, call `usePostBySlugQuery` and pass it any options that fit your needs.
- * When your component renders, `usePostBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = usePostBySlugQuery({
- *   variables: {
- *      slug: // value for 'slug'
- *   },
- * });
- */
-export function usePostBySlugQuery(baseOptions: Apollo.QueryHookOptions<PostBySlugQuery, PostBySlugQueryVariables>) {
-        return Apollo.useQuery<PostBySlugQuery, PostBySlugQueryVariables>(PostBySlugDocument, baseOptions);
-      }
-export function usePostBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PostBySlugQuery, PostBySlugQueryVariables>) {
-          return Apollo.useLazyQuery<PostBySlugQuery, PostBySlugQueryVariables>(PostBySlugDocument, baseOptions);
-        }
-export type PostBySlugQueryHookResult = ReturnType<typeof usePostBySlugQuery>;
-export type PostBySlugLazyQueryHookResult = ReturnType<typeof usePostBySlugLazyQuery>;
-export type PostBySlugQueryResult = Apollo.QueryResult<PostBySlugQuery, PostBySlugQueryVariables>;
-export const PostsDocument = gql`
-    query Posts {
-  posts {
-    nodes {
-      id
-      uri
-      title
-      slug
-      excerpt
-      featuredImage {
-        node {
-          altText
-          sourceUrl(size: THUMBNAIL)
-          srcSet(size: THUMBNAIL)
-          sizes(size: THUMBNAIL)
-        }
-      }
-      seo {
-        metaDesc
-      }
-      categories {
-        nodes {
-          name
-        }
-      }
-    }
-  }
-}
-    `;
-
-/**
- * __usePostsQuery__
- *
- * To run a query within a React component, call `usePostsQuery` and pass it any options that fit your needs.
- * When your component renders, `usePostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = usePostsQuery({
- *   variables: {
- *   },
- * });
- */
-export function usePostsQuery(baseOptions?: Apollo.QueryHookOptions<PostsQuery, PostsQueryVariables>) {
-        return Apollo.useQuery<PostsQuery, PostsQueryVariables>(PostsDocument, baseOptions);
-      }
-export function usePostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PostsQuery, PostsQueryVariables>) {
-          return Apollo.useLazyQuery<PostsQuery, PostsQueryVariables>(PostsDocument, baseOptions);
-        }
-export type PostsQueryHookResult = ReturnType<typeof usePostsQuery>;
-export type PostsLazyQueryHookResult = ReturnType<typeof usePostsLazyQuery>;
-export type PostsQueryResult = Apollo.QueryResult<PostsQuery, PostsQueryVariables>;

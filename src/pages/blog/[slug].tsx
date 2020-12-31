@@ -1,10 +1,10 @@
 import Head from "next/head";
 import React from "react";
-import Html2React from "../components/Html2React";
-import Layout from "../components/layout/Layout";
-import PostComponent from "../components/PostComponent";
+import Html2React from "../../components/Html2React";
+import Layout from "../../components/layout/Layout";
+import PostComponent from "../../components/PostComponent";
 import { Box } from "@chakra-ui/react";
-import { getAllPosts, getPostBySlug } from "../lib/api";
+import { getAllPosts, getPostBySlug } from "../../lib/api";
 interface IProps {
   post: any;
 }
@@ -38,7 +38,7 @@ export async function getStaticProps({ params }: any) {
 export async function getStaticPaths() {
   const posts = await getAllPosts();
   return {
-    paths: posts.edges.map(({ node }: any) => `/${node.slug}`) || [],
+    paths: posts.edges.map(({ node }: any) => `/blog/${node.slug}`) || [],
     fallback: true,
   };
 }
