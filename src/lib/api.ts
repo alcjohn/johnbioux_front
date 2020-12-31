@@ -1,14 +1,17 @@
 const fetchApi = async (query: any, { variables }: any = {}) => {
   const headers = { "Content-Type": "application/json" };
 
-  const res = await fetch("https://admin.johnbioux.fr/graphql", {
-    method: "POST",
-    headers,
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
+  const res = await fetch(
+    "https://vv9clahqom.preview.infomaniak.website//graphql",
+    {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+    }
+  );
 
   const json = await res.json();
   if (json.errors) {
