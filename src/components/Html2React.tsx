@@ -1,14 +1,11 @@
-import { Divider } from "@chakra-ui/react";
 import parse, { HTMLReactParserOptions } from "html-react-parser";
-import { Language } from "prism-react-renderer";
 import React from "react";
-import CodeBlock from "./codeblock/codeblock";
 import A from "./processors/A";
+import Figure from "./processors/Figure";
 import H2 from "./processors/H2";
 import H3 from "./processors/H3";
 import P from "./processors/P";
 import Pre from "./processors/Pre";
-
 const components: Record<
   string,
   React.FC<{ data: any; options: HTMLReactParserOptions }>
@@ -18,6 +15,7 @@ const components: Record<
   p: P,
   a: A,
   pre: Pre,
+  figure: Figure,
 };
 
 const options: HTMLReactParserOptions = {
@@ -28,9 +26,6 @@ const options: HTMLReactParserOptions = {
     const CustomComponent = components[data.name];
     if (CustomComponent) {
       return <CustomComponent data={data} options={options} />;
-    }
-    if (data.name === "hr") {
-      return <Divider />;
     }
   },
 };

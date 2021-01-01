@@ -1,4 +1,3 @@
-import { domToReact, HTMLReactParserOptions } from "html-react-parser";
 import { Language } from "prism-react-renderer";
 import React from "react";
 import CodeBlock from "../codeblock/codeblock";
@@ -17,9 +16,7 @@ const Pre: React.FC<PreProps> = ({ data }) => {
         language={langage as Language}
         viewlines={true}
         codeString={data.children[0].children[0].data}
-      >
-        {}
-      </CodeBlock>
+      />
     );
   }
   return null;
