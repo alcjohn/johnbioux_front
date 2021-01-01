@@ -1,6 +1,5 @@
 import React from "react";
 import BaseHighlight, { defaultProps, Language } from "prism-react-renderer";
-import { liveEditorStyle } from "./codeblock";
 import { chakra } from "@chakra-ui/react";
 import theme from "prism-react-renderer/themes/nightOwl";
 
@@ -46,7 +45,7 @@ const Highlight: React.FC<HighlightProps> = ({
       {...props}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div style={liveEditorStyle} data-language={language}>
+        <div data-language={language}>
           <pre className={className} style={style}>
             {tokens.map((line, i) => {
               const lineProps = getLineProps({ line, key: i });

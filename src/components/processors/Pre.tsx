@@ -1,12 +1,27 @@
 import { domToReact, HTMLReactParserOptions } from "html-react-parser";
+import { Language } from "prism-react-renderer";
 import React from "react";
+import CodeBlock from "../codeblock/codeblock";
 
 interface PreProps {
   data: any;
-  options: HTMLReactParserOptions;
 }
 
-const Pre: React.FC<PreProps> = ({ data, options }) => {
-  return <div>{domToReact(data.children, options)}</div>;
+const Pre: React.FC<PreProps> = ({ data }) => {
+  if (data.attribs.class.includes("wp-block-code")) {
+    const rx = /language-(.*?)$/gm;
+    const exc = rx.exec(data.attribs.class);
+    const langage = exc?.length ? exc[1] : "";
+    return (
+      <CodeBlock
+        language={langage as Language}
+        viewlines={true}
+        codeString={data.children[0].children[0].data}
+      >
+        {}
+      </CodeBlock>
+    );
+  }
+  return null;
 };
 export default Pre;

@@ -1,11 +1,13 @@
 import { Divider } from "@chakra-ui/react";
 import parse, { HTMLReactParserOptions } from "html-react-parser";
+import { Language } from "prism-react-renderer";
 import React from "react";
 import CodeBlock from "./codeblock/codeblock";
 import A from "./processors/A";
 import H2 from "./processors/H2";
 import H3 from "./processors/H3";
 import P from "./processors/P";
+import Pre from "./processors/Pre";
 
 const components: Record<
   string,
@@ -15,6 +17,7 @@ const components: Record<
   h3: H3,
   p: P,
   a: A,
+  pre: Pre,
 };
 
 const options: HTMLReactParserOptions = {
@@ -28,17 +31,6 @@ const options: HTMLReactParserOptions = {
     }
     if (data.name === "hr") {
       return <Divider />;
-    }
-    if (data.name === "pre" && data.attribs.class.includes("wp-block-code")) {
-      const rx = /language-(.*?)$/gm;
-      const exc = rx.exec(data.attribs.class);
-      const langage = exc?.length ? exc[1] : "";
-      return (
-        <CodeBlock language={langage} viewlines={true}>
-          {data.children[0].children[0].data}
-        </CodeBlock>
-      );
-      // return <Code>{data.children[0].children[0].data}</Code>;
     }
   },
 };

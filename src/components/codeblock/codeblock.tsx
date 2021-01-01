@@ -5,25 +5,11 @@ import {
   ButtonProps,
   useClipboard,
 } from "@chakra-ui/react";
+import { Language } from "prism-react-renderer";
 import React from "react";
 import Highlight from "./highlight";
 
-export const liveEditorStyle: React.CSSProperties = {
-  fontSize: 14,
-  overflowX: "auto",
-  fontFamily: "SF Mono, Menlo, monospace",
-};
-
-export const liveErrorStyle: React.CSSProperties = {
-  fontFamily: "SF Mono, Menlo, monospace",
-  fontSize: 14,
-  padding: "1em",
-  overflowX: "auto",
-  color: "white",
-  backgroundColor: "red",
-};
-
-const CopyButton = (props: ButtonProps) => (
+const CopyButton: React.FC<ButtonProps> = (props) => (
   <Button
     size="sm"
     position="absolute"
@@ -37,20 +23,29 @@ const CopyButton = (props: ButtonProps) => (
   />
 );
 
-const CodeContainer = (props: BoxProps) => (
+const CodeContainer: React.FC<BoxProps> = (props) => (
   <Box padding="5" rounded="8px" my="8" bg="#011627" {...props} />
 );
+interface CodeBlockProps {
+  language: Language;
+  viewlines?: boolean;
+  ln?: string;
+  codeString: string;
+}
 
-function CodeBlock(props: any) {
-  const { children, viewlines, language, ln } = props;
-
-  const { hasCopied, onCopy } = useClipboard(children.trim());
+const CodeBlock: React.FC<CodeBlockProps> = ({
+  viewlines,
+  language,
+  ln,
+  codeString,
+}) => {
+  const { hasCopied, onCopy } = useClipboard(codeString);
 
   return (
     <Box position="relative" zIndex="0">
       <CodeContainer px="0" overflow="hidden">
         <Highlight
-          codeString={children.trim()}
+          codeString={codeString}
           language={language}
           metastring={ln}
           showLines={viewlines}
@@ -61,10 +56,6 @@ function CodeBlock(props: any) {
       </CopyButton>
     </Box>
   );
-}
-
-CodeBlock.defaultProps = {
-  mountStylesheet: false,
 };
 
 export default CodeBlock;
