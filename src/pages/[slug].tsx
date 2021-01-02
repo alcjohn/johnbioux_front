@@ -32,7 +32,6 @@ export async function getStaticProps({ params }: any) {
     props: {
       post,
     },
-    revalidate: 1,
   };
 }
 
@@ -40,7 +39,7 @@ export async function getStaticPaths() {
   const posts = await getAllPosts();
   return {
     paths: posts.edges.map(({ node }: any) => `/${node.slug}`) || [],
-    fallback: true,
+    fallback: false,
   };
 }
 export default Post;
