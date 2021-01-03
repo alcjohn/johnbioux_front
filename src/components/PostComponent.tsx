@@ -9,7 +9,6 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
-import { useRouter } from "next/dist/client/router";
 import React from "react";
 import {
   FacebookIcon,
