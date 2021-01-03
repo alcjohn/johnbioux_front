@@ -15,9 +15,13 @@ const Post: React.FC<IProps> = ({ content }) => {
   return (
     <Layout>
       <Head>
-        <title>{content.seo.title}</title>
-        <meta name="description" content={content.seo.metaDesc} />
-        <script type="application/ld+json">{content.seo.schema.raw}</script>
+        {content?.seo && (
+          <>
+            <title>{content.seo.title}</title>
+            <meta name="description" content={content.seo.metaDesc} />
+            <script type="application/ld+json">{content.seo.schema.raw}</script>
+          </>
+        )}
       </Head>
       {typePost === "post" && <PostComponent post={content} />}
       {typePost === "page" && (
