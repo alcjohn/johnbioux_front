@@ -44,8 +44,8 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
           srcSet={image.srcSet!}
           alt={image?.altText || undefined}
           sizes={image.sizes || undefined}
-          width="768px"
-          height="424px"
+          htmlWidth="768px"
+          htmlHeight="424px"
         />
       )}
       <Html2React html={post.content || ""} />
