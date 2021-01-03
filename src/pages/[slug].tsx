@@ -19,7 +19,10 @@ const Post: React.FC<IProps> = ({ content }) => {
           <>
             <title>{content.seo.title}</title>
             <meta name="description" content={content.seo.metaDesc} />
-            <script type="application/ld+json">{content.seo.schema.raw}</script>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: content.seo.schema.raw }}
+            />
           </>
         )}
       </Head>
