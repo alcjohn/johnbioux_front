@@ -1,14 +1,19 @@
-import { ChakraProvider } from "@chakra-ui/react";
-
 import theme from "../theme";
 import { AppProps } from "next/app";
+import Chakra from "../components/Chakra";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, cookies }: AppProps & any) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <Chakra resetCSS cookies={cookies} theme={theme}>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </Chakra>
   );
 }
-
+export function getServerSideProps({ req }: any) {
+  return {
+    props: {
+      cookies: req.headers.cookie ?? "",
+    },
+  };
+}
 export default MyApp;
