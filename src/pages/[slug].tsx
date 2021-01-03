@@ -4,41 +4,43 @@ import Html2React from "../components/Html2React";
 import Layout from "../components/layout/Layout";
 import PostComponent from "../components/PostComponent";
 import { Box } from "@chakra-ui/react";
-import { getAllPosts, getPostBySlug } from "../lib/api";
+import { getAllSlugs, getContentBySlug } from "../lib/api";
 interface IProps {
-  post: any;
+  content: any;
 }
 
-const Post: React.FC<IProps> = ({ post }) => {
-  const typePost = post?.contentType?.node?.name;
-
+const Post: React.FC<IProps> = ({ content }) => {
+  const typePost = content?.contentType?.node?.name;
+  console.log(content.seo);
   return (
     <Layout>
       <Head>
-        <title>{post?.seo?.title}</title>
+        <title>{content.seo.title}</title>
+        <meta name="description" content={content.seo.metaDesc} />
+        <script type="application/ld+json">{content.seo.schema.raw}</script>
       </Head>
-      {typePost === "post" && <PostComponent post={post} />}
+      {typePost === "post" && <PostComponent post={content} />}
       {typePost === "page" && (
         <Box maxW="64rem" mx="auto" p={4}>
-          <Html2React html={post?.content || ""} />
+          <Html2React html={content?.content || ""} />
         </Box>
       )}
     </Layout>
   );
 };
 export async function getStaticProps({ params }: any) {
-  const post = await getPostBySlug(params.slug as string);
+  const content = await getContentBySlug(params.slug as string);
   return {
     props: {
-      post,
+      content,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts();
+  const slugs = await getAllSlugs();
   return {
-    paths: posts.edges.map(({ node }: any) => `/${node.slug}`) || [],
+    paths: slugs.edges.map(({ node }: any) => `/${node.slug}`) || [],
     fallback: false,
   };
 }

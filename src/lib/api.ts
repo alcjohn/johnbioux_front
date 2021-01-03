@@ -18,8 +18,63 @@ const fetchApi = async (query: any, { variables }: any = {}) => {
   return json.data;
 };
 
+export const getAllSlugs = async () => {
+  const data = await fetchApi(`query Slugs {
+	  contentNodes {
+		  edges {
+			  node {
+				  slug
+			  }
+		  }
+	  }
+  }`);
+  return data?.contentNodes;
+};
+
+export const getContentBySlug = async (slug: string) => {
+  const data = await fetchApi(
+    `query Contents($slug: ID!) {
+		contentNode(id: $slug, idType: URI){
+			... on Post {
+				id
+				content
+				title
+				date
+				featuredImage {
+				  node {
+					sourceUrl
+					srcSet
+				  }
+				}
+				contentType {
+				  node {
+					name
+				  }
+				}
+				seo {
+				  title
+				  metaDesc
+				  schema {
+					  raw
+				  }
+				}
+			}
+
+		}
+	}`,
+    {
+      variables: {
+        slug,
+      },
+    }
+  );
+
+  return data?.contentNode;
+};
+
 export const getAllPosts = async () => {
-  const data = await fetchApi(`query Posts {
+  const data = await fetchApi(
+    `query Posts {
 	posts(where: { orderby: { field: DATE, order: ASC } }) {
 	  edges {
 		node {
@@ -44,7 +99,8 @@ export const getAllPosts = async () => {
 		}
 	  }
 	}
-  }`);
+  }`
+  );
   return data?.posts;
 };
 

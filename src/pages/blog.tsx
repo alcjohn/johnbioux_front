@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../../components/layout/Layout";
+import Layout from "../components/layout/Layout";
 import { Box } from "@chakra-ui/react";
-import ListPosts from "../../components/ListPosts";
-import { getAllPosts } from "../../lib/api";
+import ListPosts from "../components/ListPosts";
+import { getAllPosts } from "../lib/api";
 
 const Posts: React.FC = ({ posts }: any) => {
   return (

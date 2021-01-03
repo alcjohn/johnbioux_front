@@ -25,7 +25,6 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
   return (
     <SimpleGrid spacing={10} columns={[1, 2, 3]}>
       {posts?.edges?.map((item: any) => {
-        console.log(item?.node);
         if (!item?.node) {
           return;
         }
@@ -60,7 +59,7 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             </Link>
             <Box px={4} py={2}>
               <Box as="h2" fontSize="xl" fontWeight="bold">
-                <NextChakraLink href={`/blog/${slug}`}>{title}</NextChakraLink>
+                <NextChakraLink href={`/${slug}`}>{title}</NextChakraLink>
               </Box>
             </Box>
             <Box flex={1} px={4} py={2}>
