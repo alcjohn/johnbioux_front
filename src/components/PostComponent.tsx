@@ -3,7 +3,6 @@ import {
   Divider,
   Flex,
   Heading,
-  Img,
   Text,
   Wrap,
   WrapItem,
@@ -38,7 +37,7 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || "").format("DD MMMM YYYY")}
       </Box>
       {image && (
-        <Img
+        <img
           loading="lazy"
           src={image.sourceUrl!}
           srcSet={image.srcSet!}
