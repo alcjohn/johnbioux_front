@@ -68,13 +68,11 @@ export const getContentBySlug = async (slug: string) => {
 				date
 				featuredImage {
 				  node {
-					sourceUrl
-					srcSet
 					altText
 					id
-					sourceUrl
-					srcSet
-					sizes
+					sourceUrl(size: MEDIUM_LARGE)
+					srcSet(size: MEDIUM_LARGE)
+					sizes(size: MEDIUM_LARGE)
 				  }
 				}
 				contentType {

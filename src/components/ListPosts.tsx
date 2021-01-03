@@ -61,6 +61,8 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
                     srcSet={featuredImage?.node?.srcSet || undefined}
                     alt={featuredImage?.node?.altText || undefined}
                     sizes={featuredImage?.node?.sizes || undefined}
+                    width="728px"
+                    height="422px"
                   />
                 </AspectRatio>
               </a>
