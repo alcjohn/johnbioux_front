@@ -24,22 +24,24 @@ const Header: React.FC<HeaderProps> = ({}) => {
       >
         John Bioux
       </NextChakraLink>
-      <DarkModeSwitch />
-      <Flex as="nav">
-        <List justifyContent="center">
-          <ListItem>
-            <NextChakraLink
-              href="/blog"
-              textTransform="uppercase"
-              fontSize={{
-                base: "md",
-                md: "xl",
-              }}
-            >
-              Blog
-            </NextChakraLink>
-          </ListItem>
-        </List>
+      <Flex alignItems="center">
+        <Flex as="nav" mr={4}>
+          <List justifyContent="center">
+            <ListItem>
+              <NextChakraLink
+                href="/blog"
+                textTransform="uppercase"
+                fontSize={{
+                  base: "md",
+                  md: "xl",
+                }}
+              >
+                Blog
+              </NextChakraLink>
+            </ListItem>
+          </List>
+        </Flex>
+        <DarkModeSwitch />
       </Flex>
     </Flex>
   );

@@ -44,6 +44,8 @@ export const getContentBySlug = async (slug: string) => {
 				  node {
 					sourceUrl
 					srcSet
+					altText
+					id
 				  }
 				}
 				contentType {
@@ -68,6 +70,11 @@ export const getContentBySlug = async (slug: string) => {
 				  node {
 					sourceUrl
 					srcSet
+					altText
+					id
+					sourceUrl
+					srcSet
+					sizes
 				  }
 				}
 				contentType {
@@ -108,8 +115,9 @@ export const getAllPosts = async () => {
 		  excerpt
 		  categories {
 			nodes {
-			  name
-			  slug
+				id
+				name
+				slug
 			}
 		  }
 		  featuredImage {
@@ -140,6 +148,7 @@ export const getPostBySlug = async (slug: string) => {
 			node {
 			  sourceUrl
 			  srcSet
+			  sizes
 			}
 		  }
 		  contentType {

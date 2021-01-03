@@ -38,7 +38,13 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || "").format("DD MMMM YYYY")}
       </Box>
       {image && (
-        <Img loading="lazy" src={image.sourceUrl!} srcSet={image.srcSet!} />
+        <Img
+          loading="lazy"
+          src={image.sourceUrl!}
+          srcSet={image.srcSet!}
+          alt={image?.altText || undefined}
+          sizes={image.sizes || undefined}
+        />
       )}
       <Html2React html={post.content || ""} />
       <Divider />

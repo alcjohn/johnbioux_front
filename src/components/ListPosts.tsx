@@ -1,4 +1,11 @@
-import { AspectRatio, Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Flex,
+  Img,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { NextChakraLink } from "./ChakraLink";
@@ -49,10 +56,11 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             <Link href={`/${slug}`}>
               <a>
                 <AspectRatio ratio={16 / 9}>
-                  <img
+                  <Img
                     src={featuredImage?.node?.sourceUrl || undefined}
                     srcSet={featuredImage?.node?.srcSet || undefined}
-                    alt=""
+                    alt={featuredImage?.node?.altText || undefined}
+                    sizes={featuredImage?.node?.sizes || undefined}
                   />
                 </AspectRatio>
               </a>
@@ -74,7 +82,7 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
                 if (!item?.name) {
                   return;
                 }
-                return <TagItem name={item.name} />;
+                return <TagItem key={item.id} name={item.name} />;
               })}
             </Box>
           </Flex>
