@@ -46,7 +46,7 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             shadow="lg"
             flexDir="column"
           >
-            <Link href={`/blog/${slug}`}>
+            <Link href={`/${slug}`}>
               <a>
                 <AspectRatio ratio={16 / 9}>
                   <img

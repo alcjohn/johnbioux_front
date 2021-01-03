@@ -11,7 +11,6 @@ interface IProps {
 
 const Post: React.FC<IProps> = ({ content }) => {
   const typePost = content?.contentType?.node?.name;
-  console.log(content.seo);
   return (
     <Layout>
       <Head>

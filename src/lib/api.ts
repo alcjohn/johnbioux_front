@@ -59,6 +59,30 @@ export const getContentBySlug = async (slug: string) => {
 				  }
 				}
 			}
+			... on Page {
+				id
+				content
+				title
+				date
+				featuredImage {
+				  node {
+					sourceUrl
+					srcSet
+				  }
+				}
+				contentType {
+				  node {
+					name
+				  }
+				}
+				seo {
+				  title
+				  metaDesc
+				  schema {
+					  raw
+				  }
+				}
+			}
 
 		}
 	}`,
