@@ -5,6 +5,7 @@ import Layout from "../components/layout/Layout";
 import PostComponent from "../components/PostComponent";
 import { Box } from "@chakra-ui/react";
 import { getAllSlugs, getContentBySlug } from "../lib/api";
+import { NextSeo } from "next-seo";
 interface IProps {
   content: any;
 }
@@ -13,16 +14,23 @@ const Post: React.FC<IProps> = ({ content }) => {
   const typePost = content?.contentType?.node?.name;
   return (
     <Layout>
+      <NextSeo
+        title={content?.seo?.title}
+        description={content?.seo?.metaDesc}
+        openGraph={{
+          url: content?.seo?.opengraphUrl,
+          description: content?.seo?.opengraphDescription,
+          images: [{ url: content?.seo?.opengraphImage?.sourceUrl }],
+          type: content?.seo?.opengraphType,
+          site_name: content?.seo?.opengraphSiteName,
+        }}
+      />
       <Head>
-        {content?.seo && (
-          <>
-            <title>{content.seo.title}</title>
-            <meta name="description" content={content.seo.metaDesc} />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: content.seo.schema.raw }}
-            />
-          </>
+        {content?.seo?.schema?.raw && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: content.seo.schema.raw }}
+          />
         )}
       </Head>
       {typePost === "post" && <PostComponent post={content} />}

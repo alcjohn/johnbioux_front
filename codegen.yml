@@ -1,7 +1,0 @@
-overwrite: true
-schema: "https://admin.johnbioux.fr/graphql"
-documents: "src/**/*.graphql"
-generates:
-  src/generated/graphql.tsx:
-    plugins:
-      - "typescript"

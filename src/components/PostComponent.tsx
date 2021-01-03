@@ -9,6 +9,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
+import { useRouter } from "next/dist/client/router";
 import React from "react";
 import {
   FacebookIcon,
@@ -28,6 +29,8 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   if (!post) {
     return null;
   }
+  const router = useRouter();
+  console.log(router);
   const image = post.featuredImage?.node;
   return (
     <Box mx="auto" maxW="760px" px={4}>
