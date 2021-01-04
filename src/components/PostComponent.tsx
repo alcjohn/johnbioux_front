@@ -18,6 +18,7 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
+import { FRONT_URL } from "../url";
 import Html2React from "./Html2React";
 
 interface PostComponentProps {
@@ -54,17 +55,17 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         <Text>Partager sur : </Text>
         <Wrap spacing={2} p={2}>
           <WrapItem>
-            <FacebookShareButton url="https://johnbioux.fr">
+            <FacebookShareButton url={`${FRONT_URL}/${post.slug}`}>
               <FacebookIcon size={32} round />
             </FacebookShareButton>
           </WrapItem>
           <WrapItem>
-            <TwitterShareButton url="https://johnbioux.fr">
+            <TwitterShareButton url={`${FRONT_URL}/${post.slug}`}>
               <TwitterIcon size={32} round />
             </TwitterShareButton>
           </WrapItem>
           <WrapItem>
-            <LinkedinShareButton url="https://johnbioux.fr">
+            <LinkedinShareButton url={`${FRONT_URL}/${post.slug}`}>
               <LinkedinIcon size={32} round />
             </LinkedinShareButton>
           </WrapItem>

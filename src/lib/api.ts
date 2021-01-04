@@ -40,6 +40,7 @@ export const getContentBySlug = async (slug: string) => {
 				content
 				title
 				date
+				slug
 				featuredImage {
 				  node {
 					sourceUrl(size: MEDIUM_LARGE)
@@ -74,6 +75,7 @@ export const getContentBySlug = async (slug: string) => {
 				content
 				title
 				date
+				slug
 				featuredImage {
 				  node {
 					altText
