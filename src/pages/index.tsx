@@ -1,17 +1,9 @@
 import { Box, Flex } from "@chakra-ui/react";
-import Head from "next/head";
 import React from "react";
 import Layout from "../components/layout/Layout";
 
 const Index: React.FC = () => (
   <Layout>
-    <Head>
-      <title>John Bioux - Développeur Fullstack</title>
-      <meta
-        name="description"
-        content="Développeur Fullstack Javascript, React, React Native, Nodejs"
-      />
-    </Head>
     <Flex
       h="full"
       justifyContent="center"
