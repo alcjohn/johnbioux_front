@@ -20,7 +20,7 @@ const Post: React.FC<IProps> = ({ content }) => {
         openGraph={{
           url: content?.seo?.opengraphUrl,
           description: content?.seo?.opengraphDescription,
-          images: [{ url: content?.seo?.opengraphImage?.sourceUrl }],
+          images: [{ url: content?.featuredImage?.node?.sourceUrl }],
           type: content?.seo?.opengraphType,
           site_name: content?.seo?.opengraphSiteName,
         }}
