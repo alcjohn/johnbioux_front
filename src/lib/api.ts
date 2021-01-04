@@ -42,8 +42,9 @@ export const getContentBySlug = async (slug: string) => {
 				date
 				featuredImage {
 				  node {
-					sourceUrl
-					srcSet
+					sourceUrl(size: MEDIUM_LARGE)
+					srcSet(size: MEDIUM_LARGE)
+					sizes(size: MEDIUM_LARGE)
 					altText
 					id
 				  }
@@ -56,8 +57,15 @@ export const getContentBySlug = async (slug: string) => {
 				seo {
 				  title
 				  metaDesc
+				  opengraphTitle
+				  opengraphDescription
+				  opengraphType
+				  opengraphUrl
 				  schema {
 					  raw
+				  }
+				  opengraphImage {
+					sourceUrl
 				  }
 				}
 			}
@@ -81,11 +89,18 @@ export const getContentBySlug = async (slug: string) => {
 				  }
 				}
 				seo {
-				  title
-				  metaDesc
-				  schema {
-					  raw
-				  }
+					title
+					metaDesc
+					opengraphTitle
+					opengraphDescription
+					opengraphType
+					opengraphUrl
+					schema {
+						raw
+					}
+					opengraphImage {
+					  sourceUrl
+					}
 				}
 			}
 
