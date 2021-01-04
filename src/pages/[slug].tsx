@@ -56,7 +56,7 @@ export async function getStaticPaths() {
   const slugs = await getAllSlugs();
   return {
     paths: slugs.edges.map(({ node }: any) => `/${node.slug}`) || [],
-    fallback: false,
+    fallback: true,
   };
 }
 export default Post;
