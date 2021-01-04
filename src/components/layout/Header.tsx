@@ -12,7 +12,8 @@ const Header: React.FC<HeaderProps> = ({}) => {
       as="header"
       justifyContent="space-between"
       alignItems="center"
-      mx={6}
+      pl={6}
+      pr={2}
     >
       <NextChakraLink
         href="/"

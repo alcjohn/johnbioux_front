@@ -73,7 +73,9 @@ const Footer: React.FC<FooterProps> = ({}) => {
           md: "flex-end",
         }}
       >
-        <NextChakraLink href="mention-legales">Mention légales</NextChakraLink>
+        <NextChakraLink fontSize="xs" href="/mention-legales">
+          Mention légales
+        </NextChakraLink>
       </Flex>
     </Flex>
   );
