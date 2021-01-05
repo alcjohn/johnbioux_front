@@ -1,5 +1,6 @@
-import { Box, Grid, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Grid, useColorMode, Text } from "@chakra-ui/react";
 import React from "react";
+import CookieConsent from "react-cookie-consent";
 import useFullHeight from "../../hooks/useFullHeight";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -31,6 +32,32 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Box as="main">{children}</Box>
         <Footer />
       </Grid>
+
+      <CookieConsent
+        debug
+        buttonText="Accepter"
+        style={{
+          justifyContent: "center",
+          position: "relative",
+        }}
+        ButtonComponent={(props) => (
+          <Button
+            bg="primary.500"
+            color="white"
+            size="sm"
+            {...props}
+            m={1}
+            style={{}}
+          >
+            {props.children}
+          </Button>
+        )}
+      >
+        <Text fontSize="sm">
+          En poursuivant votre navigation sur ce site, vous acceptez
+          l’utilisation de cookies ou autres traceurs
+        </Text>
+      </CookieConsent>
     </Grid>
   );
 };
