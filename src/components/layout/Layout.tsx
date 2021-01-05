@@ -34,7 +34,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Grid>
 
       <CookieConsent
-        debug
         buttonText="Accepter"
         style={{
           justifyContent: "center",
