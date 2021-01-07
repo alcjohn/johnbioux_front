@@ -20,6 +20,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           url: FRONT_URL,
           type: "website",
           site_name: title,
+          images: [
+            {
+              url:
+                "https://admin.johnbioux.fr/wp-content/uploads/2021/01/home.jpg",
+            },
+          ],
         }}
       />
       <Component {...pageProps} />
