@@ -5,13 +5,14 @@ import { AppProps } from "next/app";
 import React from "react";
 import { DefaultSeo } from "next-seo";
 import { FRONT_URL } from "../url";
+import { Chakra } from "../components/ChakraProvider";
 
 const title = "John Bioux - Développeur Fullstack";
 const description =
   "Développeur Fullstack en Freelance, création de site internet ou d'apllication web ou mobile avec React.js, React-Native, Typescript, Nodejs.";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <Chakra resetCSS theme={theme}>
       <DefaultSeo
         title={title}
         description={description}
@@ -29,8 +30,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <Component {...pageProps} />
-    </ChakraProvider>
+    </Chakra>
   );
 }
-
+export { getServerSideProps } from "../components/ChakraProvider";
 export default MyApp;
