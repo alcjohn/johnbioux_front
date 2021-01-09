@@ -1,6 +1,7 @@
 import {
   AspectRatio,
   Box,
+  css,
   Flex,
   Img,
   keyframes,
@@ -68,7 +69,7 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             borderRadius="md"
             shadow="lg"
             flexDir="column"
-            animation={`${fade} 0.5s ${bezier} ${0.1 * index}s`}
+            animation={`${fade} 0.5s ${bezier} ${0.1 * index}s both`}
           >
             <Link href={`/${slug}`}>
               <a>
