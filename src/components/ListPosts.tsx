@@ -1,7 +1,6 @@
 import {
   AspectRatio,
   Box,
-  css,
   Flex,
   Img,
   keyframes,
