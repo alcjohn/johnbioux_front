@@ -8,9 +8,9 @@ import { Chakra } from "../components/ChakraProvider";
 const title = "John Bioux - Développeur Fullstack";
 const description =
   "Développeur Fullstack en Freelance, création de site internet ou d'apllication web ou mobile avec React.js, React-Native, Typescript, Nodejs.";
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, cookies }: AppProps & { cookies: any }) {
   return (
-    <Chakra resetCSS theme={theme}>
+    <Chakra resetCSS theme={theme} cookies={cookies}>
       <DefaultSeo
         title={title}
         description={description}
