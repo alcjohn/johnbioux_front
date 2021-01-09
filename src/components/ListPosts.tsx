@@ -3,12 +3,28 @@ import {
   Box,
   Flex,
   Img,
+  keyframes,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { NextChakraLink } from "./ChakraLink";
+
+const fade = keyframes`
+  0%{
+    transform: translateY(100px);
+    opacity: 0
+  }
+  75%{
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100%{
+    opacity: 1;
+  }
+`;
+const bezier = "cubic-bezier(.43,.13,.23,.96)";
 interface ITagProps {
   name: string;
 }
@@ -31,7 +47,7 @@ const TagItem: React.FC<ITagProps> = ({ name }) => (
 const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
   return (
     <SimpleGrid spacing={10} columns={[1, 2, 3]}>
-      {posts?.edges?.map((item: any) => {
+      {posts?.edges?.map((item: any, index: number) => {
         if (!item?.node) {
           return;
         }
@@ -52,6 +68,7 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             borderRadius="md"
             shadow="lg"
             flexDir="column"
+            animation={`${fade} 0.5s ${bezier} ${0.1 * index}s`}
           >
             <Link href={`/${slug}`}>
               <a>
