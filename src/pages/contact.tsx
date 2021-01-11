@@ -1,6 +1,7 @@
 import {
   Button,
   Container,
+  Flex,
   FormControl,
   FormLabel,
   Heading,
@@ -8,15 +9,18 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout/Layout";
 import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
+import CheckIcn from "../components/CheckIcn";
 interface contactProps {}
 const Form: React.FC = () => {
+  const [submited, onSubmited] = useState(false);
+  const [message, setMessage] = useState("");
   const { register, handleSubmit } = useForm();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -37,8 +41,8 @@ const Form: React.FC = () => {
     );
 
     const json = await res.json();
-
-    console.log(json);
+    onSubmited(true);
+    setMessage(json.message);
   };
   return (
     <Layout>
@@ -54,28 +58,40 @@ const Form: React.FC = () => {
           Contactez-moi
         </Heading>
         <Text my={4}>Une idée? Un projet ? N'hésitez pas à me contacter.</Text>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <FormControl mb={2}>
-            <FormLabel>Votre nom</FormLabel>
-            <Input name="your_name" required ref={register} />
-          </FormControl>
-          <FormControl mb={2}>
-            <FormLabel>Votre adresse de messagerie</FormLabel>
-            <Input type="email" name="your_email" required ref={register} />
-          </FormControl>
-          <FormControl mb={2}>
-            <FormLabel>Objet</FormLabel>
-            <Input name="your_subject" required ref={register} />
-          </FormControl>
+        {!submited ? (
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <FormControl mb={2}>
+              <FormLabel>Votre nom</FormLabel>
+              <Input name="your_name" required ref={register} />
+            </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>Votre adresse de messagerie</FormLabel>
+              <Input type="email" name="your_email" required ref={register} />
+            </FormControl>
+            <FormControl mb={2}>
+              <FormLabel>Objet</FormLabel>
+              <Input name="your_subject" required ref={register} />
+            </FormControl>
 
-          <FormControl mb={4}>
-            <FormLabel>Votre message</FormLabel>
-            <Textarea name="your_message" ref={register} />
-          </FormControl>
-          <Button textTransform="uppercase" type="submit">
-            Envoyer
-          </Button>
-        </form>
+            <FormControl mb={4}>
+              <FormLabel>Votre message</FormLabel>
+              <Textarea name="your_message" ref={register} />
+            </FormControl>
+            <Button textTransform="uppercase" type="submit">
+              Envoyer
+            </Button>
+          </form>
+        ) : (
+          <Flex
+            p={4}
+            flexDir="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <CheckIcn />
+            <Text my={4}>{message}</Text>
+          </Flex>
+        )}
       </Container>
     </Layout>
   );
