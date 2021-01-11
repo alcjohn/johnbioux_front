@@ -11,10 +11,12 @@ import {
 import React from "react";
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout/Layout";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 interface contactProps {}
-
-const contact: React.FC<contactProps> = ({}) => {
+const Form: React.FC = () => {
   const { register, handleSubmit } = useForm();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -25,7 +27,7 @@ const contact: React.FC<contactProps> = ({}) => {
     for (const key in data) {
       form_data.append(key, data[key]);
     }
-    form_data.append("g-recaptcha-response", token);
+    form_data.append("_wpcf7_recaptcha_response", token);
     const res = await fetch(
       "https://admin.johnbioux.fr/wp-json/contact-form-7/v1/contact-forms/86/feedback",
       {
@@ -76,6 +78,13 @@ const contact: React.FC<contactProps> = ({}) => {
         </form>
       </Container>
     </Layout>
+  );
+};
+const contact: React.FC<contactProps> = ({}) => {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey="6LfVcCgaAAAAAFgnzog6bUKTRu2UV0nrBRfeuUhM">
+      <Form />
+    </GoogleReCaptchaProvider>
   );
 };
 export default contact;
