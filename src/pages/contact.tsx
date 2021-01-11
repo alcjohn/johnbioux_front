@@ -12,10 +12,7 @@ import Head from "next/head";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout/Layout";
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha,
-} from "react-google-recaptcha-v3";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 interface contactProps {}
 
 const contact: React.FC<contactProps> = ({}) => {
