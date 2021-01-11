@@ -8,8 +8,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import Head from "next/head";
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout/Layout";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
@@ -19,16 +18,14 @@ const contact: React.FC<contactProps> = ({}) => {
   const { register, handleSubmit } = useForm();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  useEffect(() => {
-    executeRecaptcha().then(console.log);
-  }, []);
   const onSubmit = async (data: any) => {
     var form_data = new FormData();
+    const token = await executeRecaptcha();
 
     for (const key in data) {
       form_data.append(key, data[key]);
     }
-    // form_data.append("g-recaptcha-response",);
+    form_data.append("g-recaptcha-response", token);
     const res = await fetch(
       "https://admin.johnbioux.fr/wp-json/contact-form-7/v1/contact-forms/86/feedback",
       {
@@ -43,9 +40,6 @@ const contact: React.FC<contactProps> = ({}) => {
   };
   return (
     <Layout>
-      <Head>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LfVcCgaAAAAAFgnzog6bUKTRu2UV0nrBRfeuUhM"></script>
-      </Head>
       <Container>
         <Heading
           as="h1"
