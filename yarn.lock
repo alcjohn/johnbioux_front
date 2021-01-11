@@ -2774,7 +2774,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.3.1:
+hoist-non-react-statics@3.3.2, hoist-non-react-statics@^3.3.1:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -4182,6 +4182,13 @@ react-focus-lock@2.4.1:
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
+
+react-google-recaptcha-v3@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/react-google-recaptcha-v3/-/react-google-recaptcha-v3-1.7.1.tgz#e49f81e42b59c04ab9b488b88db3dd6e41e7aa00"
+  integrity sha512-5aCGrSy23rWgxfACxHZ1Mwt+2bnUDoljlm6Xz2gyJS3nGf6vRpVEeY0BjQjAT4C5ujQmvOY7EEpm3bVO8EjH+A==
+  dependencies:
+    hoist-non-react-statics "3.3.2"
 
 react-hook-form@^6.14.1:
   version "6.14.1"
