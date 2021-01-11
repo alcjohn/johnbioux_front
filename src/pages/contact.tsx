@@ -8,6 +8,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import React from "react";
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout/Layout";
@@ -36,6 +37,9 @@ const contact: React.FC<contactProps> = ({}) => {
   };
   return (
     <Layout>
+      <Head>
+        <script src="https://www.google.com/recaptcha/api.js" />
+      </Head>
       <Container>
         <Heading
           as="h1"
