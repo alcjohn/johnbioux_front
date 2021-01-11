@@ -17,6 +17,7 @@ import {
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import CheckIcn from "../components/CheckIcn";
+import { NextChakraLink } from "../components/ChakraLink";
 interface contactProps {}
 const Form: React.FC = () => {
   const [submited, onSubmited] = useState(false);
@@ -49,19 +50,21 @@ const Form: React.FC = () => {
   };
   return (
     <Layout>
-      <Container>
-        <Heading
-          as="h1"
-          mt={12}
-          mb={4}
-          fontSize="4xl"
-          color="primary.500"
-          fontFamily="roboto"
-        >
-          Contactez-moi
-        </Heading>
-        <Text my={4}>Une idée? Un projet ? N'hésitez pas à me contacter.</Text>
-        {!submited ? (
+      {!submited ? (
+        <Container>
+          <Heading
+            as="h1"
+            pt={12}
+            pb={4}
+            fontSize="4xl"
+            color="primary.500"
+            fontFamily="roboto"
+          >
+            Contactez-moi
+          </Heading>
+          <Text py={4}>
+            Une idée? Un projet ? N'hésitez pas à me contacter.
+          </Text>
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormControl mb={2}>
               <FormLabel>Votre nom</FormLabel>
@@ -84,18 +87,22 @@ const Form: React.FC = () => {
               Envoyer
             </Button>
           </form>
-        ) : (
-          <Flex
-            p={4}
-            flexDir="column"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <CheckIcn />
-            <Text my={4}>{message}</Text>
-          </Flex>
-        )}
-      </Container>
+        </Container>
+      ) : (
+        <Flex
+          p={4}
+          h="full"
+          flexDir="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <CheckIcn />
+          <Text my={4}>{message}</Text>
+          <NextChakraLink my={4} href="/blog">
+            Voir les derniers articles
+          </NextChakraLink>
+        </Flex>
+      )}
     </Layout>
   );
 };

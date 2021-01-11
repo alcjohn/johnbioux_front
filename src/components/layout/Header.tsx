@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
       </NextChakraLink>
       <Flex alignItems="center">
         <Flex as="nav" mr={4}>
-          <List justifyContent="center">
+          <List display="flex" justifyContent="center">
             <ListItem>
               <NextChakraLink
                 href="/blog"
@@ -38,6 +38,18 @@ const Header: React.FC<HeaderProps> = ({}) => {
                 }}
               >
                 Blog
+              </NextChakraLink>
+            </ListItem>
+            <ListItem ml={4}>
+              <NextChakraLink
+                href="/contact"
+                textTransform="uppercase"
+                fontSize={{
+                  base: "md",
+                  md: "xl",
+                }}
+              >
+                Contact
               </NextChakraLink>
             </ListItem>
           </List>
