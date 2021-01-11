@@ -20,11 +20,13 @@ import CheckIcn from "../components/CheckIcn";
 interface contactProps {}
 const Form: React.FC = () => {
   const [submited, onSubmited] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const { register, handleSubmit } = useForm();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const onSubmit = async (data: any) => {
+    setLoading(true);
     var form_data = new FormData();
     const token = await executeRecaptcha();
 
@@ -42,6 +44,7 @@ const Form: React.FC = () => {
 
     const json = await res.json();
     onSubmited(true);
+    setLoading(false);
     setMessage(json.message);
   };
   return (
@@ -77,7 +80,7 @@ const Form: React.FC = () => {
               <FormLabel>Votre message</FormLabel>
               <Textarea name="your_message" ref={register} />
             </FormControl>
-            <Button textTransform="uppercase" type="submit">
+            <Button textTransform="uppercase" type="submit" isLoading={loading}>
               Envoyer
             </Button>
           </form>
