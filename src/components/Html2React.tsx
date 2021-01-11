@@ -25,6 +25,7 @@ const options: HTMLReactParserOptions = {
     }
     const CustomComponent = components[data.name];
     if (CustomComponent) {
+      console.log(data.name);
       return <CustomComponent data={data} options={options} />;
     }
   },
