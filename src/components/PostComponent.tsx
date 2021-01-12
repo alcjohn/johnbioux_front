@@ -42,7 +42,7 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
       </Box>
       {image && (
         <BoxAnimated
-          layoutId="image"
+          layoutId={`image${post.id}`}
           loading="lazy"
           src={image.sourceUrl!}
           srcSet={image.srcSet!}

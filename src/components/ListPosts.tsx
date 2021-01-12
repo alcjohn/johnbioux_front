@@ -77,7 +77,7 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
               <a>
                 <AspectRatio ratio={16 / 9}>
                   <BoxAnimated
-                    layoutId="image"
+                    layoutId={`image${id}`}
                     src={featuredImage?.node?.sourceUrl || undefined}
                     srcSet={featuredImage?.node?.srcSet || undefined}
                     alt={featuredImage?.node?.altText || undefined}
