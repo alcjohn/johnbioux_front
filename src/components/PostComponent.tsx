@@ -9,6 +9,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
+import { motion } from "framer-motion";
 import React from "react";
 import {
   FacebookIcon,
@@ -21,6 +22,7 @@ import {
 import { FRONT_URL } from "../url";
 import Html2React from "./Html2React";
 
+const BoxAnimated = motion.custom(Img);
 interface PostComponentProps {
   post: any;
 }
@@ -39,7 +41,8 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || "").format("DD MMMM YYYY")}
       </Box>
       {image && (
-        <Img
+        <BoxAnimated
+          layoutId="image"
           loading="lazy"
           src={image.sourceUrl!}
           srcSet={image.srcSet!}
