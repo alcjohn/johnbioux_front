@@ -18,11 +18,13 @@ const breakpoints = createBreakpoints({
 const theme = extendTheme({
   config,
   styles: {
-    global: {
+    global: (props) => ({
       "html, body": {
         fontFamily: "roboto",
+        bg: props.colorMode === "dark" ? "bgPrimary" : "gray.50",
+        color: props.colorMode === "dark" ? "white" : "bgPrimary",
       },
-    },
+    }),
   },
   colors: {
     bgPrimary: "#262626",

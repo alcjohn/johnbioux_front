@@ -1,4 +1,4 @@
-import { Box, Button, Grid, useColorMode, Text } from "@chakra-ui/react";
+import { Box, Button, Grid, Text } from "@chakra-ui/react";
 import React from "react";
 import CookieConsent from "react-cookie-consent";
 import useFullHeight from "../../hooks/useFullHeight";
@@ -7,21 +7,11 @@ import Header from "./Header";
 
 interface LayoutProps {}
 
-const bgColor = { light: "gray.50", dark: "bgPrimary" };
-const color = { light: "bgPrimary", dark: "white" };
-
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const { colorMode } = useColorMode();
   const height = useFullHeight();
 
   return (
-    <Grid
-      height={height}
-      gridTemplateRows="auto 1fr"
-      bg={bgColor[colorMode]}
-      color={color[colorMode]}
-      overflow="hidden"
-    >
+    <Grid height={height} gridTemplateRows="auto 1fr" overflow="hidden">
       <Header />
       <Grid
         overflow="auto"
