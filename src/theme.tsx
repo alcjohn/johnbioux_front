@@ -3,6 +3,11 @@ import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 const fonts = { roboto: `'Roboto', sans-serif` };
 
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
+
 const breakpoints = createBreakpoints({
   sm: "40em",
   md: "52em",
@@ -11,6 +16,7 @@ const breakpoints = createBreakpoints({
 });
 
 const theme = extendTheme({
+  config,
   styles: {
     global: {
       "html, body": {
