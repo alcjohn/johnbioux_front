@@ -4,6 +4,7 @@ import {
   Flex,
   Heading,
   Img,
+  keyframes,
   Text,
   Wrap,
   WrapItem,
@@ -25,6 +26,30 @@ interface PostComponentProps {
   post: any;
 }
 
+const anim = keyframes`
+	0% {
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+`;
+const animImg = keyframes`
+0%{
+	transform: translateY(20%);
+	opacity: 0
+}
+75%{
+	opacity: 0.5;
+	transform: translateY(0);
+}
+100%{
+	opacity: 1;
+}`;
+
+const animationText = `${anim} 0.5s linear 0.2s both`;
+const animationImg = `${animImg} 0.3s linear`;
+
 const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   if (!post) {
     return null;
@@ -32,14 +57,21 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   const image = post.featuredImage?.node;
   return (
     <Box mx="auto" maxW="760px" px={4}>
-      <Heading as="h1" fontFamily="roboto" color="primary.500">
+      <Heading
+        // {...animationText}
+        animation={animationText}
+        as="h1"
+        fontFamily="roboto"
+        color="primary.500"
+      >
         {post.title}
       </Heading>
-      <Box mb={8} fontSize="sm">
+      <Box animation={animationText} mb={8} fontSize="sm">
         {dayjs(post.date || "").format("DD MMMM YYYY")}
       </Box>
       {image && (
         <Img
+          animation={animationImg}
           loading="lazy"
           src={image.sourceUrl!}
           srcSet={image.srcSet!}
@@ -49,7 +81,9 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
           htmlHeight="424px"
         />
       )}
-      <Html2React html={post.content || ""} />
+      <Box animation={animationText}>
+        <Html2React html={post.content || ""} />
+      </Box>
       <Divider />
       <Flex justifyContent="flex-end" alignItems="center">
         <Text>Partager sur : </Text>
