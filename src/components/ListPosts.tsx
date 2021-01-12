@@ -7,12 +7,9 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { NextChakraLink } from "./ChakraLink";
-
-const BoxAnimated = motion.custom(Img);
 
 const fade = keyframes`
   0%{
@@ -76,13 +73,11 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             <Link href={`/${slug}`}>
               <a>
                 <AspectRatio ratio={16 / 9}>
-                  <BoxAnimated
-                    layoutId={`image${id}`}
+                  <Img
                     src={featuredImage?.node?.sourceUrl || undefined}
                     srcSet={featuredImage?.node?.srcSet || undefined}
                     alt={featuredImage?.node?.altText || undefined}
                     sizes={featuredImage?.node?.sizes || undefined}
-                    initial={false}
                   />
                 </AspectRatio>
               </a>
