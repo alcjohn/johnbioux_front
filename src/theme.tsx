@@ -17,6 +17,18 @@ const breakpoints = createBreakpoints({
 
 const theme = extendTheme({
   config,
+  components: {
+    Input: {
+      defaultProps: {
+        focusBorderColor: "primary.500",
+      },
+    },
+    Textarea: {
+      defaultProps: {
+        focusBorderColor: "primary.500",
+      },
+    },
+  },
   styles: {
     global: (props) => ({
       "html, body": {

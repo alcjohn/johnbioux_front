@@ -1,15 +1,5 @@
-import {
-  Button,
-  Container,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  Text,
-  Textarea,
-} from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Layout from "../components/layout/Layout";
 import {
@@ -18,13 +8,31 @@ import {
 } from "react-google-recaptcha-v3";
 import CheckIcn from "../components/CheckIcn";
 import { NextChakraLink } from "../components/ChakraLink";
-interface contactProps {}
+import InputCustom from "../components/InputCustom";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  your_name: yup.string().required("Ce champ est obligatoire."),
+  your_email: yup
+    .string()
+    .email("L’adresse e-mail n’est pas valide.")
+    .required("Ce champ est obligatoire."),
+  your_subject: yup.string().required("Ce champ est obligatoire."),
+  your_message: yup.string().required("Ce champ est obligatoire."),
+});
+
 const Form: React.FC = () => {
   const [submited, onSubmited] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(schema),
+  });
   const { executeRecaptcha } = useGoogleReCaptcha();
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   const onSubmit = async (data: any) => {
     setLoading(true);
@@ -63,27 +71,47 @@ const Form: React.FC = () => {
             Contactez-moi
           </Heading>
           <Text py={4}>
-            Une idée? Un projet ? N'hésitez pas à me contacter.
+            Une idée ? Un projet ? N'hésitez pas à me contacter.
           </Text>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <FormControl mb={2}>
-              <FormLabel>Votre nom</FormLabel>
-              <Input name="your_name" required ref={register} />
-            </FormControl>
-            <FormControl mb={2}>
-              <FormLabel>Votre adresse de messagerie</FormLabel>
-              <Input type="email" name="your_email" required ref={register} />
-            </FormControl>
-            <FormControl mb={2}>
-              <FormLabel>Objet</FormLabel>
-              <Input name="your_subject" required ref={register} />
-            </FormControl>
-
-            <FormControl mb={4}>
-              <FormLabel>Votre message</FormLabel>
-              <Textarea name="your_message" ref={register} />
-            </FormControl>
-            <Button textTransform="uppercase" type="submit" isLoading={loading}>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate={true}>
+            <InputCustom
+              label="Votre nom"
+              name="your_name"
+              type="text"
+              isRequired
+              error={errors?.your_name?.message}
+              register={register({ required: "Ce champ est requis." })}
+            />
+            <InputCustom
+              label="Votre adresse de messagerie"
+              name="your_email"
+              type="email"
+              isRequired
+              error={errors?.your_email?.message}
+              register={register({ required: "Ce champ est requis." })}
+            />
+            <InputCustom
+              label="Objet"
+              name="your_subject"
+              type="text"
+              isRequired
+              error={errors?.your_subject?.message}
+              register={register({ required: "Ce champ est requis." })}
+            />
+            <InputCustom
+              label="Votre message"
+              name="your_message"
+              type="textarea"
+              isRequired
+              error={errors?.your_message?.message}
+              register={register({ required: "Ce champ est requis." })}
+            />
+            <Button
+              textTransform="uppercase"
+              variant="ghost"
+              type="submit"
+              isLoading={loading}
+            >
               Envoyer
             </Button>
           </form>
@@ -106,7 +134,7 @@ const Form: React.FC = () => {
     </Layout>
   );
 };
-const contact: React.FC<contactProps> = ({}) => {
+const contact: React.FC = () => {
   return (
     <GoogleReCaptchaProvider reCaptchaKey="6LfVcCgaAAAAAFgnzog6bUKTRu2UV0nrBRfeuUhM">
       <Form />
