@@ -1,31 +1,31 @@
-import { Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import Layout from "../components/layout/Layout";
+import { Button, Container, Flex, Heading, Text } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Layout from '../components/layout/Layout';
 import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
-} from "react-google-recaptcha-v3";
-import CheckIcn from "../components/CheckIcn";
-import { NextChakraLink } from "../components/ChakraLink";
-import InputCustom from "../components/InputCustom";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+} from 'react-google-recaptcha-v3';
+import CheckIcn from '../components/CheckIcn';
+import { NextChakraLink } from '../components/ChakraLink';
+import InputCustom from '../components/InputCustom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  your_name: yup.string().required("Ce champ est obligatoire."),
+  your_name: yup.string().required('Ce champ est obligatoire.'),
   your_email: yup
     .string()
-    .email("L’adresse e-mail n’est pas valide.")
-    .required("Ce champ est obligatoire."),
-  your_subject: yup.string().required("Ce champ est obligatoire."),
-  your_message: yup.string().required("Ce champ est obligatoire."),
+    .email('L’adresse e-mail n’est pas valide.')
+    .required('Ce champ est obligatoire.'),
+  your_subject: yup.string().required('Ce champ est obligatoire.'),
+  your_message: yup.string().required('Ce champ est obligatoire.'),
 });
 
 const Form: React.FC = () => {
   const [submited, onSubmited] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
@@ -42,11 +42,11 @@ const Form: React.FC = () => {
     for (const key in data) {
       form_data.append(key, data[key]);
     }
-    form_data.append("_wpcf7_recaptcha_response", token);
+    form_data.append('_wpcf7_recaptcha_response', token);
     const res = await fetch(
-      "https://admin.johnbioux.fr/wp-json/contact-form-7/v1/contact-forms/86/feedback",
+      'https://admin.johnbioux.fr/wp-json/contact-form-7/v1/contact-forms/86/feedback',
       {
-        method: "POST",
+        method: 'POST',
         body: form_data,
       }
     );
@@ -80,7 +80,7 @@ const Form: React.FC = () => {
               type="text"
               isRequired
               error={errors?.your_name?.message}
-              register={register({ required: "Ce champ est requis." })}
+              register={register({ required: 'Ce champ est requis.' })}
             />
             <InputCustom
               label="Votre adresse de messagerie"
@@ -88,7 +88,7 @@ const Form: React.FC = () => {
               type="email"
               isRequired
               error={errors?.your_email?.message}
-              register={register({ required: "Ce champ est requis." })}
+              register={register({ required: 'Ce champ est requis.' })}
             />
             <InputCustom
               label="Objet"
@@ -96,7 +96,7 @@ const Form: React.FC = () => {
               type="text"
               isRequired
               error={errors?.your_subject?.message}
-              register={register({ required: "Ce champ est requis." })}
+              register={register({ required: 'Ce champ est requis.' })}
             />
             <InputCustom
               label="Votre message"
@@ -104,7 +104,7 @@ const Form: React.FC = () => {
               type="textarea"
               isRequired
               error={errors?.your_message?.message}
-              register={register({ required: "Ce champ est requis." })}
+              register={register({ required: 'Ce champ est requis.' })}
             />
             <Button
               textTransform="uppercase"
