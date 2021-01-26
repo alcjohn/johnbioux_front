@@ -8,9 +8,9 @@ import {
 } from 'react-google-recaptcha-v3';
 import CheckIcn from '../components/CheckIcn';
 import { NextChakraLink } from '../components/ChakraLink';
-import InputCustom from '../components/InputCustom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import InputCustom from '../components/InputCustom';
 
 const schema = yup.object().shape({
   your_name: yup.string().required('Ce champ est obligatoire.'),
@@ -138,4 +138,10 @@ const contact: React.FC = () => {
     </GoogleReCaptchaProvider>
   );
 };
+
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}
 export default contact;

@@ -3,14 +3,13 @@ import {
   Divider,
   Flex,
   Heading,
-  Img,
   keyframes,
   Text,
   Wrap,
   WrapItem,
-} from "@chakra-ui/react";
-import dayjs from "dayjs";
-import React from "react";
+} from '@chakra-ui/react';
+import dayjs from 'dayjs';
+import React from 'react';
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -18,9 +17,9 @@ import {
   LinkedinShareButton,
   TwitterIcon,
   TwitterShareButton,
-} from "react-share";
-import { FRONT_URL } from "../url";
-import Html2React from "./Html2React";
+} from 'react-share';
+import { FRONT_URL } from '../url';
+import Html2React from './Html2React';
 
 interface PostComponentProps {
   post: any;
@@ -48,7 +47,7 @@ const animImg = keyframes`
 }`;
 
 const animationText = `${anim} 0.5s linear 0.2s both`;
-const animationImg = `${animImg} 0.3s linear`;
+const animationImg = `${animImg} 0.3s linear both`;
 
 const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   if (!post) {
@@ -67,22 +66,21 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {post.title}
       </Heading>
       <Box animation={animationText} mb={8} fontSize="sm">
-        {dayjs(post.date || "").format("DD MMMM YYYY")}
+        {dayjs(post.date || '').format('DD MMMM YYYY')}
       </Box>
       {image && (
-        <Img
+        <Box
+          as="img"
           animation={animationImg}
           loading="lazy"
           src={image.sourceUrl!}
           srcSet={image.srcSet!}
           alt={image?.altText || undefined}
           sizes={image.sizes || undefined}
-          htmlWidth="768px"
-          htmlHeight="424px"
         />
       )}
       <Box animation={animationText}>
-        <Html2React html={post.content || ""} />
+        <Html2React html={post.content || ''} />
       </Box>
       <Divider />
       <Flex justifyContent="flex-end" alignItems="center">
