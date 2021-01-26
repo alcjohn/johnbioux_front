@@ -3,6 +3,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Image,
   keyframes,
   Text,
   Wrap,
@@ -69,15 +70,17 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || '').format('DD MMMM YYYY')}
       </Box>
       {image && (
-        <Box
-          as="img"
-          animation={animationImg}
-          loading="lazy"
-          src={image.sourceUrl!}
-          srcSet={image.srcSet!}
-          alt={image?.altText || undefined}
-          sizes={image.sizes || undefined}
-        />
+        <Box animation={animationImg}>
+          <img
+            loading="lazy"
+            src={image.sourceUrl!}
+            srcSet={image.srcSet!}
+            alt={image?.altText || undefined}
+            sizes={image.sizes || undefined}
+            width="768px"
+            height="424px"
+          />
+        </Box>
       )}
       <Box animation={animationText}>
         <Html2React html={post.content || ''} />
