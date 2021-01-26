@@ -6,11 +6,11 @@ import {
   keyframes,
   SimpleGrid,
   Text,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import React from "react";
-import { NextChakraLink } from "./ChakraLink";
-
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import React from 'react';
+import { NextChakraLink } from './ChakraLink';
+import parse from 'html-react-parser';
 const fade = keyframes`
   0%{
     transform: translateY(100px);
@@ -24,7 +24,7 @@ const fade = keyframes`
     opacity: 1;
   }
 `;
-const bezier = "cubic-bezier(.43,.13,.23,.96)";
+const bezier = 'cubic-bezier(.43,.13,.23,.96)';
 interface ITagProps {
   name: string;
 }
@@ -88,11 +88,9 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
               </Box>
             </Box>
             <Box flex={1} px={4} py={2}>
-              <Text
-                noOfLines={3}
-                color="gray.500"
-                dangerouslySetInnerHTML={{ __html: excerpt || "" }}
-              />
+              <Text noOfLines={3} color="gray.500">
+                {parse(excerpt)}
+              </Text>
             </Box>
             <Box px={4} py={2}>
               {categories?.nodes?.map((item: any) => {

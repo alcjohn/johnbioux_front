@@ -58,7 +58,6 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   return (
     <Box mx="auto" maxW="760px" px={4}>
       <Heading
-        {...animationText}
         animation={animationText}
         as="h1"
         fontFamily="roboto"
