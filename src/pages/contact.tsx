@@ -1,5 +1,5 @@
 import { Button, Container, Flex, Heading, Text } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Layout from '../components/layout/Layout';
 import {
@@ -30,9 +30,6 @@ const Form: React.FC = () => {
     resolver: yupResolver(schema),
   });
   const { executeRecaptcha } = useGoogleReCaptcha();
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
 
   const onSubmit = async (data: any) => {
     setLoading(true);

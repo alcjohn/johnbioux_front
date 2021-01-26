@@ -1,11 +1,11 @@
-import parse, { HTMLReactParserOptions } from "html-react-parser";
-import React from "react";
-import A from "./processors/A";
-import Figure from "./processors/Figure";
-import H2 from "./processors/H2";
-import H3 from "./processors/H3";
-import P from "./processors/P";
-import Pre from "./processors/Pre";
+import parse, { HTMLReactParserOptions } from 'html-react-parser';
+import React from 'react';
+import A from './processors/A';
+import Figure from './processors/Figure';
+import H2 from './processors/H2';
+import H3 from './processors/H3';
+import P from './processors/P';
+import Pre from './processors/Pre';
 const components: Record<
   string,
   React.FC<{ data: any; options: HTMLReactParserOptions }>
@@ -20,12 +20,11 @@ const components: Record<
 
 const options: HTMLReactParserOptions = {
   replace: (data: any) => {
-    if (data.type !== "tag") {
+    if (data.type !== 'tag') {
       return;
     }
     const CustomComponent = components[data.name];
     if (CustomComponent) {
-      console.log(data.name);
       return <CustomComponent data={data} options={options} />;
     }
   },
