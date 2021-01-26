@@ -3,6 +3,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Img,
   keyframes,
   Text,
   Wrap,
@@ -47,7 +48,7 @@ const animImg = keyframes`
 }`;
 
 const animationText = `${anim} 0.5s linear 0.2s both`;
-const animationImg = `${animImg} 0.3s linear both`;
+const animationImg = `${animImg} 0.3s linear`;
 
 const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   if (!post) {
@@ -57,7 +58,7 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   return (
     <Box mx="auto" maxW="760px" px={4}>
       <Heading
-        // {...animationText}
+        {...animationText}
         animation={animationText}
         as="h1"
         fontFamily="roboto"
@@ -69,17 +70,17 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || '').format('DD MMMM YYYY')}
       </Box>
       {image && (
-        <Box animation={animationImg}>
-          <img
-            loading="lazy"
-            src={image.sourceUrl!}
-            srcSet={image.srcSet!}
-            alt={image?.altText || undefined}
-            sizes={image.sizes || undefined}
-            width="768px"
-            height="424px"
-          />
-        </Box>
+        <Img
+          animation={animationImg}
+          loading="lazy"
+          src={image.sourceUrl!}
+          srcSet={image.srcSet!}
+          alt={image?.altText || undefined}
+          sizes={image.sizes || undefined}
+          htmlWidth="768px"
+          htmlHeight="424px"
+          minW="100%"
+        />
       )}
       <Box animation={animationText}>
         <Html2React html={post.content || ''} />
