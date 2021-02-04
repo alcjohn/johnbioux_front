@@ -5,10 +5,10 @@ import {
   Link,
   ListItemProps,
   Text,
-} from "@chakra-ui/react";
-import dayjs from "dayjs";
-import React from "react";
-import { NextChakraLink } from "../ChakraLink";
+} from '@chakra-ui/react';
+import dayjs from 'dayjs';
+import React from 'react';
+import { NextChakraLink } from '../ChakraLink';
 
 interface FooterProps {}
 
@@ -25,7 +25,7 @@ const LinkItem: React.FC<LinkItemProps & ListItemProps> = ({
       href={href}
       isExternal
       textTransform="uppercase"
-      fontSize={{ base: "sm", md: "md", lg: "lg" }}
+      fontSize={{ base: 'sm', md: 'md', lg: 'lg' }}
     >
       {children}
     </Link>
@@ -33,14 +33,14 @@ const LinkItem: React.FC<LinkItemProps & ListItemProps> = ({
 );
 
 const Footer: React.FC<FooterProps> = ({}) => {
-  const year = dayjs().format("YYYY");
+  const year = dayjs().format('YYYY');
   return (
     <Flex
       as="footer"
       p={6}
       flexDirection={{
-        base: "column",
-        md: "row",
+        base: 'column',
+        md: 'row',
       }}
     >
       <List
@@ -48,11 +48,11 @@ const Footer: React.FC<FooterProps> = ({}) => {
         flex="1"
         alignItems="center"
         justifyContent={{
-          base: "center",
-          md: "flex-start",
+          base: 'center',
+          md: 'flex-start',
         }}
       >
-        <LinkItem mr={4} href="mailto:john.bioux@gmail.com">
+        <LinkItem mr={4} href="mailto:contact@johnbioux.fr">
           Mail
         </LinkItem>
         <LinkItem mr={4} href="https://www.linkedin.com/in/john-bioux/">
@@ -69,8 +69,8 @@ const Footer: React.FC<FooterProps> = ({}) => {
         flex={1}
         alignItems="center"
         justifyContent={{
-          base: "center",
-          md: "flex-end",
+          base: 'center',
+          md: 'flex-end',
         }}
       >
         <NextChakraLink fontSize="xs" href="/mention-legales">
