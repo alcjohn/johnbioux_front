@@ -21,6 +21,7 @@ import {
 } from 'react-share';
 import { FRONT_URL } from '../url';
 import Html2React from './Html2React';
+import Image from 'next/image';
 
 interface PostComponentProps {
   post: any;
@@ -69,23 +70,24 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || '').format('DD MMMM YYYY')}
       </Box>
       {image && (
-        <Img
-          animation={animationImg}
-          loading="lazy"
-          src={image.sourceUrl!}
-          srcSet={image.srcSet!}
-          alt={image?.altText || undefined}
-          sizes={image.sizes || undefined}
-          htmlWidth="768px"
-          htmlHeight="424px"
-          minW="100%"
-        />
+        // <Img
+        //   animation={animationImg}
+        //   loading="lazy"
+        //   src={image.sourceUrl!}
+        //   srcSet={image.srcSet!}
+        //   alt={image?.altText || undefined}
+        //   sizes={image.sizes || undefined}
+        //   htmlWidth="768px"
+        //   htmlHeight="424px"
+        //   minW="100%"
+        // />
+        <Image src={image.sourceUrl!} width={768} height={424} />
       )}
       <Box animation={animationText}>
         <Html2React html={post.content || ''} />
       </Box>
       <Divider />
-      <Flex justifyContent="flex-end" alignItems="center">
+      <Flex alignItems="center">
         <Text>Partager sur : </Text>
         <Wrap spacing={2} p={2}>
           <WrapItem>
