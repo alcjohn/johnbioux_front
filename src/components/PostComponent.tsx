@@ -3,7 +3,6 @@ import {
   Divider,
   Flex,
   Heading,
-  Img,
   keyframes,
   Text,
   Wrap,
