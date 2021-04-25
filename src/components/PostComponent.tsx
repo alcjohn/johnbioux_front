@@ -3,6 +3,7 @@ import {
   Divider,
   Flex,
   Heading,
+  Img,
   keyframes,
   Text,
   Wrap,
@@ -20,7 +21,6 @@ import {
 } from 'react-share';
 import { FRONT_URL } from '../url';
 import Html2React from './Html2React';
-import Image from 'next/image';
 
 interface PostComponentProps {
   post: any;
@@ -34,21 +34,21 @@ const anim = keyframes`
 		opacity: 1;
 	}
 `;
-// const animImg = keyframes`
-// 0%{
-// 	transform: translateY(20%);
-// 	opacity: 0
-// }
-// 75%{
-// 	opacity: 0.5;
-// 	transform: translateY(0);
-// }
-// 100%{
-// 	opacity: 1;
-// }`;
+const animImg = keyframes`
+0%{
+	transform: translateY(20%);
+	opacity: 0
+}
+75%{
+	opacity: 0.5;
+	transform: translateY(0);
+}
+100%{
+	opacity: 1;
+}`;
 
 const animationText = `${anim} 0.5s linear 0.2s both`;
-// const animationImg = `${animImg} 0.3s linear`;
+const animationImg = `${animImg} 0.3s linear`;
 
 const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   if (!post) {
@@ -69,24 +69,23 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || '').format('DD MMMM YYYY')}
       </Box>
       {image && (
-        // <Img
-        //   animation={animationImg}
-        //   loading="lazy"
-        //   src={image.sourceUrl!}
-        //   srcSet={image.srcSet!}
-        //   alt={image?.altText || undefined}
-        //   sizes={image.sizes || undefined}
-        //   htmlWidth="768px"
-        //   htmlHeight="424px"
-        //   minW="100%"
-        // />
-        <Image src={image.sourceUrl!} width={768} height={424} />
+        <Img
+          animation={animationImg}
+          loading="lazy"
+          src={image.sourceUrl!}
+          srcSet={image.srcSet!}
+          alt={image?.altText || undefined}
+          sizes={image.sizes || undefined}
+          htmlWidth="768px"
+          htmlHeight="424px"
+          minW="100%"
+        />
       )}
       <Box animation={animationText}>
         <Html2React html={post.content || ''} />
       </Box>
       <Divider />
-      <Flex alignItems="center">
+      <Flex justifyContent="flex-end" alignItems="center">
         <Text>Partager sur : </Text>
         <Wrap spacing={2} p={2}>
           <WrapItem>
