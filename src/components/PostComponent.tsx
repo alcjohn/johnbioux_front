@@ -48,7 +48,7 @@ const animImg = keyframes`
 }`;
 
 const animationText = `${anim} 0.5s linear 0.2s both`;
-const animationImg = `${animImg} 0.3s linear`;
+// const animationImg = `${animImg} 0.3s linear`;
 
 const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
   if (!post) {
