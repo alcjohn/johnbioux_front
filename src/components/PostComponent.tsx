@@ -34,18 +34,18 @@ const anim = keyframes`
 		opacity: 1;
 	}
 `;
-const animImg = keyframes`
-0%{
-	transform: translateY(20%);
-	opacity: 0
-}
-75%{
-	opacity: 0.5;
-	transform: translateY(0);
-}
-100%{
-	opacity: 1;
-}`;
+// const animImg = keyframes`
+// 0%{
+// 	transform: translateY(20%);
+// 	opacity: 0
+// }
+// 75%{
+// 	opacity: 0.5;
+// 	transform: translateY(0);
+// }
+// 100%{
+// 	opacity: 1;
+// }`;
 
 const animationText = `${anim} 0.5s linear 0.2s both`;
 // const animationImg = `${animImg} 0.3s linear`;
