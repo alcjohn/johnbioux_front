@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Text } from '@chakra-ui/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import CookieConsent from 'react-cookie-consent';
 import useFullHeight from '../../hooks/useFullHeight';
 import Footer from './Footer';
@@ -7,43 +7,13 @@ import Header from './Header';
 // @ts-ignore
 import NET from 'vanta/dist/vanta.net.min';
 
-interface LayoutProps {
-  showBg?: boolean;
-}
+interface LayoutProps {}
 
-const Layout: React.FC<LayoutProps> = ({ children, showBg }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const height = useFullHeight();
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
-  const myRef = useRef(null);
-  useEffect(() => {
-    if (!vantaEffect && showBg) {
-      setVantaEffect(
-        NET({
-          el: myRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: '#39ac54',
-          backgroundColor: '#262626',
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect, showBg]);
 
   return (
-    <Grid
-      ref={myRef}
-      height={height}
-      gridTemplateRows="auto 1fr"
-      overflow="hidden"
-    >
+    <Grid height={height} gridTemplateRows="auto 1fr" overflow="hidden">
       <Header />
       <Grid
         overflow="auto"

@@ -19,7 +19,7 @@ const anim = (fromLeft = false) => keyframes`
 
 const Index: React.FC = () => {
   return (
-    <Layout showBg={true}>
+    <Layout>
       <Flex
         h="full"
         justifyContent="center"
