@@ -1,5 +1,5 @@
 import { Box, Flex, keyframes } from '@chakra-ui/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import Layout from '../components/layout/Layout';
 
 const anim = (fromLeft = false) => keyframes`
