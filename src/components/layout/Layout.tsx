@@ -4,8 +4,6 @@ import CookieConsent from 'react-cookie-consent';
 import useFullHeight from '../../hooks/useFullHeight';
 import Footer from './Footer';
 import Header from './Header';
-// @ts-ignore
-import NET from 'vanta/dist/vanta.net.min';
 
 interface LayoutProps {}
 
