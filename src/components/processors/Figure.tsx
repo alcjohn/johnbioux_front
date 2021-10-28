@@ -8,9 +8,9 @@ import {
   Th,
   Thead,
   Tr,
-} from "@chakra-ui/react";
-import { domToReact, HTMLReactParserOptions } from "html-react-parser";
-import React, { useMemo } from "react";
+} from '@chakra-ui/react';
+import { domToReact, HTMLReactParserOptions } from 'html-react-parser';
+import React, { useMemo } from 'react';
 
 interface IProps {
   data: any;
@@ -38,14 +38,15 @@ const TableTr: React.FC<
 };
 
 const Figure: React.FC<IProps> = ({ data, options }) => {
-  if (data.attribs.class.includes("wp-block-table")) {
+  const table = useMemo(() => {
+    const t = data.children.find((item: any) => item.name === 'table');
+    return t?.children.length ? t.children : null;
+  }, data.children);
+  if (data.attribs.class.includes('wp-block-table')) {
     const figcaption = data.children.find(
-      (item: any) => item.name === "figcaption"
+      (item: any) => item.name === 'figcaption'
     );
-    const table = useMemo(() => {
-      const t = data.children.find((item: any) => item.name === "table");
-      return t?.children.length ? t.children : null;
-    }, data.children);
+
     return (
       <Box my={4}>
         <Table variant="striped" colorScheme="primary">
@@ -57,7 +58,7 @@ const Figure: React.FC<IProps> = ({ data, options }) => {
           {table?.length &&
             table.map((item: any, index: number) => {
               switch (item.name) {
-                case "thead":
+                case 'thead':
                   return (
                     <Thead key={index}>
                       {item.children.map((item: any, index: number) => (
@@ -70,7 +71,7 @@ const Figure: React.FC<IProps> = ({ data, options }) => {
                       ))}
                     </Thead>
                   );
-                case "tbody":
+                case 'tbody':
                   return (
                     <Tbody key={index}>
                       {item.children.map((item: any, index: number) => (
@@ -78,7 +79,7 @@ const Figure: React.FC<IProps> = ({ data, options }) => {
                       ))}
                     </Tbody>
                   );
-                case "tfoot":
+                case 'tfoot':
                   return (
                     <Tfoot key={index}>
                       {item.children.map((item: any, index: number) => (

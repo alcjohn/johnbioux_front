@@ -1,7 +1,7 @@
-import React from "react";
-import BaseHighlight, { defaultProps, Language } from "prism-react-renderer";
-import { chakra } from "@chakra-ui/react";
-import theme from "prism-react-renderer/themes/nightOwl";
+import React from 'react';
+import BaseHighlight, { defaultProps, Language } from 'prism-react-renderer';
+import { chakra } from '@chakra-ui/react';
+import theme from 'prism-react-renderer/themes/nightOwl';
 
 const RE = /{([\d,-]+)}/;
 
@@ -35,7 +35,7 @@ const Highlight: React.FC<HighlightProps> = ({
   showLines,
   ...props
 }) => {
-  const shouldHighlightLine = calculateLinesToHighlight(metastring || "");
+  const shouldHighlightLine = calculateLinesToHighlight(metastring || '');
   return (
     <BaseHighlight
       {...defaultProps}
@@ -51,8 +51,9 @@ const Highlight: React.FC<HighlightProps> = ({
               const lineProps = getLineProps({ line, key: i });
               return (
                 <chakra.div
+                  key={i}
                   px="5"
-                  bg={shouldHighlightLine(i) ? "whiteAlpha.200" : undefined}
+                  bg={shouldHighlightLine(i) ? 'whiteAlpha.200' : undefined}
                   {...lineProps}
                 >
                   {showLines && (
@@ -61,7 +62,7 @@ const Highlight: React.FC<HighlightProps> = ({
                     </chakra.span>
                   )}
                   {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} />
+                    <span key={key} {...getTokenProps({ token, key })} />
                   ))}
                 </chakra.div>
               );

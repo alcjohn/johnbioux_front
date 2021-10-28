@@ -68,7 +68,7 @@ const Form: React.FC = () => {
             Contactez-moi
           </Heading>
           <Text py={4}>
-            Une idée ? Un projet ? N'hésitez pas à me contacter.
+            Une idée ? Un projet ? N&apos;hésitez pas à me contacter.
           </Text>
           <form onSubmit={handleSubmit(onSubmit)} noValidate={true}>
             <InputCustom
