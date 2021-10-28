@@ -1,4 +1,5 @@
 import {
+  AspectRatio,
   Box,
   Divider,
   Flex,
@@ -55,16 +56,15 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
         {dayjs(post.date || '').format('DD MMMM YYYY')}
       </Box>
       {image && (
-        <Image
-          loading="lazy"
-          src={image.sourceUrl!}
-          // srcSet={image.srcSet!}
-          alt={image?.altText || undefined}
-          // sizes={image.sizes || undefined}
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-        />
+        <AspectRatio ratio={16 / 9}>
+          <Image
+            loading="lazy"
+            objectFit="cover"
+            placeholder="blur"
+            src={image.sourceUrl!}
+            alt={image?.altText || undefined}
+          />
+        </AspectRatio>
       )}
       <Box animation={animationText}>
         <Html2React html={post.content || ''} />
