@@ -60,9 +60,10 @@ const PostComponent: React.FC<PostComponentProps> = ({ post }) => {
           src={image.sourceUrl!}
           // srcSet={image.srcSet!}
           alt={image?.altText || undefined}
-          sizes={image.sizes || undefined}
-          width="768"
-          height="424"
+          // sizes={image.sizes || undefined}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
         />
       )}
       <Box animation={animationText}>
