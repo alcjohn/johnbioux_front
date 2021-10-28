@@ -2,7 +2,6 @@ import {
   AspectRatio,
   Box,
   Flex,
-  Img,
   keyframes,
   SimpleGrid,
   Text,
@@ -11,6 +10,7 @@ import Link from 'next/link';
 import React from 'react';
 import { NextChakraLink } from './ChakraLink';
 import parse from 'html-react-parser';
+import Image from 'next/image';
 const fade = keyframes`
   0%{
     transform: translateY(100px);
@@ -51,14 +51,8 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
         if (!item?.node) {
           return;
         }
-        const {
-          title,
-          featuredImage,
-          excerpt,
-          categories,
-          id,
-          slug,
-        } = item?.node;
+        const { title, featuredImage, excerpt, categories, id, slug } =
+          item?.node;
         return (
           <Flex
             key={id}
@@ -73,11 +67,14 @@ const ListPosts: React.FC<{ posts: any }> = ({ posts }) => {
             <Link href={`/${slug}`}>
               <a>
                 <AspectRatio ratio={16 / 9}>
-                  <Img
+                  <Image
+                    layout="fill"
+                    objectFit="cover"
+                    placeholder="blur"
                     src={featuredImage?.node?.sourceUrl || undefined}
-                    srcSet={featuredImage?.node?.srcSet || undefined}
+                    // srcSet={featuredImage?.node?.srcSet || undefined}
                     alt={featuredImage?.node?.altText || undefined}
-                    sizes={featuredImage?.node?.sizes || undefined}
+                    // sizes={featuredImage?.node?.sizes || undefined}
                   />
                 </AspectRatio>
               </a>
